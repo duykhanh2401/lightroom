@@ -1,1 +1,2337 @@
-[{"title": "Tổ chức ảnh và làm quen Lightroom", "goal": "Tự thiết lập một buổi chỉnh ảnh có thể quay lại, so sánh và sao lưu. Bạn cần bài này trước khi lưu preset hoặc chỉnh hàng loạt.", "idea": "Ảnh gốc là nguyên liệu; catalog ghi vị trí ảnh và các quyết định chỉnh sửa. Một bản xem trước không thay thế ảnh gốc. Việc chỉnh không phá hủy giúp thử nghiệm nhiều hướng mà vẫn giữ nguyên dữ liệu đầu vào.", "tools": [["Library và Develop", "Library dùng chọn, xếp và tìm ảnh; Develop là nơi xử lý ánh sáng, màu và chi tiết."], ["Folders và Collections", "Folders tương ứng thư mục trên ổ đĩa; Collections gom ảnh theo dự án mà không cần nhân bản file."], ["Import", "Copy để chép từ thẻ; Add cho ảnh đã ở đúng vị trí; Move chuyển vị trí. Chọn có chủ đích để tránh thất lạc."], ["RAW và JPEG", "RAW cho nhiều dư địa diễn giải ánh sáng và cân bằng trắng; JPEG đã được xử lý, dễ lộ lỗi khi đẩy mạnh."], ["History và Snapshot", "History theo dõi thao tác; Snapshot đánh dấu một trạng thái đáng giữ như bản trung tính và bản hoàn thiện."], ["Virtual Copy", "Tạo nhiều cách chỉnh từ một ảnh gốc; hữu ích khi so phong cách, không phải một bản sao lưu ảnh."], ["Phím cơ bản trên Classic", "G mở lưới; D mở Develop; R mở Crop; W lấy cân bằng trắng; J báo clipping; phím \\ xem trước sau."], ["Sao lưu", "Sao lưu catalog và ảnh gốc riêng. Catalog backup không tự chứa toàn bộ ảnh gốc."]], "steps": ["Tạo thư mục dự án gồm RAW, SELECT và EXPORT. Chép ảnh từ thẻ vào RAW trước khi xóa thẻ; kiểm tra mở được vài ảnh.", "Import 20 ảnh. Đánh cờ chọn ảnh rõ nét và có chủ thể; dùng sao để xếp hạng, tạo collection 10 ảnh học màu.", "Chọn một ảnh, tạo hai Virtual Copy tên Neutral và Look A. Chỉnh thử Exposure rồi quay về bằng History để hiểu tính không phá hủy.", "Tạo Snapshot sau khi sửa ánh sáng. Xuất JPEG vào EXPORT; mở lại JPEG để phân biệt ảnh nguồn với file giao nhận.", "Tạo bản sao lưu catalog, sao lưu RAW sang nơi khác. Thử tìm một ảnh bằng tên, collection và thư mục trước khi kết thúc."], "case": "Bạn có 300 ảnh du lịch nhưng chỉ học trên 10 ảnh: chọn đủ nắng, bóng râm và trong nhà. Đừng dùng 10 ảnh gần như giống nhau vì không đo được khả năng thích ứng của phong cách.", "errors": ["Dấu chấm than hoặc mất file: kiểm tra ổ đĩa và liên kết lại đường dẫn; tránh import lần nữa để chữa mù.", "Ảnh nhìn khác JPEG máy: kiểm tra profile và WB, vì RAW không nhất thiết giống xử lý màu trong máy.", "Chỉnh đồng loạt ngoài ý muốn: kiểm tra Auto Sync và số ảnh đang chọn trước mỗi thao tác."], "exercise": ["Nộp 1 collection gồm 10 ảnh, 2 phiên bản chỉnh của cùng một ảnh và 1 JPEG xuất thử.", "Ghi ra vị trí thật của ảnh gốc, catalog và bản sao lưu; tự tìm lại ảnh khi đóng rồi mở ứng dụng."], "answer": "Đạt khi bạn giải thích được vì sao xóa preview khác xóa RAW và khôi phục được trạng thái trung tính mà không làm mất bản sáng tạo.", "refs": ["catalog", "compare"], "days": [1, 2, 3, 20, 24], "chapter": "2 đến 4", "visual": "palette", "id": 1, "file": "docs/Bai_01_Lightroom.pdf", "sources": [["Adobe | Catalog là gì", "https://helpx.adobe.com/lightroom-classic/desktop/manage-catalogs-and-files/lightroom-catalog-basics.html"], ["Adobe | So sánh Classic và Lightroom", "https://helpx.adobe.com/lightroom-classic/desktop/kb/lightroom-feature-comparison.html"]], "group": "Nền tảng"}, {"title": "Tư duy màu sắc và cách nhìn ảnh", "goal": "Mô tả một ảnh bằng ánh sáng, sắc độ và quan hệ màu trước khi chạm thanh trượt. Đây là nền tảng để hiểu ảnh mẫu và tạo phong cách.", "idea": "Một màu trông khác khi đặt trên nền khác. Người xem cảm nhận cả độ sáng, vùng bao quanh và diện tích màu. Vì vậy, ảnh có cùng mã màu chưa chắc mang cùng cảm giác. Hãy xác định thứ tự chú ý mà bạn muốn tạo.", "tools": [["Hue", "Họ màu như đỏ, vàng, xanh; đổi Hue để dịch màu theo hướng khác, không đồng nghĩa làm ảnh sáng hơn."], ["Saturation", "Độ mạnh yếu của sắc màu. Một màu chỉ cần diện tích nhỏ cũng gây chú ý nếu bão hòa cao."], ["Luminance trong chỉnh màu", "Độ sáng của một nhóm màu trong công cụ; cảm giác sáng còn phụ thuộc màu nền và tương phản."], ["Value và cấu trúc sáng tối", "Tạm xem đen trắng để nhận ra chủ thể có tách nền không; màu đẹp khó cứu bố cục sáng tối rối."], ["RGB và màu đối", "Đỏ đối cyan, xanh lá đối magenta, xanh dương đối vàng. Cặp đối này hữu ích khi đọc RGB Curve."], ["Tương đồng và bổ túc", "Màu gần nhau tạo mạch nhẹ; màu đối tạo phân tách. Không bắt buộc mọi ảnh phải theo một phối màu cố định."], ["Nóng lạnh tương đối", "Một vùng ấm có thể nổi lên khi nền lạnh; không có nghĩa cứ tăng Kelvin là tạo được chiều sâu."], ["Tỷ lệ màu", "Chọn màu chủ đạo, phụ và điểm nhấn. Thử tỷ lệ 70/25/5 như bài luyện, không coi là luật thẩm mỹ."]], "steps": ["Chọn 3 ảnh bạn thích cùng chủ đề. Với mỗi ảnh, viết ba tính từ cụ thể: ví dụ nền xanh lạnh, da ấm vừa, bóng tối sâu.", "Tạm bỏ qua màu: đánh dấu vùng sáng nhất, tối nhất và chủ thể. Hỏi mắt nhìn vào đâu đầu tiên, vì sao.", "Ghi 5 màu đại diện theo vật thể: da, cây, trời, vùng trắng, vùng bóng. Ghi cả độ sáng và bão hòa tương đối.", "Đọc quan hệ: da sáng hơn hay tối hơn nền, màu nền có cạnh tranh với mặt không, vùng đen có ám màu không.", "Viết ý định chỉnh bằng câu có thể kiểm tra: giảm độ nổi của lá nhưng giữ da. Sau đó mới chọn Mixer hoặc Mask."], "case": "Ảnh chân dung trong vườn có thể gây rối vì lá vàng xanh rất sáng. Trước khi đổi toàn bộ cây sang xanh ngọc, thử giảm Luminance hoặc Saturation của nền có kiểm soát và so lại mặt người.", "errors": ["Gọi tên phong cách bằng một chữ cinematic: thay bằng mô tả được sắc độ, bảng màu và độ tương phản.", "Chỉ nhặt mã HEX: các mã không mô tả hướng sáng, tỷ lệ diện tích và chuyển vùng.", "Mọi vùng đều nổi: giảm cạnh tranh ở nền trước khi tăng Saturation chủ thể."], "exercise": ["Làm phiếu phân tích cho 5 ảnh, mỗi ảnh có 5 vùng màu và 1 câu ý định.", "Tạo hai phiên bản cùng ảnh: màu tương đồng nhẹ và cặp nóng lạnh. Giữ độ sáng chủ thể gần nhau để so công bằng."], "answer": "Đạt khi bạn chỉ ra được ít nhất 3 quan hệ màu cụ thể và chọn đúng công cụ cho từng quan hệ. Không chấm theo việc tên phong cách nghe hấp dẫn.", "refs": ["learn", "mixer"], "days": [8, 9, 19], "chapter": "5 và 7", "visual": "context", "id": 2, "file": "docs/Bai_02_Lightroom.pdf", "sources": [["Adobe | Tutorial thực hành", "https://lightroom.adobe.com/learn/tutorial"], ["Adobe | Color Mixer và Point Color", "https://helpx.adobe.com/uk/lightroom-classic/desktop/process-and-develop-photos/color-mixer.html"]], "group": "Nền tảng"}, {"title": "Ánh sáng Histogram và nhóm Basic", "goal": "Biết bắt đầu từ đâu với ảnh tối, cháy hoặc phẳng. Hiểu từng thanh Tone và phân biệt lỗi toàn ảnh với lỗi cục bộ.", "idea": "Histogram mô tả phân bố sắc độ, không chấm điểm ảnh đẹp. Ảnh đêm có thể lệch trái đúng ý đồ; ảnh tuyết có thể lệch phải. Chỉ sửa clipping khi vùng mất chi tiết đó cần được giữ.", "tools": [["Exposure", "Điều chỉnh độ sáng tổng thể; đặt theo chủ thể quan trọng trước, rồi xử lý vùng quá chênh."], ["Contrast", "Tăng hoặc giảm phân tách sáng tối quanh vùng trung gian; đẩy mạnh có thể làm mất chuyển sắc mềm."], ["Highlights", "Tác động ưu tiên vùng sáng; dùng giữ mây, áo trắng khi còn dữ liệu. Không khôi phục được dữ liệu không tồn tại."], ["Shadows", "Tác động ưu tiên vùng tối; nâng vừa để đọc được nội dung, tránh làm mọi bóng tối thành xám."], ["Whites", "Đặt phần sáng cao của ảnh; dùng cùng clipping và cảm nhận độ trong, không nhất thiết luôn chạm trắng tuyệt đối."], ["Blacks", "Đặt chiều sâu vùng tối; kéo quá thấp có thể bệt, kéo cao dễ tạo cảm giác bạc."], ["Auto và Reset", "Auto là một điểm tham khảo; so với ý đồ của bạn. Reset hoặc nhấp đúp tên thanh để đánh giá đóng góp của chỉnh sửa."], ["Clipping và HDR", "Bật cảnh báo để phát hiện mất chi tiết. HDR edit là quy trình riêng, khác việc chỉ kéo Highlights xuống."]], "steps": ["Dùng ảnh người trước cửa sổ. Xem Fit để đánh giá bố cục rồi xem 100% vùng mặt và áo.", "Đặt Exposure để mặt có độ sáng hợp cảnh. Ví dụ tăng +0.3 EV rồi so, thay vì lập tức nâng +2 EV.", "Giảm Highlights từng bước để giữ rèm hoặc áo. Nếu cửa sổ vẫn trắng hoàn toàn, quyết định chấp nhận hoặc dùng ảnh bracket nếu đã chụp.", "Nâng Shadows vừa đủ thấy tóc; đặt Whites và Blacks trong lúc kiểm tra clipping. Cảnh báo trên điểm phản chiếu nhỏ có thể chấp nhận.", "So trước sau ở cùng kích thước. Nếu mặt tốt nhưng cửa sổ còn sai, dùng mask cửa sổ; đừng tiếp tục làm tối toàn ảnh."], "case": "Ảnh ngược sáng: tăng Exposure cho mặt có thể làm trời quá sáng. Tách thành hai mục tiêu, mặt đủ sáng và trời còn chuyển sắc; dùng chỉnh toàn cục vừa phải rồi mask cho từng vùng.", "errors": ["Ảnh xám như HDR quá tay: giảm Shadows, giữ điểm đen có chủ đích.", "Da tối nhưng nền đã đúng: chuyển sang Subject hoặc People mask.", "Histogram đẹp nhưng ảnh thiếu cảm xúc: quay lại hướng sáng và điểm nhìn, không ép đồ thị phủ kín."], "exercise": ["Chỉnh 3 ảnh: tối toàn cục, ngược sáng, high key. Ghi thanh đầu tiên và lý do.", "Tạo một bản nâng Shadows mạnh và một bản dùng mask mặt; so độ sâu và nhiễu ở tóc."], "answer": "Đáp án định hướng: tối toàn cục thường xét Exposure; ngược sáng cần tách vùng; high key không phải lỗi chỉ vì histogram lệch phải. Đạt khi vùng quan trọng còn chi tiết và chủ thể rõ.", "refs": ["tone", "hdr"], "days": [4, 11], "chapter": "5", "visual": "hist", "id": 3, "file": "docs/Bai_03_Lightroom.pdf", "sources": [["Adobe | Tone và Color", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"], ["Adobe | Chỉnh và xuất HDR", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/hdr-output.html"]], "group": "Nền tảng"}, {"title": "Cân bằng trắng Profile và màu nền", "goal": "Tách ám màu do nguồn sáng khỏi màu sáng tạo. Biết dùng Temp, Tint và Profile để xây nền ổn định trước khi blend.", "idea": "Cân bằng trắng là quyết định diễn giải ánh sáng. Một vùng trắng trong nắng chiều không nhất thiết phải trắng trung tính. Sửa ám màu để vật thể đáng tin, rồi mới thêm cảm giác có chủ đích.", "tools": [["Temp", "Dịch cảm giác xanh lạnh sang vàng ấm. RAW thường hiển thị Kelvin; JPEG có thang điều chỉnh khác nên không chép số máy móc."], ["Tint", "Dịch xanh lá sang magenta; hữu ích khi ánh đèn hoặc màu phản xạ làm da xanh."], ["Eyedropper W", "Lấy mẫu vùng xám trung tính chưa cháy; tránh chọn răng, mắt hoặc áo bị phản xạ màu làm chuẩn tuyệt đối."], ["As Shot và Auto", "As Shot dùng thông tin WB của máy; Auto là gợi ý. Cả hai đều cần kiểm tra bằng cảnh thật và chủ thể."], ["Profile", "Chọn cách diễn giải ban đầu của màu và tone. Đổi profile có thể đổi cảm giác dù các thanh vẫn cùng số."], ["Adobe Raw và Camera Matching", "So một vài profile có sẵn cho file. Camera Matching phụ thuộc máy và định dạng, không phải ảnh nào cũng có."], ["Creative và Amount", "Một số profile sáng tạo có Amount; không phải mọi profile đều cho chỉnh cường độ."], ["Ánh sáng hỗn hợp", "Một WB toàn cục khó sửa đồng thời đèn vàng và cửa sổ xanh; cần mask cục bộ hoặc giữ tương phản nguồn sáng."]], "steps": ["Chọn RAW có da và vật xám. Tạo bản As Shot, bản Auto và bản lấy mẫu xám; so vùng da, không chỉ nhìn nền.", "Chọn một profile làm nền và giữ cố định trong bài. Nếu đổi profile sau này, kiểm tra lại các chỉnh màu phụ thuộc.", "Lấy mẫu 3 điểm xám khác nhau chưa cháy. Nếu kết quả lệch nhiều, nghi ngờ phản xạ màu hoặc ánh sáng hỗn hợp.", "Tinh Temp rồi Tint bằng bước nhỏ. Ghi lại cái gì tốt hơn: da bớt xanh, áo trung tính hơn hay ánh chiều còn được giữ.", "Nếu một bên mặt vàng còn bên kia xanh, tạo mask theo vùng ánh sáng và chỉnh WB tại đó. Kiểm tra ranh giới ở mũi và tóc."], "case": "Quán cà phê có cửa sổ xanh và đèn vàng: ưu tiên da ở nguồn sáng chính; giảm ám đèn tại vùng cần thiết. Trung hòa tất cả có thể làm không gian mất đặc trưng.", "errors": ["Da hồng sau khi sửa xanh: giảm Tint, kiểm tra phản xạ màu trước khi kéo toàn ảnh.", "Chép 5200 K nhưng ảnh khác: kiểm tra file, profile, nguồn sáng và máy ảnh.", "Ảnh ấm được coi là sai WB: hỏi ý đồ và vật trung tính trước khi sửa."], "exercise": ["Chỉnh 3 cảnh gồm bóng râm, đèn trong nhà và ánh sáng hỗn hợp. Lưu bản trung tính lẫn bản giữ không khí.", "Lập bảng Profile, Temp, Tint và lý do chọn; giải thích thay đổi bằng vật thể cụ thể."], "answer": "Đạt khi da hợp cảnh, vùng trung tính đáng tin và bạn phân biệt được ấm do ánh sáng với ám vàng ngoài ý muốn. Không yêu cầu mọi ảnh cùng Kelvin.", "refs": ["tone", "mask"], "days": [4, 13], "chapter": "5", "visual": "palette", "id": 4, "file": "docs/Bai_04_Lightroom.pdf", "sources": [["Adobe | Tone và Color", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"], ["Adobe | Masking", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"]], "group": "Nền tảng"}, {"title": "Tone Curve và RGB Curve", "goal": "Tạo độ tương phản, độ mềm vùng sáng và ám màu có kiểm soát. Biết đọc đồ thị trước khi kéo điểm.", "idea": "Trục ngang là độ sáng đầu vào, trục dọc là đầu ra. Nâng một điểm làm vùng đó sáng hơn trên curve tổng. Với curve kênh màu, nâng điểm làm tăng thành phần kênh đó; quan hệ màu cũng đổi theo.", "tools": [["Point Curve tổng", "Đặt điểm trực tiếp. Đường chéo là mốc không đổi; ưu tiên ít điểm để chuyển sắc mượt."], ["Parametric Curve", "Chỉnh Highlights, Lights, Darks, Shadows theo vùng; ranh giới chia vùng thay đổi phạm vi tác động."], ["S Curve", "Hạ vùng tối và nâng vùng sáng để tăng phân tách; S mạnh dễ làm da gắt."], ["Black point và White point", "Nâng điểm đen tạo đen bạc; hạ điểm trắng nén cực sáng. Đây không phải phục hồi chi tiết đã mất."], ["Red channel", "Nâng tăng đỏ; hạ dịch về cyan. Có thể tác động riêng bóng hoặc sáng bằng điểm neo."], ["Green channel", "Nâng tăng xanh lá; hạ dịch magenta. Kiểm tra da và vật xám vì ám xanh rất dễ gây khó chịu."], ["Blue channel", "Nâng tăng xanh dương; hạ dịch vàng. Dùng lượng nhỏ khi muốn bóng lạnh và sáng ấm."], ["Điểm neo và tính liên tục", "Neo midtone giúp giữ da khi chỉnh shadows. Tránh đường gãy hoặc đảo chiều gây chuyển tone bất thường."]], "steps": ["Bắt đầu từ bản đã cân bằng Exposure và WB. Tạo Virtual Copy chỉ dùng Curve để thấy rõ tác động.", "Trên curve tổng, đặt điểm gần 25%, 50%, 75% trục vào. Hạ nhẹ điểm tối, nâng nhẹ điểm sáng; giữ điểm giữa nếu da đã đúng.", "Thử nâng điểm đen một chút rồi bật tắt. Nếu tóc mất chiều sâu, giảm mức nâng; đen bạc không tự tạo chất phim.", "Ở Blue curve, nâng rất nhẹ vùng bóng, giữ midtone, hạ nhẹ vùng sáng. Quan sát áo xám và da xem có ám không mong muốn.", "Tắt toàn bộ Curve rồi bật lại. Nếu đổi quá nhiều thứ cùng lúc, bỏ bớt điểm hoặc tách mục tiêu sang Color Grading."], "case": "Muốn ảnh mềm vùng sáng nhưng vẫn có đen sâu: thử nén đầu trắng nhẹ và giữ đầu đen, thay vì nâng toàn bộ vùng tối. Hai thao tác tạo hai cảm giác khác nhau.", "errors": ["Da xám xanh: kiểm tra Blue hoặc Red curve ở midtone.", "Ảnh bị gãy chuyển sắc: giảm điểm và biên độ; JPEG chịu đẩy kém hơn RAW.", "Không biết màu đến từ đâu: tắt lần lượt curve kênh và Color Grading."], "exercise": ["Tạo 3 phiên bản một ảnh: tương phản sạch, đen bạc nhẹ, bóng lạnh sáng ấm. Mỗi bản tối đa 5 điểm mỗi curve.", "Vẽ lại curve đã dùng và giải thích tác động của từng điểm bằng vùng ảnh."], "answer": "Đạt khi giải thích được đầu vào và đầu ra, đọc đúng 3 cặp màu đối và giữ được chuyển sắc da. Số điểm ít chỉ là giới hạn bài tập, không phải chuẩn bắt buộc.", "refs": ["tone", "learn"], "days": [4, 9], "chapter": "5 và 7", "visual": "curve", "id": 5, "file": "docs/Bai_05_Lightroom.pdf", "sources": [["Adobe | Tone và Color", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"], ["Adobe | Tutorial thực hành", "https://lightroom.adobe.com/learn/tutorial"]], "group": "Công cụ màu"}, {"title": "Color Mixer HSL và Point Color", "goal": "Thay đổi từng nhóm màu mà vẫn bảo vệ da và vật thể khác. Hiểu khi nào chọn màu và khi nào phải chọn vị trí.", "idea": "HSL chọn theo họ màu, không hiểu vật thể. Lá vàng và da có thể dùng chung dải cam vàng; chỉnh một dải có thể tác động cả hai. Point Color tinh chọn phạm vi hơn nhưng vẫn cần kiểm tra vùng bị ảnh hưởng.", "tools": [["Hue", "Dịch sắc trong một dải: cây xanh có thể nghiêng vàng hoặc cyan tùy hướng kéo. Quan sát ảnh thay vì học thuộc dấu số."], ["Saturation", "Giảm hoặc tăng cường độ của dải. Giảm mạnh có thể khiến vật thể trông xám và thiếu sức sống."], ["Luminance", "Đổi độ sáng nhóm màu. Hạ Blue có thể làm trời sâu nhưng dễ lộ viền và banding."], ["Tám dải Mixer", "Red, Orange, Yellow, Green, Aqua, Blue, Purple, Magenta. Dải có thể chồng lấn, không chia màu bằng biên cứng."], ["Targeted Adjustment", "Chọn công cụ đích, kéo trên vùng ảnh để điều chỉnh các dải liên quan; kiểm tra các thanh cùng thay đổi."], ["Point Color", "Lấy mẫu một màu rồi chỉnh Hue, Saturation và Luminance cho phạm vi đã chọn."], ["Range và Visualize Range", "Thu hoặc mở phạm vi tác động; dùng xem vùng chọn để biết da hoặc nền có bị kéo theo không."], ["Mask kết hợp màu", "Khi chỉ muốn đổi màu áo mà nền cùng màu, chọn vị trí bằng mask rồi dùng các điều chỉnh có sẵn trong phiên bản."]], "steps": ["Dùng ảnh người đứng trước cây. Cân WB trước để phạm vi màu không bị lệch ngay từ đầu.", "Ở Mixer giảm nhẹ Saturation Yellow và Green. Bật tắt xem cây bớt tranh mắt hay chỉ thành xám bẩn.", "Dịch Green Hue từng chút theo ý đồ. Kiểm tra vàng của lá, cam của da và các vùng phản xạ trên áo.", "Dùng Point Color lấy mẫu lá. Bật Visualize Range, thu phạm vi tới khi mặt ít bị ảnh hưởng rồi tinh Hue và Luminance.", "Nếu mặt vẫn đổi vì chung màu, dùng mask nền; so mặt và cây riêng, sau đó đánh giá cả khung ở Fit."], "case": "Áo đỏ và biển hiệu đỏ: Mixer Red sẽ tác động cả hai. Nếu cần giữ biển hiệu, chọn áo bằng Object hoặc Brush mask; bài toán này là không gian trước rồi mới đến màu.", "errors": ["Da cam rực: giảm Orange Saturation có thể giúp nhưng phải kiểm tra WB và profile trước.", "Trời sọc màu: giảm mức hạ Blue Luminance và kiểm tra JPEG nén.", "Lá bị hai mảng màu: phạm vi chọn quá hẹp hoặc đổi Hue quá mạnh; làm mềm chuyển vùng."], "exercise": ["Chỉnh nền cây thành xanh dịu trong khi da gần bản trung tính. Xuất trước sau.", "Tạo bản HSL toàn cục và bản Point Color hoặc mask; ghi vùng tác động ngoài ý muốn."], "answer": "Đạt khi màu mục tiêu thay đổi rõ, vùng cần bảo vệ còn tự nhiên và không có ranh màu gắt. Nếu hai vật thể cùng màu, câu trả lời đúng thường cần mask vị trí.", "refs": ["mixer", "mask"], "days": [8, 15, 16], "chapter": "7", "visual": "palette", "id": 6, "file": "docs/Bai_06_Lightroom.pdf", "sources": [["Adobe | Color Mixer và Point Color", "https://helpx.adobe.com/uk/lightroom-classic/desktop/process-and-develop-photos/color-mixer.html"], ["Adobe | Masking", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"]], "group": "Công cụ màu"}, {"title": "Color Grading và kỹ thuật blend màu", "goal": "Phối màu theo vùng sáng tối để tạo cảm giác thống nhất. Phân biệt phủ màu tone với đổi màu của một vật thể.", "idea": "Blend màu trong bài này là phối sắc và chuyển vùng để tạo một cách nhìn nhất quán. Color Grading phù hợp với màu trong bóng, trung gian và sáng; Mixer phù hợp với họ màu vật thể.", "tools": [["Shadows", "Phủ sắc vào vùng tối. Lạnh nhẹ có thể tăng phân tách với da ấm; quá mạnh dễ làm vùng đen bẩn."], ["Midtones", "Tác động trung gian, thường liên quan nhiều tới da. Dùng rất tiết chế và kiểm tra chân dung trước."], ["Highlights", "Phủ sắc vùng sáng; vàng nhẹ có thể gợi ánh nắng, nhưng áo trắng không nên vàng nếu cần trung tính."], ["Hue và Saturation trên wheel", "Góc chọn sắc, khoảng cách tới tâm chọn độ mạnh; tâm gần trung tính. Có thể tăng tạm để thấy sắc rồi giảm."], ["Luminance từng vùng", "Đổi độ sáng kèm theo sắc. Đừng nhầm thay đổi độ sáng này với chỉ thay đổi độ bão hòa."], ["Blending", "Điều khiển mức hòa trộn giữa các vùng tone; đánh giá chuyển vùng trên da và nền xám."], ["Balance", "Nghiêng cân bằng tác động về phía sáng hoặc tối. Không phải thanh Exposure và không thay mask vật thể."], ["Global", "Một sắc phủ chung. Dùng nhẹ vì tác động rộng và có thể làm giảm phân tách nóng lạnh đã tạo."]], "steps": ["Tạo bản sạch trước: WB, Exposure, profile và curve đã ổn. Viết mục tiêu bóng lạnh, da ấm nhẹ, đen còn trung tính tương đối.", "Chọn sắc bóng bằng Saturation tạm rõ để nhìn hướng; sau đó giảm xuống mức chỉ thấy khi bật tắt. Không giữ mức tạm mạnh.", "Thêm sắc sáng ấm nhẹ. Để Midtones gần trung tính trước để bảo vệ da; chỉ đổi nếu có lý do.", "Thử Blending thấp và cao ở hai bản; xem vùng chuyển trên má, áo và tường. Tinh Balance để màu phủ không lấn mặt.", "So với bản sạch sau vài phút nghỉ mắt. Giảm tổng cường độ nếu ánh sáng bị mất hoặc vùng xám nhìn xanh vàng quá rõ."], "case": "Bài thử có thể dùng bóng H khoảng 210, S khoảng 6 và sáng H khoảng 45, S khoảng 5. Đây là điểm khởi đầu minh họa trên thang wheel, không phải công thức chung cho mọi RAW.", "errors": ["Da bị cam: kiểm tra cả Highlights, Midtones, WB và Orange Mixer.", "Bóng xanh nhưng ảnh vẫn phẳng: sửa cấu trúc sáng tối trước khi tăng màu bóng.", "Áp teal orange cho mọi cảnh: xem lại màu có sẵn và cảm giác bạn thực sự muốn."], "exercise": ["Tạo hai look: ấm nhẹ và nóng lạnh. Giữ crop, Exposure và profile giống nhau để đo đóng góp của Grading.", "Ghi màu ở shadows, midtones, highlights và giải thích Blending, Balance đã giúp vùng nào."], "answer": "Đạt khi chuyển sắc mượt, da được giữ theo ý đồ và màu bổ sung phục vụ ánh sáng. Không yêu cầu người xem gọi đúng tên look.", "refs": ["grade", "learn"], "days": [9, 17], "chapter": "7", "visual": "palette", "id": 7, "file": "docs/Bai_07_Lightroom.pdf", "sources": [["Adobe | Video Color Grading", "https://pages.adobe.com/lightroom-classic/en/learn/color-grading/"], ["Adobe | Tutorial thực hành", "https://lightroom.adobe.com/learn/tutorial"]], "group": "Công cụ màu"}, {"title": "Calibration và xây màu có hệ thống", "goal": "Hiểu vai trò rộng của Calibration, tránh dùng Blue Primary như một mẹo cho mọi ảnh. Xác định thứ tự hiệu chỉnh để không tự làm rối màu.", "idea": "Calibration tác động rộng đến cách các màu được tái hiện. Nó không chọn riêng tất cả vật màu đỏ hay xanh như HSL. Mọi thay đổi ở đây cần thử trên nhiều loại ánh sáng và màu da.", "tools": [["Process", "Chọn phiên bản xử lý nếu được hiển thị. Với bài học mới, giữ cố định; đổi Process có thể làm thay đổi kết quả các thanh."], ["Shadows Tint", "Tinh ám xanh lá hoặc magenta trong bóng. Không dùng thay cân WB toàn ảnh."], ["Red Primary Hue", "Dịch cách diễn giải thành phần màu liên quan kênh đỏ; ảnh hưởng có thể lan sang nhiều họ màu."], ["Red Primary Saturation", "Thay đổi cường độ liên quan primary đỏ. Quan sát cả da, gỗ và vật trung tính."], ["Green Primary Hue và Saturation", "Tác động quan hệ màu rộng; kiểm tra cây lẫn vùng da và bóng, không chỉ vật xanh lá."], ["Blue Primary Hue và Saturation", "Có thể đổi cảm giác cam và xanh đồng thời. Không phải thanh riêng cho bầu trời."], ["Profile trước Calibration", "Chốt profile nền rồi mới thử Calibration. Cùng giá trị trên profile khác nhau có thể tạo kết quả khác."], ["Đối chiếu Lightroom Mobile", "Không coi mọi giao diện đều có Calibration tương đương Classic. Có thể tạo look bằng Curve, Mixer, Grading và mask."]], "steps": ["Chọn 6 RAW gồm nắng, râm, đèn trong nhà; lưu bản trung tính. Giữ cùng profile khi so Calibration.", "Chỉ đổi Blue Primary Hue một mức nhỏ, ví dụ thử -10 rồi +10. Ghi những màu nào thay đổi, đặc biệt da và màu trời.", "Hoàn nguyên rồi thử Saturation của cùng primary. Không thay Hue và Saturation cùng lúc trong lượt học đầu.", "Chọn phương án có ích, kiểm tra 5 ảnh còn lại. Nếu chỉ một ảnh đẹp, coi đó là chỉnh riêng ảnh, chưa phải nền preset.", "Sau khi chốt nền Calibration, tinh lại Mixer và Grading. Nếu kết quả lệch mạnh, giảm Calibration thay vì thêm nhiều chỉnh sửa bù."], "case": "Một preset trông đẹp trên nắng chiều nhưng làm da trong bóng râm quá cam: thử giảm Calibration trước, kiểm tra WB theo cảnh, rồi mới chỉnh Orange riêng. Tìm nguyên nhân sớm giúp giảm chỉnh bù.", "errors": ["Tưởng Blue Primary chỉ đổi xanh: tắt bật và quan sát cả cam, đỏ, da.", "Da mất tự nhiên ở nhiều ảnh: giảm mức tác động rộng và kiểm tra profile.", "Không thấy Calibration: kiểm tra đúng ứng dụng và phiên bản; không tìm một thanh thay thế hoàn toàn tương đương."], "exercise": ["Lập bảng 6 ảnh và 3 trạng thái Calibration: gốc, thử âm, thử dương. Mỗi ảnh ghi da, nền, vùng xám.", "Chọn một thay đổi nhỏ có thể dùng lại, hoặc kết luận không cần Calibration và giải thích."], "answer": "Đạt khi dự đoán được đây là thay đổi rộng, nhận ra tác dụng phụ và không ép dùng công cụ nếu Mixer hoặc Grading đã đủ.", "refs": ["tone", "compare"], "days": [8, 9, 12], "chapter": "5 và 7", "visual": "palette", "id": 8, "file": "docs/Bai_08_Lightroom.pdf", "sources": [["Adobe | Tone và Color", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"], ["Adobe | So sánh Classic và Lightroom", "https://helpx.adobe.com/lightroom-classic/desktop/kb/lightroom-feature-comparison.html"]], "group": "Công cụ màu"}, {"title": "Masking và tạo chiều sâu bằng ánh sáng", "goal": "Chỉnh đúng vùng, tạo điểm nhìn và xử lý ánh sáng hỗn hợp mà không làm toàn ảnh lệch. Hiểu các phép kết hợp mask.", "idea": "Mask trả lời câu hỏi chỉnh ở đâu. Các thanh trong mask trả lời chỉnh như thế nào. Một mask được chọn đúng nhưng tăng sáng quá nhiều vẫn tạo ảnh giả; chọn vùng và cường độ đều cần kiểm tra.", "tools": [["Subject Sky Background People", "Lựa chọn tự động cho vùng lớn hoặc người; kết quả cần kiểm tra tóc, kính và các khe hở."], ["Object và Brush", "Object hỗ trợ chọn vật; Brush cho phép tô thủ công. Size đổi cỡ, Feather làm mềm rìa, Flow tích lũy nét, Density giới hạn mức phủ."], ["Linear và Radial Gradient", "Tạo chuyển vùng thẳng hoặc elip; hữu ích dẫn sáng, làm dịu cạnh ảnh và dodge burn rộng."], ["Color Range và Luminance Range", "Chọn theo màu hoặc độ sáng. Thường cần kết hợp phạm vi vị trí để tránh tác động nhầm."], ["Add Subtract Intersect", "Add mở rộng vùng, Subtract bỏ phần, Intersect giữ vùng giao. Kiểm tra overlay sau mỗi phép."], ["Invert và Overlay", "Đảo vùng chọn; overlay hiển thị nơi ảnh hưởng. Tắt overlay khi đánh giá màu thật."], ["Thanh chỉnh trong mask", "Exposure, tone, Temp, Tint, Texture và các điều chỉnh hỗ trợ tùy phiên bản. Không phải mọi thanh toàn cục đều có bản cục bộ."], ["Amount và tên mask", "Nếu có Amount, dùng giảm tổng tác động. Đặt tên theo ý định như Mặt sáng nhẹ để lần sau đọc được quyết định."]], "steps": ["Trên ảnh chân dung đã chỉnh nền, tạo Subject mask và xem overlay ở tóc. Subtract Brush nếu vùng nền bị chọn nhầm.", "Nâng sáng mặt nhẹ, ví dụ +0.2 EV rồi xem Fit. Nếu vai và áo bị sáng quá, giới hạn bằng People hoặc Brush.", "Tạo Radial Gradient mềm gần hướng sáng có thật. Tránh vẽ quầng sáng đồng tâm quanh người nếu cảnh không có nguồn sáng đó.", "Chọn nền rồi Intersect Luminance Range nếu chỉ muốn hạ vùng nền quá sáng. Kiểm tra áo trắng không bị ảnh hưởng.", "Tắt tất cả mask, bật lại từng cái. Kiểm tra viền tóc 100% rồi xem cả ảnh để phát hiện chủ thể như bị dán vào nền."], "case": "Mặt đúng nhưng tường phía sau tranh mắt: hạ tường bằng Background kết hợp vùng sáng. Không tăng Exposure mặt liên tục vì sẽ làm da phẳng và mất chi tiết.", "errors": ["Viền sáng quanh người: sửa rìa mask, tăng độ mềm phù hợp và giảm chênh Exposure.", "Tô mãi mới đủ mạnh: kiểm tra Flow và Density, tránh lạm dụng nét chồng.", "Màu nhìn kỳ khi đang tô: tắt overlay để xem màu thật trước khi kết luận."], "exercise": ["Tạo 3 mask có tên: mặt, nền sáng, vùng dẫn mắt. Mỗi mask ghi mục đích và vùng phải bảo vệ.", "Tạo một mask giao giữa nền và vùng sáng; chụp hoặc xuất hai bản bật tắt để đánh giá hiệu quả."], "answer": "Đạt khi hướng sáng hợp cảnh, viền sạch ở 100% và khi xem Fit mắt tới đúng chủ thể. Một mask lớn mềm tốt có thể hiệu quả hơn nhiều mask mạnh.", "refs": ["mask", "learn"], "days": [5, 6, 15, 16], "chapter": "6", "visual": "palette", "id": 9, "file": "docs/Bai_09_Lightroom.pdf", "sources": [["Adobe | Masking", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"], ["Adobe | Tutorial thực hành", "https://lightroom.adobe.com/learn/tutorial"]], "group": "Thực hành"}, {"title": "Texture Clarity Dehaze Detail và chất ảnh", "goal": "Kiểm soát độ trong, độ nổi, nhiễu và độ sắc. Tránh nhầm ảnh nhiều vi tương phản với ảnh có chất lượng cao.", "idea": "Chất ảnh là tổng hợp của chuyển sắc, chi tiết, nhiễu và cách hiển thị cuối. Luôn xem cả Fit lẫn 100%; một ảnh trông sắc khi thu nhỏ có thể có halo hoặc da sáp khi phóng lớn.", "tools": [["Texture Clarity Dehaze", "Texture nhấn chi tiết cỡ vừa; Clarity tăng cảm giác tương phản cục bộ; Dehaze thay đổi độ mù và có thể đổi màu mạnh."], ["Sharpening Amount và Radius", "Amount là cường độ; Radius là độ rộng tác động ở biên. Bắt đầu nhẹ và xem tóc, chữ, đường chân trời."], ["Sharpening Detail và Masking", "Detail nhấn chi tiết nhỏ; Masking hạn chế tác động vào vùng phẳng. Giữ Alt hoặc Option để xem hỗ trợ khi kéo."], ["Noise Reduction Luminance", "Giảm nhiễu sáng; Detail giữ chi tiết, Contrast giữ cấu trúc nhưng có thể làm nhiễu quay lại."], ["Noise Reduction Color", "Giảm đốm màu; Detail và Smoothness cân bằng rìa màu với độ mượt."], ["AI Denoise", "Dùng khi file và phiên bản hỗ trợ. Tài liệu mới có Denoise trong Detail; video cũ có thể mô tả quy trình tạo DNG khác."], ["Raw Details và Super Resolution", "Enhance chi tiết và tăng kích thước là mục tiêu khác nhau. Super Resolution không biến ảnh sai nét thành đúng nét."], ["Vibrance và Saturation", "Saturation tác động rộng; Vibrance điều chỉnh theo mức bão hòa có sẵn. Vibrance không đảm bảo bảo vệ mọi màu da."]], "steps": ["Chọn ảnh ISO cao có da, tóc, tường và chữ. Đặt Exposure gần đúng để thấy nhiễu thật trong vùng cần dùng.", "Nếu cần AI Denoise, thực hiện sớm trước mask và Remove; chờ xử lý xong rồi kiểm tra chi tiết. Xem định dạng hỗ trợ trong Adobe.", "So Denoise nhẹ và mạnh ở 100%. Chọn bản còn tóc và lỗ chân lông thay vì bản sạch tuyệt đối nhưng mất kết cấu.", "Tinh Sharpening với Amount vừa phải và Masking để tránh làm sắc tường phẳng. Kiểm tra halo trên rìa sáng tối.", "Thử Texture và Clarity riêng; dùng mask nếu chỉ muốn áo hoặc tóc nổi hơn. Xuất ảnh đúng kích thước dự kiến để chấm chất ảnh cuối."], "case": "Chân dung da đẹp nhưng tóc mềm: giảm Texture toàn ảnh sẽ làm tóc tệ hơn. Giữ toàn ảnh cân bằng, mask da nhẹ riêng, mask tóc khi cần. Không dùng giảm nhiễu để chữa sai nét.", "errors": ["Da sáp: giảm Denoise, Luminance NR hoặc Texture âm.", "Viền trắng: giảm sharpening Radius hoặc Amount và Clarity.", "Màu quá đậm sau Dehaze: giảm Dehaze và kiểm tra lại WB, saturation của vùng ảnh hưởng."], "exercise": ["Làm 3 bản cùng ảnh ISO cao: tự nhiên, sạch quá mức, sắc quá mức. Ghi chi tiết bị mất hoặc halo nhìn thấy.", "Xuất cạnh dài 2048 px và bản đầy đủ; so ở kích thước sử dụng, không chỉ nhìn preview."], "answer": "Đạt khi phân biệt nhiễu với kết cấu, không có halo rõ và không hy sinh chi tiết quan trọng để đạt bề mặt sạch. Thông số phụ thuộc file và kích thước xuất.", "refs": ["enhance", "retouch"], "days": [4, 22, 27], "chapter": "5 và 6", "visual": "palette", "id": 10, "file": "docs/Bai_10_Lightroom.pdf", "sources": [["Adobe | Denoise và Enhance", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/enhance-details.html"], ["Adobe | Retouch và các công cụ chi tiết", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/retouch-photos.html"]], "group": "Thực hành"}, {"title": "Crop Optics Transform Remove Lens Blur và Effects", "goal": "Hoàn thiện bố cục và xử lý lỗi quang học trước khi kết luận màu chưa đẹp. Biết giới hạn của xóa vật thể và giả lập độ sâu.", "idea": "Màu chịu ảnh hưởng bởi những gì nằm trong khung. Một biển hiệu đỏ sát mép có thể phá bảng màu; crop hợp lý đôi khi hiệu quả hơn giảm toàn bộ dải đỏ.", "tools": [["Crop và Straighten", "Aspect chọn tỷ lệ, khóa giữ tỷ lệ, Angle xoay thẳng; crop cần giữ không gian nhìn và phần cơ thể quan trọng."], ["Lens Corrections hoặc Optics", "Remove Chromatic Aberration giảm viền màu; Enable Profile Corrections sửa méo và tối góc theo profile hỗ trợ."], ["Manual và Defringe", "Chỉnh Distortion, Vignetting và phạm vi viền tím xanh khi cần. Defringe mạnh có thể làm mất màu thật ở rìa."], ["Transform", "Upright tự động hoặc Guided theo đường tham chiếu. Vertical, Horizontal, Rotate, Aspect, Scale, X và Y Offset tinh hình học."], ["Remove Heal Clone", "Remove xử lý vật thừa; Heal hòa vùng sửa với xung quanh; Clone sao chép nguồn. Tên và tùy chọn phụ thuộc phiên bản."], ["Generative Remove", "Tạo nội dung thay vùng chọn. Kiểm tra kết quả và biến thể; công cụ có thể cần mạng hoặc điều kiện tài khoản."], ["Lens Blur", "Blur Amount, dạng Bokeh và Boost điều khiển cảm giác mờ; Focus Range và tinh vùng Focus hoặc Blur sửa bản đồ chiều sâu."], ["Effects", "Vignette: Amount, Midpoint, Roundness, Feather, Highlights; Grain: Amount, Size, Roughness. Đánh giá theo kích thước đầu ra."]], "steps": ["Chọn ảnh phố có người và kiến trúc. Bật sửa viền màu và profile lens nếu đúng; xem mép khung thay đổi thế nào.", "Dùng Guided Upright với hai đường thẳng đáng tin. Chỉnh vừa đủ, tránh kéo người thành dài bất thường; crop phần mép trắng.", "Crop để loại vùng tranh mắt. Sau đó Remove một vật nhỏ ở nền; kiểm tra hoa văn lặp, bóng và đường thẳng ở 100%.", "Nếu cần Lens Blur, dùng mức nhẹ và xem tóc, kính, khoảng trống giữa tay và thân. Tinh bản đồ chiều sâu khi mặt phẳng sai.", "Thêm vignette nhẹ nếu hỗ trợ điểm nhìn, Grain nếu có chủ đích. Xuất rồi so lại; bỏ hiệu ứng không đóng góp."], "case": "Ảnh trong quán có lưới cửa sau tóc: Lens Blur có thể hiểu sai khe tóc và cửa cùng độ sâu. Giảm cường độ hoặc bỏ blur nếu không sửa được rìa đáng tin.", "errors": ["Tòa nhà thẳng nhưng người méo: giảm Transform hoặc chọn bố cục khác.", "Vùng xóa có họa tiết lạ: chọn nguồn Clone hoặc Heal khác, chia vùng sửa nhỏ.", "Tối góc lộ như vòng tròn: giảm Amount, tăng Feather hoặc dùng mask theo ánh sáng."], "exercise": ["Nộp 1 ảnh hoàn thiện kèm ghi chú crop, lens, transform, remove và hiệu ứng nào đã dùng.", "Xuất một bản không hiệu ứng và một bản có Grain hoặc Blur; giải thích giá trị thêm vào."], "answer": "Đạt khi hình học hợp cảnh, không có dấu xóa rõ và độ sâu có thể tin. Không bắt buộc dùng đủ công cụ; biết bỏ hiệu ứng sai là một phần của bài.", "refs": ["retouch", "upright", "remove", "blur"], "days": [7, 10, 21], "chapter": "6 và 7", "visual": "palette", "id": 11, "file": "docs/Bai_11_Lightroom.pdf", "sources": [["Adobe | Retouch và các công cụ chi tiết", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/retouch-photos.html"], ["Adobe | Guided Upright", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/guided-upright-perspective-correction.html"], ["Adobe | Remove", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/remove-tool.html"], ["Adobe | Lens Blur", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/lens-blur.html"]], "group": "Thực hành"}, {"title": "Màu da và xử lý các bối cảnh khó", "goal": "Giữ chân dung đáng tin trong nắng, bóng râm và đèn hỗn hợp; xử lý cây xanh, trời và đồ ăn mà không áp cùng một công thức.", "idea": "Không có một màu da chuẩn cho mọi người. Tông da thay đổi theo cá nhân, ánh sáng và phản xạ môi trường. Mục tiêu là giữ quan hệ sáng tối, sắc độ và sự sống của da trong bối cảnh.", "tools": [["Thứ tự chẩn đoán da", "Xem Exposure, WB và profile trước Orange HSL. Da sai có thể do thiếu sáng, phản xạ hoặc Grading."], ["Da và môi trường", "Áo, tường và cây phản chiếu màu lên da. Sửa từng vùng khi cần, không trung hòa cả cảnh chỉ để cứu một má."], ["Nắng gắt", "Giữ chuyển vùng giữa trán, má và bóng; không nâng mọi bóng bằng nhau vì sẽ làm mặt phẳng."], ["Ánh sáng hỗn hợp", "Chọn nguồn sáng chính làm chuẩn, dùng mask cho nguồn phụ. Có thể giữ một phần nóng lạnh để còn không khí."], ["Cây xanh và trời", "Giảm cạnh tranh về độ sáng hoặc bão hòa; không mặc định mọi cây phải xanh rêu và mọi trời phải teal."], ["Đồ ăn và sản phẩm", "Độ trung thực màu có thể quan trọng hơn look. Cần so với vật thật hoặc mẫu tham chiếu phù hợp."], ["Trang điểm và áo trắng", "Son, phấn và chất vải có sắc riêng; không lấy mọi vùng sáng làm điểm trắng trung tính."], ["Giữ kết cấu", "Dùng Texture âm hoặc NR thận trọng, kiểm tra da ở 100%. Da tự nhiên không đồng nghĩa da không còn lỗ chân lông."]], "steps": ["Chọn 3 chân dung cùng người trong nắng, râm và đèn. Tạo bản nền sạch cho từng ảnh, chưa áp look.", "So mặt với cổ và tay trong cùng nguồn sáng. Nếu khác vì phản xạ, mask đúng vùng thay vì chỉnh toàn bộ Orange.", "Giảm ám bằng Temp hoặc Tint cục bộ từng chút. Nếu cần Point Color, dùng phạm vi vừa đủ và xem môi, mắt, tóc.", "Áp look nhẹ rồi kiểm tra lại da. Nếu Grading làm mặt mất sức sống, giảm midtones hoặc mask bảo vệ theo khả năng phiên bản.", "Xem cả series cạnh nhau. Chấp nhận khác biệt ánh sáng có thật nhưng giữ mức bão hòa và độ sáng da nhất quán tương đối."], "case": "Da dưới tán cây bị xanh ở một bên: mask vùng phản xạ và thêm Tint magenta vừa đủ. Đừng tăng Tint toàn ảnh khiến phía mặt còn lại hồng.", "errors": ["Da xám sau giảm Orange: trả lại Saturation và sửa ám nguồn sáng trước.", "Mặt sáng hơn cổ rõ: giảm mask nâng mặt hoặc mở rộng chuyển vùng mềm.", "Răng và mắt trắng phát sáng: giảm whitening và so với ánh sáng chung."], "exercise": ["Tạo series 3 ảnh cùng người dưới 3 nguồn sáng, mỗi ảnh có bản sạch và bản look.", "Ghi một lỗi màu da, nguyên nhân nghi ngờ, công cụ thử và kết quả; kiểm tra từng giả thuyết một."], "answer": "Đạt khi da có kết cấu, mặt cổ tay hợp lý theo ánh sáng và không bị một look phủ đồng loạt. Không chấm bằng việc ép mọi da thành màu đào.", "refs": ["mask", "mixer"], "days": [15, 16, 17, 18], "chapter": "6 và 7", "visual": "palette", "id": 12, "file": "docs/Bai_12_Lightroom.pdf", "sources": [["Adobe | Masking", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"], ["Adobe | Color Mixer và Point Color", "https://helpx.adobe.com/uk/lightroom-classic/desktop/process-and-develop-photos/color-mixer.html"]], "group": "Thực hành"}, {"title": "Đọc ảnh mẫu và tái tạo cảm giác màu", "goal": "Biến một ảnh tham chiếu thành các giả thuyết có thể thử. Học tái tạo quan hệ màu thay vì đoán preset hay sao chép số.", "idea": "Ảnh đã xuất không cho biết chắc profile, đèn, lens hay mọi bước hậu kỳ. Có nhiều cách tạo kết quả gần nhau. Bạn có thể tái tạo cảm giác và quan hệ màu; không thể đảm bảo khôi phục đúng thiết lập gốc từ một JPEG bất kỳ.", "tools": [["So đầu vào tương đồng", "Chọn ảnh có hướng sáng, vật thể và màu nền gần tham chiếu; hậu kỳ khó bù hoàn toàn khác biệt lúc chụp."], ["Tách tone khỏi color", "So tương phản, điểm đen, vùng sáng trước; sau đó so WB, dải màu vật thể và sắc trong từng vùng tone."], ["Năm vùng tham chiếu", "Ghi da, nền, trắng, đen và điểm nhấn. So cả hue, độ mạnh và độ sáng tương đối."], ["Phân biệt màu vật và màu ánh sáng", "Nếu mọi vật trong bóng đều lạnh, nghĩ tới WB cục bộ hoặc Grading; nếu chỉ lá đổi màu, nghĩ Mixer hoặc mask."], ["Tỷ lệ diện tích", "Cùng màu nhưng nền chiếm nhiều hơn có thể làm cảm giác khác. Crop hoặc lựa ảnh có thể là bước cần thiết."], ["Reference View", "Trên Classic có thể dùng chế độ tham chiếu trong Develop để so ảnh mẫu và ảnh đang chỉnh; giữ cùng nền xem."], ["RGB và lấy mẫu", "RGB tại một điểm chỉ là manh mối phụ thuộc profile và mã hóa; không đánh đồng cùng số với cùng cảm nhận."], ["Bảng sai khác", "Viết sai khác thành câu: bóng quá xanh, da quá tối, cây quá bão hòa. Mỗi câu chọn một công cụ trước khi thử."]], "steps": ["Chọn tham chiếu có quyền sử dụng và ảnh RAW tương tự. Viết 5 đặc điểm: ví dụ đen hơi nâng, sáng mềm, da ấm, cây dịu, bóng xanh nhẹ.", "Làm bản nền sạch. Ghép cấu trúc sáng tối bằng Exposure và Curve trước, chưa thêm màu sáng tạo.", "Ghép màu nền bằng WB, Mixer hoặc Point Color; kiểm tra vùng da và các vật cần giữ.", "Ghép sắc trong bóng sáng bằng Grading hoặc RGB Curve. Chỉnh từng giả thuyết, bật tắt để biết đúng nguyên nhân không.", "Nghỉ mắt rồi ghi 3 sai khác lớn nhất. Sửa theo mức ảnh hưởng: ánh sáng, độ sáng, bảng màu, chi tiết. Dừng khi sửa tiếp gây hại hơn lợi."], "case": "Tham chiếu có cây xanh rêu và da ấm, nhưng RAW của bạn chụp buổi trưa nắng gắt: hãy xử lý tương phản và vùng sáng trước. Đổi Green Hue ngay sẽ không tạo được ánh sáng mềm của ảnh mẫu.", "errors": ["Màu gần nhưng cảm giác khác: kiểm tra hướng sáng, crop và tỷ lệ màu.", "Càng match càng bẩn: về bản sạch, bỏ chỉnh bù và ưu tiên ba sai khác lớn.", "Cố đạt giống tuyệt đối: ghi rõ giới hạn do cảnh, dữ liệu hoặc ánh sáng và chọn mức tương đồng thực tế."], "exercise": ["Tái tạo 2 tham chiếu trên 2 RAW phù hợp; nộp ảnh tham chiếu, bản sạch, bản match và phiếu 5 vùng.", "Với mỗi lần chỉnh, ghi giả thuyết, công cụ và điều gì thay đổi ngoài ý muốn."], "answer": "Tự chấm 5 mục, mỗi mục 0 đến 2: tone, WB, bảng màu, nóng lạnh, chuyển sắc. Từ 8/10 là đạt bài luyện nếu không có lỗi da hoặc artifact rõ. Đây là rubric học tập, không là đo tương đồng khách quan.", "refs": ["proof", "learn"], "days": [8, 9, 20], "chapter": "5 và 7", "visual": "palette", "id": 13, "file": "docs/Bai_13_Lightroom.pdf", "sources": [["Adobe | Develop và Soft Proofing", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/develop-module-options.html"], ["Adobe | Tutorial thực hành", "https://lightroom.adobe.com/learn/tutorial"]], "group": "Phong cách"}, {"title": "Phát triển phong cách Preset và chỉnh cả bộ", "goal": "Xây phong cách từ các quyết định lặp lại và kiểm chứng trên nhiều cảnh. Tạo preset giúp tiết kiệm thời gian mà vẫn linh hoạt.", "idea": "Phong cách nằm trong cách chọn ánh sáng, bố cục, bảng màu và mức tương phản được duy trì qua nhiều ảnh. Một bộ preset chỉ là công cụ ghi lại một phần quyết định đó.", "tools": [["Moodboard có chú thích", "Chọn ảnh bạn thích và ghi lý do cụ thể. Tách sở thích ánh sáng, màu, bố cục và chủ đề để biết phần nào đến từ lúc chụp."], ["Bản mô tả phong cách", "Viết 5 quy tắc có thể kiểm tra: ví dụ sáng mềm, đen sâu vừa, cây ít nổi, da không đỏ, grain nhỏ nhẹ."], ["Preset nền và preset look", "Nền xử lý nhóm kỹ thuật; look xử lý Curve, Mixer, Grading. Tách giúp sửa nguyên nhân dễ hơn."], ["Chọn mục lưu", "Tránh lưu Exposure, WB, crop, vị trí Remove và mask riêng ảnh vào preset dùng chung nếu không chủ đích."], ["Amount và Adaptive", "Nếu preset hỗ trợ Amount, dùng để tinh mức mạnh. Preset có AI mask cần cập nhật và kiểm tra từng ảnh."], ["Sync và Auto Sync", "Sync chép các mục được chọn; Auto Sync có thể tác động liên tục tới nhiều ảnh. Kiểm tra vùng chọn trước khi chỉnh."], ["Ảnh đại diện", "Chia theo nguồn sáng rồi chọn ảnh đại diện từng nhóm. Không lấy một ảnh nắng làm chuẩn phơi sáng cho cả bộ đèn tối."], ["Version và kiểm định", "Đặt tên LookA_v01, ghi điều chỉnh và thử trên ảnh chưa dùng xây preset để tránh chỉ đẹp trên ảnh mẫu."]], "steps": ["Gom 15 ảnh bạn thích, viết lý do. Chọn 3 đặc điểm có thể lặp lại trong ảnh của bạn; không cố lấy mọi thứ từ nhiều tác giả.", "Chỉnh 6 RAW khác cảnh theo ba đặc điểm đó. Tạo preset chỉ gồm các mục phù hợp mục tiêu, ghi profile nếu preset phụ thuộc profile.", "Thử preset lên 12 ảnh mới gồm da, cây, trời, trong nhà. Chỉnh Exposure và WB từng nhóm, sau đó mới đánh giá chất lượng look.", "Nếu nhiều ảnh gặp cùng lỗi, sửa preset nền. Nếu chỉ một cảnh lệch, tạo biến thể theo ánh sáng thay vì phá bản chung.", "Sync look cho từng nhóm, kiểm tra ảnh đầu giữa cuối và tất cả ảnh có da hoặc ánh sáng lạ. Đặt tên phiên bản và lưu ghi chú."], "case": "Nếu muốn cây dịu, hãy giảm độ nổi của cây theo mức cần thiết nhưng vẫn chấp nhận sắc cây thay đổi theo mùa. Phong cách bền là quan hệ chủ thể và nền ổn định, không phải mọi lá cùng một màu.", "errors": ["Preset đẹp đúng một ảnh: thử ảnh kiểm định chưa dùng xây look.", "Cả bộ cùng số nhưng không nhất quán: chỉnh WB và Exposure theo nguồn sáng.", "Preset kéo theo crop hay xóa nhầm: chọn lại các mục lưu và mục Sync."], "exercise": ["Nộp 1 preset XMP tự tạo nếu ứng dụng hỗ trợ xuất, mô tả 5 quy tắc và series 12 ảnh.", "Ghi 3 điều kiện preset hoạt động tốt, 3 điều kiện cần chỉnh tay và phiên bản tiếp theo sẽ sửa gì."], "answer": "Đạt khi tối thiểu 9/12 ảnh giữ ý đồ chung sau chỉnh WB và Exposure hợp cảnh, không có lỗi da lặp lại. Ngưỡng này dùng cho bài luyện; không đại diện kiểm định chất lượng thương mại.", "refs": ["presets", "catalog"], "days": [12, 14, 20, 30], "chapter": "8", "visual": "palette", "id": 14, "file": "docs/Bai_14_Lightroom.pdf", "sources": [["Adobe | Presets", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/apply-presets.html"], ["Adobe | Catalog là gì", "https://helpx.adobe.com/lightroom-classic/desktop/manage-catalogs-and-files/lightroom-catalog-basics.html"]], "group": "Phong cách"}, {"title": "Quản lý màu Soft Proof và xuất ảnh", "goal": "Giữ kết quả ổn định từ màn hình chỉnh đến web hoặc bản in. Phân biệt không gian màu, kích thước pixel, PPI và chế độ HDR.", "idea": "Ảnh đẹp trong Develop chưa phải file giao nhận. Kết quả còn phụ thuộc màn hình, ứng dụng xem, profile đầu ra, kích thước và môi trường nhìn. Chọn chuẩn xuất theo mục đích rồi kiểm tra file thật.", "tools": [["Màn hình và môi trường", "Giữ ánh sáng làm việc ổn định; tắt chế độ đổi màu theo giờ khi đánh giá. Hiệu chuẩn và profile màn hình giúp xem đáng tin hơn."], ["sRGB Adobe RGB ProPhoto RGB", "Các không gian có phạm vi khác nhau. sRGB là lựa chọn thực hành an toàn cho JPEG web thông dụng; in theo yêu cầu lab."], ["Soft Proofing", "Chọn profile đầu ra để xem mô phỏng, đánh giá màu vượt gamut; có thể tạo Proof Copy để tinh riêng bản xuất."], ["Intent và mô phỏng giấy", "So Relative và Perceptual khi profile hỗ trợ. Simulate Paper and Ink giúp dự đoán giới hạn trắng đen của giấy."], ["Format và Quality", "JPEG cho giao nhận phổ biến; TIFF cho quy trình yêu cầu chất lượng và chỉnh tiếp. Quality cao tăng dung lượng, không phục hồi chi tiết."], ["Image Sizing và PPI", "Pixel quyết định kích thước hiển thị số. PPI gắn với kích thước in; 300 PPI không tự làm JPEG ít pixel sắc hơn."], ["Output Sharpening và Metadata", "Sharpen cho Screen hoặc giấy đúng mục đích; chọn metadata, GPS và watermark theo nhu cầu giao nhận."], ["HDR và SDR", "HDR cần quy trình, định dạng và nơi xem tương thích. Bài cơ bản ưu tiên SDR; không nhầm HDR edit với HDR merge nhiều phơi sáng."]], "steps": ["Chọn ảnh hoàn thiện, kiểm tra dưới ánh sáng làm việc ổn định. So trên ứng dụng có quản lý màu trước khi quy lỗi cho preset.", "Xuất bản web thử: JPEG, sRGB, SDR, Quality khoảng 85, cạnh dài 2048 px, Output Sharpening Screen Standard. Đây là cấu hình luyện, không phải quy định mọi nền tảng.", "Mở file vừa xuất, xem đúng kích thước. Kiểm tra da, chuyển sắc trời, nét tóc, metadata và crop; không chỉ nhìn thumbnail.", "Với bản in, hỏi lab kích thước, profile và yêu cầu file. Ví dụ 20 x 30 cm ở 300 PPI cần xấp xỉ 2362 x 3543 px nếu không tính lề.", "Soft proof bằng profile lab, tạo bản tinh riêng nếu cần. Xuất theo hướng dẫn lab và thử bản in nhỏ trước khi in lớn."], "case": "Ảnh trên điện thoại ấm hơn máy: kiểm tra chế độ màn hình, độ sáng, ứng dụng xem và profile file. Đừng sửa RAW liên tục để chạy theo từng màn hình chưa được kiểm soát.", "errors": ["Xuất vẫn tối: màn hình chỉnh có thể quá sáng; kiểm tra điều kiện nhìn và file xuất.", "Đổi 72 thành 300 PPI nhưng web không nét hơn: kiểm tra số pixel và mức resize.", "In khác màn hình: kiểm tra ICC lab, giấy, ánh sáng xem bản in và tránh quản lý màu hai lần."], "exercise": ["Nộp JPEG web, file đủ độ phân giải và bảng thiết lập xuất. So trên hai thiết bị, ghi khác biệt có thể giải thích.", "Tính pixel cần cho bản in 20 x 30 cm ở 300 PPI; chuẩn bị proof copy nếu có profile lab."], "answer": "Đáp án tính: cm chia 2.54 rồi nhân PPI. Đạt khi file đúng không gian màu và kích thước, không có lỗi resize hoặc sharpening rõ, và bạn phân biệt pixel với PPI.", "refs": ["color", "proof", "export", "hdr"], "days": [27, 28], "chapter": "11 và 12", "visual": "palette", "id": 15, "file": "docs/Bai_15_Lightroom.pdf", "sources": [["Adobe | Quản lý màu", "https://helpx.adobe.com/lightroom-classic/desktop/workspace/color-management.html"], ["Adobe | Develop và Soft Proofing", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/develop-module-options.html"], ["Adobe | Các thiết lập Export", "https://helpx.adobe.com/lightroom-classic/desktop/export-photos/export-files-disk-or-cd.html"], ["Adobe | Chỉnh và xuất HDR", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/hdr-output.html"]], "group": "Phong cách"}, {"title": "Quy trình chuyên nghiệp và đồ án cuối khóa", "goal": "Tự xử lý một bộ ảnh từ chẩn đoán đến xuất, giải thích quyết định và kiểm tra phong cách. Đây là bài kết nối toàn bộ 15 bài trước.", "idea": "Một quy trình tốt giúp bạn chọn đúng vấn đề đầu tiên và dừng đúng lúc. Thứ tự dưới đây là khung suy nghĩ, không mô tả thứ tự tính toán nội bộ của Lightroom và không phải công thức bắt buộc.", "tools": [["Quan sát", "Xác định chủ thể, hướng sáng, tình trạng dữ liệu và mục đích đầu ra; viết một câu ý đồ."], ["Nền kỹ thuật", "Nếu cần Denoise, làm sớm trước mask và Remove. Kiểm tra profile, lens, crop và hình học trước khi tinh màu."], ["Cân bằng", "Đặt WB, Exposure và dải sáng tối theo chủ thể. Phân biệt toàn cục với từng vùng."], ["Định hình", "Dùng Curve cho chuyển tone; Mixer hoặc Point Color cho màu vật; Grading cho sắc trong vùng tone."], ["Dẫn mắt", "Mask để chủ thể và nền có quan hệ sáng tối phù hợp; không tăng mặt cho tới khi tách khỏi cảnh."], ["Hoàn thiện", "Dọn vật thừa, kiểm tra rìa, chi tiết, grain và hiệu ứng. Chỉ giữ hiệu ứng có lý do."], ["Đồng bộ", "Nhóm ảnh theo ánh sáng, Sync mục phù hợp, kiểm tra từng ảnh quan trọng và mọi ảnh có lỗi bất thường."], ["Giao nhận", "Xuất đúng đích, mở file thật và so bộ ảnh. Lưu preset, snapshot, ghi chú và sao lưu ảnh gốc lẫn catalog."]], "steps": ["Chọn 20 RAW chưa chỉnh gồm ít nhất 3 điều kiện ánh sáng, 1 ảnh khó và 1 ảnh có chủ thể da người. Chọn 10 ảnh để hoàn thiện.", "Viết brief: người xem nhìn vào đâu, cảm giác chính là gì, ba đặc điểm phong cách và kênh sử dụng cuối.", "Chỉnh một ảnh đại diện mỗi nhóm. Ghi vấn đề, giả thuyết, công cụ, kết quả; tối đa ba giả thuyết chính trước khi đánh giá lại.", "Áp look cho nhóm còn lại, chỉnh theo cảnh. Tạo một bản match tham chiếu và một bản phong cách của bạn để phân biệt mô phỏng với sáng tạo.", "Xuất series, tự chấm rubric và sửa ba lỗi lớn nhất. Sau 24 giờ xem lại, ghi điều bạn sẽ làm khác ở lần chụp tiếp theo."], "case": "Một ảnh nhìn đẹp riêng nhưng lệch bộ: xác định lệch do WB, tương phản hay độ mạnh nền. Sửa đúng quan hệ đó; đừng thêm một preset khác chỉ để thử may.", "errors": ["Chỉnh quá lâu mà không tiến bộ: quay lại brief và ba sai khác lớn nhất.", "Mỗi ảnh một màu: kiểm tra nhóm nguồn sáng và bản mô tả phong cách.", "Màu đẹp nhưng lỗi ảnh rõ: kiểm tra clipping, mask, halo, xóa vật, độ nét và file xuất trước khi giao."], "exercise": ["Nộp series 10 ảnh, 1 preset look, 1 phiếu phân tích tham chiếu và nhật ký quyết định cho ảnh khó nhất.", "Tự chấm 5 tiêu chí 0 đến 4: ánh sáng, quan hệ màu, da hoặc màu vật, sự nhất quán, chất lượng đầu ra."], "answer": "Từ 16/20 và không có lỗi nghiêm trọng là hoàn thành đồ án học tập. Mức 0 chưa xử lý; 1 lỗi rõ; 2 dùng được nhưng chưa đều; 3 tốt; 4 có chủ đích và giải thích được. Lặp lại trên ảnh mới để đo tiến bộ.", "refs": ["learn", "export", "presets"], "days": [14, 15, 16, 27, 30], "chapter": "1 và 8", "visual": "palette", "id": 16, "file": "docs/Bai_16_Lightroom.pdf", "sources": [["Adobe | Tutorial thực hành", "https://lightroom.adobe.com/learn/tutorial"], ["Adobe | Các thiết lập Export", "https://helpx.adobe.com/lightroom-classic/desktop/export-photos/export-files-disk-or-cd.html"], ["Adobe | Presets", "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/apply-presets.html"]], "group": "Phong cách"}]
+[
+  {
+    "title": "Tổ chức ảnh và làm quen Lightroom",
+    "goal": "Tự thiết lập một buổi chỉnh ảnh có thể quay lại, so sánh và sao lưu. Bạn cần bài này trước khi lưu preset hoặc chỉnh hàng loạt.",
+    "idea": "Ảnh gốc là nguyên liệu; catalog ghi vị trí ảnh và các quyết định chỉnh sửa. Một bản xem trước không thay thế ảnh gốc. Việc chỉnh không phá hủy giúp thử nghiệm nhiều hướng mà vẫn giữ nguyên dữ liệu đầu vào.",
+    "tools": [
+      [
+        "Library và Develop",
+        "Library dùng chọn, xếp và tìm ảnh; Develop là nơi xử lý ánh sáng, màu và chi tiết."
+      ],
+      [
+        "Folders và Collections",
+        "Folders tương ứng thư mục trên ổ đĩa; Collections gom ảnh theo dự án mà không cần nhân bản file."
+      ],
+      [
+        "Import",
+        "Copy để chép từ thẻ; Add cho ảnh đã ở đúng vị trí; Move chuyển vị trí. Chọn có chủ đích để tránh thất lạc."
+      ],
+      [
+        "RAW và JPEG",
+        "RAW cho nhiều dư địa diễn giải ánh sáng và cân bằng trắng; JPEG đã được xử lý, dễ lộ lỗi khi đẩy mạnh."
+      ],
+      [
+        "History và Snapshot",
+        "History theo dõi thao tác; Snapshot đánh dấu một trạng thái đáng giữ như bản trung tính và bản hoàn thiện."
+      ],
+      [
+        "Virtual Copy",
+        "Tạo nhiều cách chỉnh từ một ảnh gốc; hữu ích khi so phong cách, không phải một bản sao lưu ảnh."
+      ],
+      [
+        "Phím cơ bản trên Classic",
+        "G mở lưới; D mở Develop; R mở Crop; W lấy cân bằng trắng; J báo clipping; phím \\ xem trước sau."
+      ],
+      [
+        "Sao lưu",
+        "Sao lưu catalog và ảnh gốc riêng. Catalog backup không tự chứa toàn bộ ảnh gốc."
+      ]
+    ],
+    "steps": [
+      "Tạo thư mục dự án gồm RAW, SELECT và EXPORT. Chép ảnh từ thẻ vào RAW trước khi xóa thẻ; kiểm tra mở được vài ảnh.",
+      "Import 20 ảnh. Đánh cờ chọn ảnh rõ nét và có chủ thể; dùng sao để xếp hạng, tạo collection 10 ảnh học màu.",
+      "Chọn một ảnh, tạo hai Virtual Copy tên Neutral và Look A. Chỉnh thử Exposure rồi quay về bằng History để hiểu tính không phá hủy.",
+      "Tạo Snapshot sau khi sửa ánh sáng. Xuất JPEG vào EXPORT; mở lại JPEG để phân biệt ảnh nguồn với file giao nhận.",
+      "Tạo bản sao lưu catalog, sao lưu RAW sang nơi khác. Thử tìm một ảnh bằng tên, collection và thư mục trước khi kết thúc."
+    ],
+    "case": "Bạn có 300 ảnh du lịch nhưng chỉ học trên 10 ảnh: chọn đủ nắng, bóng râm và trong nhà. Đừng dùng 10 ảnh gần như giống nhau vì không đo được khả năng thích ứng của phong cách.",
+    "errors": [
+      "Dấu chấm than hoặc mất file: kiểm tra ổ đĩa và liên kết lại đường dẫn; tránh import lần nữa để chữa mù.",
+      "Ảnh nhìn khác JPEG máy: kiểm tra profile và WB, vì RAW không nhất thiết giống xử lý màu trong máy.",
+      "Chỉnh đồng loạt ngoài ý muốn: kiểm tra Auto Sync và số ảnh đang chọn trước mỗi thao tác."
+    ],
+    "exercise": [
+      "Nộp 1 collection gồm 10 ảnh, 2 phiên bản chỉnh của cùng một ảnh và 1 JPEG xuất thử.",
+      "Ghi ra vị trí thật của ảnh gốc, catalog và bản sao lưu; tự tìm lại ảnh khi đóng rồi mở ứng dụng."
+    ],
+    "answer": "Đạt khi bạn giải thích được vì sao xóa preview khác xóa RAW và khôi phục được trạng thái trung tính mà không làm mất bản sáng tạo.",
+    "refs": [
+      "catalog",
+      "compare"
+    ],
+    "days": [
+      1,
+      2,
+      3,
+      20,
+      24
+    ],
+    "chapter": "2 đến 4",
+    "visual": "palette",
+    "id": 1,
+    "sources": [
+      [
+        "Adobe | Catalog là gì",
+        "https://helpx.adobe.com/lightroom-classic/desktop/manage-catalogs-and-files/lightroom-catalog-basics.html"
+      ],
+      [
+        "Adobe | So sánh Classic và Lightroom",
+        "https://helpx.adobe.com/lightroom-classic/desktop/kb/lightroom-feature-comparison.html"
+      ]
+    ],
+    "group": "Nền tảng",
+    "sections": [
+      {
+        "title": "Ảnh gốc catalog và preview là ba lớp khác nhau",
+        "paragraphs": [
+          "Hãy hình dung RAW là nguyên liệu, catalog là cuốn sổ ghi công thức, còn preview là ảnh xem nhanh. Kéo Exposure không ghi lại toàn bộ ảnh thành một RAW mới. Lightroom lưu quyết định xử lý, rồi dựng kết quả để bạn nhìn. Vì vậy mở được preview chưa chứng minh ảnh gốc còn ở đúng vị trí.",
+          "Nếu di chuyển RAW bằng Finder hoặc Explorer, đường dẫn catalog ghi có thể không còn đúng. Cách sửa là liên kết lại vị trí ảnh. Import lần nữa dễ tạo một bản ghi khác khiến bạn tưởng mất các chỉnh sửa cũ. Tổ chức thư mục ổn định trước khi bắt đầu giúp tránh lỗi này."
+        ]
+      },
+      {
+        "title": "Một quyết định ở Import có thể thay đổi dữ liệu ở đâu",
+        "paragraphs": [
+          "Copy để giữ nguồn và chép vào đích; Add chỉ đăng ký ảnh đã ở đúng chỗ; Move chuyển file ra khỏi nơi cũ. Copy as DNG vừa chép vừa chuyển định dạng. Với người mới, chép và kiểm tra ảnh trước, rồi Add hoặc dùng Copy rõ đích thường dễ kiểm soát.",
+          "Ví dụ thư mục 2026_10_DaLat có RAW và EXPORT. RAW giữ ảnh nguồn, EXPORT chứa JPEG giao nhận. Collection DaLat_Select chỉ gom ảnh được chọn trong catalog; tạo collection không tự nhân bản RAW và cũng không thay thế việc sao lưu."
+        ]
+      },
+      {
+        "title": "Virtual Copy Snapshot và History giải quyết ba việc khác nhau",
+        "paragraphs": [
+          "Virtual Copy giữ hai cách diễn giải cùng nguồn để so song song, chẳng hạn bản sạch và bản film. Snapshot đánh dấu mốc trong một cách chỉnh. History cho biết chuỗi thao tác. Bạn cần biết mình muốn thử hướng mới, đánh dấu mốc hay quay lại một thao tác để chọn đúng chức năng.",
+          "Trong mô phỏng, thay Exposure rồi lưu một mốc. Thay tiếp và hoàn tác để thấy con số quay về. Đây là mô hình của việc lưu quyết định; nó không tạo một file RAW thật. Khi làm trong Lightroom, đặt tên mốc theo ý nghĩa như WB sạch hoặc Look hoàn thiện, thay vì chỉ đặt 1 và 2."
+        ]
+      },
+      {
+        "title": "Sao lưu phải kiểm tra được khả năng phục hồi",
+        "paragraphs": [
+          "Có catalog mà mất RAW thì không đủ dữ liệu nguồn để dựng đầy đủ mọi ảnh; có RAW mà mất catalog thì có thể mất công sắp xếp và chỉnh sửa chưa lưu ở nơi khác. XMP có thể giữ một số metadata và thiết lập nhưng không thay thế trọn vẹn mọi thông tin trong catalog.",
+          "Một buổi kiểm tra đơn giản: tìm được RAW, mở được catalog dự phòng, biết nơi lưu JPEG, và thử đọc một file từ bản sao lưu. Không xóa thẻ nhớ chỉ vì đã thấy thumbnail xuất hiện. Chỉ xóa sau khi xác minh các bản chép bạn dự định giữ."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Bạn import 80 RAW từ thẻ rồi đổi tên thư mục ngoài Lightroom. Ảnh xem nhỏ vẫn hiện nhưng xuất đầy đủ bị báo thiếu file.",
+      "stages": [
+        [
+          "Nhận diện",
+          "Thumbnail còn không đồng nghĩa RAW còn ở đường dẫn đã ghi. Hãy kiểm tra file thật trước khi chỉnh thêm."
+        ],
+        [
+          "Giả thuyết",
+          "Catalog vẫn trỏ thư mục cũ. Mở vị trí RAW mới để xác minh tên ảnh và số lượng."
+        ],
+        [
+          "Xử lý",
+          "Dùng chức năng tìm thư mục hoặc ảnh bị thiếu để liên kết lại. Tránh import lại cùng bộ chỉ để hết cảnh báo."
+        ],
+        [
+          "Xác nhận",
+          "Mở ảnh 100%, kiểm tra chỉnh sửa cũ và xuất một JPEG thử. Sau đó mới tiếp tục công việc."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Nếu đã có RAW và một JPEG xuất cuối, vì sao bạn vẫn nên giữ catalog?",
+      "answer": "JPEG là kết quả đã dựng, không chứa toàn bộ tổ chức, lịch sử và các cách chỉnh trong catalog. RAW giữ đầu vào, còn catalog giữ công việc. Cần xem ba phần này như các lớp khác nhau."
+    },
+    "lab": "history",
+    "labTask": "Thay Exposure, lưu mốc, thay tiếp rồi khôi phục. Quan sát giá trị và ảnh quay lại đúng trạng thái.",
+    "checklist": [
+      "Phân biệt được dữ liệu nguồn với dữ liệu chỉnh sửa",
+      "Tìm lại được file gốc từ catalog",
+      "Thử phục hồi một mốc thay vì chỉ tin nút lưu"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-1/"
+  },
+  {
+    "title": "Tư duy màu sắc và cách nhìn ảnh",
+    "goal": "Mô tả một ảnh bằng ánh sáng, sắc độ và quan hệ màu trước khi chạm thanh trượt. Đây là nền tảng để hiểu ảnh mẫu và tạo phong cách.",
+    "idea": "Một màu trông khác khi đặt trên nền khác. Người xem cảm nhận cả độ sáng, vùng bao quanh và diện tích màu. Vì vậy, ảnh có cùng mã màu chưa chắc mang cùng cảm giác. Hãy xác định thứ tự chú ý mà bạn muốn tạo.",
+    "tools": [
+      [
+        "Hue",
+        "Họ màu như đỏ, vàng, xanh; đổi Hue để dịch màu theo hướng khác, không đồng nghĩa làm ảnh sáng hơn."
+      ],
+      [
+        "Saturation",
+        "Độ mạnh yếu của sắc màu. Một màu chỉ cần diện tích nhỏ cũng gây chú ý nếu bão hòa cao."
+      ],
+      [
+        "Luminance trong chỉnh màu",
+        "Độ sáng của một nhóm màu trong công cụ; cảm giác sáng còn phụ thuộc màu nền và tương phản."
+      ],
+      [
+        "Value và cấu trúc sáng tối",
+        "Tạm xem đen trắng để nhận ra chủ thể có tách nền không; màu đẹp khó cứu bố cục sáng tối rối."
+      ],
+      [
+        "RGB và màu đối",
+        "Đỏ đối cyan, xanh lá đối magenta, xanh dương đối vàng. Cặp đối này hữu ích khi đọc RGB Curve."
+      ],
+      [
+        "Tương đồng và bổ túc",
+        "Màu gần nhau tạo mạch nhẹ; màu đối tạo phân tách. Không bắt buộc mọi ảnh phải theo một phối màu cố định."
+      ],
+      [
+        "Nóng lạnh tương đối",
+        "Một vùng ấm có thể nổi lên khi nền lạnh; không có nghĩa cứ tăng Kelvin là tạo được chiều sâu."
+      ],
+      [
+        "Tỷ lệ màu",
+        "Chọn màu chủ đạo, phụ và điểm nhấn. Thử tỷ lệ 70/25/5 như bài luyện, không coi là luật thẩm mỹ."
+      ],
+      [
+        "Treatment B&W và B&W Mix",
+        "B&W chuyển ảnh sang đơn sắc; Mix đổi độ sáng của từng màu gốc. Không đồng nghĩa Saturation về 0. Kiểm tra nhiễu và viền khi đẩy mạnh từng dải."
+      ]
+    ],
+    "steps": [
+      "Chọn 3 ảnh bạn thích cùng chủ đề. Với mỗi ảnh, viết ba tính từ cụ thể: ví dụ nền xanh lạnh, da ấm vừa, bóng tối sâu.",
+      "Tạm bỏ qua màu: đánh dấu vùng sáng nhất, tối nhất và chủ thể. Hỏi mắt nhìn vào đâu đầu tiên, vì sao.",
+      "Ghi 5 màu đại diện theo vật thể: da, cây, trời, vùng trắng, vùng bóng. Ghi cả độ sáng và bão hòa tương đối.",
+      "Đọc quan hệ: da sáng hơn hay tối hơn nền, màu nền có cạnh tranh với mặt không, vùng đen có ám màu không.",
+      "Viết ý định chỉnh bằng câu có thể kiểm tra: giảm độ nổi của lá nhưng giữ da. Sau đó mới chọn Mixer hoặc Mask."
+    ],
+    "case": "Ảnh chân dung trong vườn có thể gây rối vì lá vàng xanh rất sáng. Trước khi đổi toàn bộ cây sang xanh ngọc, thử giảm Luminance hoặc Saturation của nền có kiểm soát và so lại mặt người.",
+    "errors": [
+      "Gọi tên phong cách bằng một chữ cinematic: thay bằng mô tả được sắc độ, bảng màu và độ tương phản.",
+      "Chỉ nhặt mã HEX: các mã không mô tả hướng sáng, tỷ lệ diện tích và chuyển vùng.",
+      "Mọi vùng đều nổi: giảm cạnh tranh ở nền trước khi tăng Saturation chủ thể."
+    ],
+    "exercise": [
+      "Làm phiếu phân tích cho 5 ảnh, mỗi ảnh có 5 vùng màu và 1 câu ý định.",
+      "Tạo hai phiên bản cùng ảnh: màu tương đồng nhẹ và cặp nóng lạnh. Giữ độ sáng chủ thể gần nhau để so công bằng."
+    ],
+    "answer": "Đạt khi bạn chỉ ra được ít nhất 3 quan hệ màu cụ thể và chọn đúng công cụ cho từng quan hệ. Không chấm theo việc tên phong cách nghe hấp dẫn.",
+    "refs": [
+      "learn",
+      "mixer"
+    ],
+    "days": [
+      8,
+      9,
+      19
+    ],
+    "chapter": "5 và 7",
+    "visual": "context",
+    "id": 2,
+    "sources": [
+      [
+        "Adobe | Tutorial thực hành",
+        "https://lightroom.adobe.com/learn/tutorial"
+      ],
+      [
+        "Adobe | Color Mixer và Point Color",
+        "https://helpx.adobe.com/uk/lightroom-classic/desktop/process-and-develop-photos/color-mixer.html"
+      ]
+    ],
+    "group": "Nền tảng",
+    "sections": [
+      {
+        "title": "Đừng dùng tên màu thay cho quan hệ màu",
+        "paragraphs": [
+          "Nói ảnh có xanh và cam là chưa đủ. Hãy hỏi xanh nằm ở đâu, sáng hơn hay tối hơn da, chiếm bao nhiêu khung hình và bão hòa tới mức nào. Một chấm đỏ nhỏ trên nền xám có thể thu hút hơn cả mảng xanh lớn. Diện tích và tương phản quyết định sức nặng thị giác.",
+          "Thử giữ nguyên ô màu trung tâm rồi thay độ sáng của nền. Ô màu có thể trông sáng hoặc tối khác nhau dù giá trị không đổi. Khi chỉnh ảnh, một khuôn mặt tưởng tối có thể trở nên dễ nhìn chỉ bằng cách hạ nền, không cần tăng sáng da."
+        ]
+      },
+      {
+        "title": "Hue Saturation và Lightness không độc lập trong cảm nhận",
+        "paragraphs": [
+          "Hue giúp gọi tên họ màu; Saturation mô tả độ mạnh của sắc; Lightness trong mô hình HSL là một tọa độ toán học. Nó không đồng nhất với độ sáng cảm nhận của mắt. Hai màu cùng HSL Lightness vẫn có thể trông sáng khác nhau.",
+          "Vì vậy hãy so cả ảnh màu lẫn bản xám. Bản xám dùng trong lab là xấp xỉ từ luminance của RGB và chỉ phục vụ quan sát. Nếu chủ thể không tách nền ở xám, việc đổi Hue có thể tạo thú vị nhưng chưa giải quyết được cấu trúc sáng tối."
+        ]
+      },
+      {
+        "title": "Phối màu cần có vai trò và mức ưu tiên",
+        "paragraphs": [
+          "Bắt đầu bằng một màu chủ đạo, một màu hỗ trợ và một điểm nhấn. Đó là bài tập hạn chế lựa chọn để bạn thấy quan hệ rõ hơn, không phải luật bắt mọi ảnh phải chỉ có ba màu. Cũng đừng biến tỷ lệ 70 25 5 thành tiêu chuẩn cứng.",
+          "Ví dụ chân dung trong vườn: xanh cây chiếm nhiều nhưng giảm độ nổi, da chiếm ít hơn nhưng sáng và ấm, cốc cam là điểm nhấn nhỏ. Nếu cốc nổi hơn mặt, có thể giảm bão hòa cốc hoặc crop; không nhất thiết tăng mọi màu của người lên theo."
+        ]
+      },
+      {
+        "title": "Chuyển quan sát thành một ý định có thể thực hiện",
+        "paragraphs": [
+          "Mỗi ý định nên gồm vùng cần đổi, thuộc tính cần đổi và vùng phải bảo vệ. Ví dụ giảm bão hòa lá vàng nhưng giữ độ ấm của da. Từ đó bạn chọn Mixer hoặc Point Color; nếu lá và da chồng dải màu thì thêm mask vị trí.",
+          "Trước khi kéo thanh trượt hãy dự đoán: điều gì sẽ tốt hơn, điều gì dễ bị ảnh hưởng nhầm, dấu hiệu nào chứng tỏ nên dừng. Thói quen dự đoán rồi so kết quả khiến việc học công cụ trở thành học nguyên nhân và hệ quả."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Trong ảnh mẫu, cốc cam nhỏ cạnh bàn lại hút mắt hơn khuôn mặt. Bạn muốn người xem nhìn mặt trước.",
+      "stages": [
+        [
+          "So sắc độ",
+          "Tạm giảm bão hòa toàn ảnh để xem cốc còn nổi vì sáng hay chủ yếu vì màu."
+        ],
+        [
+          "So cạnh tranh",
+          "Nếu nền sát mặt quá sáng, thử hạ nền trước. Nếu cốc vẫn nổi vì cam mạnh, xử lý màu cốc riêng."
+        ],
+        [
+          "Giữ ý đồ",
+          "Không giảm mọi Orange nếu việc đó làm da xám. Chọn vị trí cốc trước khi chỉnh."
+        ],
+        [
+          "Đánh giá",
+          "Xem toàn khung trong vài giây rồi ghi điểm nhìn đầu tiên. Đừng chỉ zoom cốc khi kết luận."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Hai ô nhỏ cùng #AD987B trông khác trên hai nền. Nên chỉnh mã màu nào để chứng minh chúng thực sự giống nhau?",
+      "answer": "Không cần đổi ô nhỏ. Giữ mã màu và thay ngữ cảnh là cách cô lập hiện tượng cảm nhận. Trên ảnh thật, phải xét vùng xung quanh trước khi kết luận một màu đơn lẻ bị sai."
+    },
+    "lab": "context",
+    "labTask": "Giữ ô trung tâm cố định. Đổi Hue, độ sáng và bão hòa của hai nền; ghi khi nào cùng một màu trông ấm hơn hoặc sáng hơn.",
+    "checklist": [
+      "Mô tả được sáng tối độ mạnh và vị trí của màu",
+      "Viết một ý định có vùng cần bảo vệ",
+      "Không suy ra vẻ đẹp chỉ từ mã HEX"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-8/"
+  },
+  {
+    "title": "Ánh sáng Histogram và nhóm Basic",
+    "goal": "Biết bắt đầu từ đâu với ảnh tối, cháy hoặc phẳng. Hiểu từng thanh Tone và phân biệt lỗi toàn ảnh với lỗi cục bộ.",
+    "idea": "Histogram mô tả phân bố sắc độ, không chấm điểm ảnh đẹp. Ảnh đêm có thể lệch trái đúng ý đồ; ảnh tuyết có thể lệch phải. Chỉ sửa clipping khi vùng mất chi tiết đó cần được giữ.",
+    "tools": [
+      [
+        "Exposure",
+        "Điều chỉnh độ sáng tổng thể; đặt theo chủ thể quan trọng trước, rồi xử lý vùng quá chênh."
+      ],
+      [
+        "Contrast",
+        "Tăng hoặc giảm phân tách sáng tối quanh vùng trung gian; đẩy mạnh có thể làm mất chuyển sắc mềm."
+      ],
+      [
+        "Highlights",
+        "Tác động ưu tiên vùng sáng; dùng giữ mây, áo trắng khi còn dữ liệu. Không khôi phục được dữ liệu không tồn tại."
+      ],
+      [
+        "Shadows",
+        "Tác động ưu tiên vùng tối; nâng vừa để đọc được nội dung, tránh làm mọi bóng tối thành xám."
+      ],
+      [
+        "Whites",
+        "Đặt phần sáng cao của ảnh; dùng cùng clipping và cảm nhận độ trong, không nhất thiết luôn chạm trắng tuyệt đối."
+      ],
+      [
+        "Blacks",
+        "Đặt chiều sâu vùng tối; kéo quá thấp có thể bệt, kéo cao dễ tạo cảm giác bạc."
+      ],
+      [
+        "Auto và Reset",
+        "Auto là một điểm tham khảo; so với ý đồ của bạn. Reset hoặc nhấp đúp tên thanh để đánh giá đóng góp của chỉnh sửa."
+      ],
+      [
+        "Clipping và HDR",
+        "Bật cảnh báo để phát hiện mất chi tiết. HDR edit là quy trình riêng, khác việc chỉ kéo Highlights xuống."
+      ]
+    ],
+    "steps": [
+      "Dùng ảnh người trước cửa sổ. Xem Fit để đánh giá bố cục rồi xem 100% vùng mặt và áo.",
+      "Đặt Exposure để mặt có độ sáng hợp cảnh. Ví dụ tăng +0.3 EV rồi so, thay vì lập tức nâng +2 EV.",
+      "Giảm Highlights từng bước để giữ rèm hoặc áo. Nếu cửa sổ vẫn trắng hoàn toàn, quyết định chấp nhận hoặc dùng ảnh bracket nếu đã chụp.",
+      "Nâng Shadows vừa đủ thấy tóc; đặt Whites và Blacks trong lúc kiểm tra clipping. Cảnh báo trên điểm phản chiếu nhỏ có thể chấp nhận.",
+      "So trước sau ở cùng kích thước. Nếu mặt tốt nhưng cửa sổ còn sai, dùng mask cửa sổ; đừng tiếp tục làm tối toàn ảnh."
+    ],
+    "case": "Ảnh ngược sáng: tăng Exposure cho mặt có thể làm trời quá sáng. Tách thành hai mục tiêu, mặt đủ sáng và trời còn chuyển sắc; dùng chỉnh toàn cục vừa phải rồi mask cho từng vùng.",
+    "errors": [
+      "Ảnh xám như HDR quá tay: giảm Shadows, giữ điểm đen có chủ đích.",
+      "Da tối nhưng nền đã đúng: chuyển sang Subject hoặc People mask.",
+      "Histogram đẹp nhưng ảnh thiếu cảm xúc: quay lại hướng sáng và điểm nhìn, không ép đồ thị phủ kín."
+    ],
+    "exercise": [
+      "Chỉnh 3 ảnh: tối toàn cục, ngược sáng, high key. Ghi thanh đầu tiên và lý do.",
+      "Tạo một bản nâng Shadows mạnh và một bản dùng mask mặt; so độ sâu và nhiễu ở tóc."
+    ],
+    "answer": "Đáp án định hướng: tối toàn cục thường xét Exposure; ngược sáng cần tách vùng; high key không phải lỗi chỉ vì histogram lệch phải. Đạt khi vùng quan trọng còn chi tiết và chủ thể rõ.",
+    "refs": [
+      "tone",
+      "hdr"
+    ],
+    "days": [
+      4,
+      11
+    ],
+    "chapter": "5",
+    "visual": "hist",
+    "id": 3,
+    "sources": [
+      [
+        "Adobe | Tone và Color",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"
+      ],
+      [
+        "Adobe | Chỉnh và xuất HDR",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/hdr-output.html"
+      ]
+    ],
+    "group": "Nền tảng",
+    "sections": [
+      {
+        "title": "Histogram là bản đồ phân bố không phải thang điểm",
+        "paragraphs": [
+          "Bên trái biểu diễn phần tối, bên phải là phần sáng. Chiều cao cho biết có nhiều pixel thuộc vùng đó. Không có yêu cầu mọi ảnh phải phủ đầy từ đen tới trắng. Cảnh sương mù có thể ít đen sâu; cảnh đêm hợp lý khi phần lớn dữ liệu ở bên trái.",
+          "Histogram tổng có thể che mất clipping riêng một kênh màu. Một vùng đỏ mạnh vẫn có thể mất chuyển sắc đỏ dù tổng độ sáng chưa sát trắng. Trong lab bạn xem phân bố RGB cùng tỷ lệ pixel chạm ngưỡng; đó là dấu hiệu kiểm tra, không phải lệnh bắt mọi clipping về không."
+        ]
+      },
+      {
+        "title": "Exposure và các vùng tone giải quyết các mục tiêu khác nhau",
+        "paragraphs": [
+          "Exposure dùng đặt độ sáng nền của ảnh theo chủ thể. Highlights ưu tiên vùng sáng, Shadows ưu tiên vùng tối. Whites và Blacks quyết định phần đầu sáng và đầu tối của dải tone. Các thuật toán thật có vùng chuyển mềm, không chia ảnh thành năm hộp cứng.",
+          "Với ảnh cửa sổ ngược sáng, nếu mặt và toàn bộ nội thất cùng tối, cân Exposure trước. Nếu mặt đã đúng nhưng trời sáng quá, hãy xử lý vùng sáng hoặc mask. Dùng Exposure để chữa một vùng riêng có thể tạo ra vấn đề lớn hơn ở phần còn lại."
+        ]
+      },
+      {
+        "title": "Một EV là quan hệ lượng sáng chứ không phải cộng độ sáng tùy ý",
+        "paragraphs": [
+          "Trong mô hình tuyến tính, tăng một EV nhân giá trị ánh sáng với hai. Màn hình mã hóa RGB có đường cong nên không thể hiểu đơn giản là cộng 50 vào mỗi kênh. Lab giải mã sRGB xấp xỉ, nhân hệ số rồi mã hóa trở lại để minh họa quan hệ này.",
+          "Ảnh mẫu là JPEG đã có giới hạn. Khi nhiều giá trị đã chạm trần, kéo tối về sau không tạo lại cấu trúc mây hoặc áo đã mất. RAW thường cho dư địa khác nhưng cũng hữu hạn. Hãy phân biệt lấy lại phần vẫn còn dữ liệu với tạo mới chi tiết."
+        ]
+      },
+      {
+        "title": "Tại sao nâng Shadows mạnh làm ảnh phẳng",
+        "paragraphs": [
+          "Tăng vùng tối có thể làm tóc và nền dễ đọc hơn, đồng thời giảm chênh lệch giữa phần sáng và phần khuất sáng. Khi mọi bóng được nâng giống nhau, khuôn mặt dễ mất khối. Nhiễu trong vùng tối cũng trở nên dễ thấy hơn.",
+          "Giải pháp là chỉ nâng tới mức thông tin cần đọc được; giữ bóng có vai trò tạo hình. Nếu chỉ mặt cần sáng, dùng mask thay vì nâng tất cả vùng tối. Đánh giá ảnh ở Fit để biết có còn chiều sâu, rồi 100% để kiểm tra nhiễu và chuyển sắc."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Mặt trong ảnh thiếu sáng khoảng nửa stop nhưng áo trắng đã gần giới hạn. Mục tiêu là sáng mặt và giữ kết cấu vải.",
+      "stages": [
+        [
+          "Đặt nền",
+          "Thử Exposure +0.4 EV và theo dõi mặt lẫn áo. Đây là số thử, không là đáp án cho mọi file."
+        ],
+        [
+          "Giữ đầu sáng",
+          "Giảm Highlights vừa phải, so từng nếp áo. Nếu áo thành xám đục, bạn đang nén quá mức."
+        ],
+        [
+          "Tách vùng",
+          "Nếu tăng Exposure vẫn gây hại áo, hoàn nguyên một phần và nâng mặt cục bộ."
+        ],
+        [
+          "Dừng",
+          "Chấp nhận phản chiếu nhỏ mất chi tiết nếu không quan trọng; không hy sinh cả ảnh để histogram trông đẹp."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Histogram của ảnh đêm lệch trái nhưng chủ thể đủ sáng. Có nên kéo Exposure cho đồ thị về giữa không?",
+      "answer": "Không tự động. Histogram phải phù hợp cảnh và ý đồ. Chỉ tăng nếu vùng cần nhìn thực sự quá tối; sau đó kiểm tra vùng sáng nhỏ như đèn, vì chúng có thể cháy rất nhanh."
+    },
+    "lab": "exposure",
+    "labTask": "Tăng Exposure rồi cứu vùng sáng bằng Highlights. So cả histogram lẫn nếp áo; ghi điểm mà tăng sáng bắt đầu đánh đổi chi tiết.",
+    "checklist": [
+      "Đặt độ sáng theo chủ thể trước",
+      "Kiểm tra clipping trên vùng có ý nghĩa",
+      "Giải thích được vì sao cần hoặc không cần mask"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-4/"
+  },
+  {
+    "title": "Cân bằng trắng Profile và màu nền",
+    "goal": "Tách ám màu do nguồn sáng khỏi màu sáng tạo. Biết dùng Temp, Tint và Profile để xây nền ổn định trước khi blend.",
+    "idea": "Cân bằng trắng là quyết định diễn giải ánh sáng. Một vùng trắng trong nắng chiều không nhất thiết phải trắng trung tính. Sửa ám màu để vật thể đáng tin, rồi mới thêm cảm giác có chủ đích.",
+    "tools": [
+      [
+        "Temp",
+        "Dịch cảm giác xanh lạnh sang vàng ấm. RAW thường hiển thị Kelvin; JPEG có thang điều chỉnh khác nên không chép số máy móc."
+      ],
+      [
+        "Tint",
+        "Dịch xanh lá sang magenta; hữu ích khi ánh đèn hoặc màu phản xạ làm da xanh."
+      ],
+      [
+        "Eyedropper W",
+        "Lấy mẫu vùng xám trung tính chưa cháy; tránh chọn răng, mắt hoặc áo bị phản xạ màu làm chuẩn tuyệt đối."
+      ],
+      [
+        "As Shot và Auto",
+        "As Shot dùng thông tin WB của máy; Auto là gợi ý. Cả hai đều cần kiểm tra bằng cảnh thật và chủ thể."
+      ],
+      [
+        "Profile",
+        "Chọn cách diễn giải ban đầu của màu và tone. Đổi profile có thể đổi cảm giác dù các thanh vẫn cùng số."
+      ],
+      [
+        "Adobe Raw và Camera Matching",
+        "So một vài profile có sẵn cho file. Camera Matching phụ thuộc máy và định dạng, không phải ảnh nào cũng có."
+      ],
+      [
+        "Creative và Amount",
+        "Một số profile sáng tạo có Amount; không phải mọi profile đều cho chỉnh cường độ."
+      ],
+      [
+        "Ánh sáng hỗn hợp",
+        "Một WB toàn cục khó sửa đồng thời đèn vàng và cửa sổ xanh; cần mask cục bộ hoặc giữ tương phản nguồn sáng."
+      ]
+    ],
+    "steps": [
+      "Chọn RAW có da và vật xám. Tạo bản As Shot, bản Auto và bản lấy mẫu xám; so vùng da, không chỉ nhìn nền.",
+      "Chọn một profile làm nền và giữ cố định trong bài. Nếu đổi profile sau này, kiểm tra lại các chỉnh màu phụ thuộc.",
+      "Lấy mẫu 3 điểm xám khác nhau chưa cháy. Nếu kết quả lệch nhiều, nghi ngờ phản xạ màu hoặc ánh sáng hỗn hợp.",
+      "Tinh Temp rồi Tint bằng bước nhỏ. Ghi lại cái gì tốt hơn: da bớt xanh, áo trung tính hơn hay ánh chiều còn được giữ.",
+      "Nếu một bên mặt vàng còn bên kia xanh, tạo mask theo vùng ánh sáng và chỉnh WB tại đó. Kiểm tra ranh giới ở mũi và tóc."
+    ],
+    "case": "Quán cà phê có cửa sổ xanh và đèn vàng: ưu tiên da ở nguồn sáng chính; giảm ám đèn tại vùng cần thiết. Trung hòa tất cả có thể làm không gian mất đặc trưng.",
+    "errors": [
+      "Da hồng sau khi sửa xanh: giảm Tint, kiểm tra phản xạ màu trước khi kéo toàn ảnh.",
+      "Chép 5200 K nhưng ảnh khác: kiểm tra file, profile, nguồn sáng và máy ảnh.",
+      "Ảnh ấm được coi là sai WB: hỏi ý đồ và vật trung tính trước khi sửa."
+    ],
+    "exercise": [
+      "Chỉnh 3 cảnh gồm bóng râm, đèn trong nhà và ánh sáng hỗn hợp. Lưu bản trung tính lẫn bản giữ không khí.",
+      "Lập bảng Profile, Temp, Tint và lý do chọn; giải thích thay đổi bằng vật thể cụ thể."
+    ],
+    "answer": "Đạt khi da hợp cảnh, vùng trung tính đáng tin và bạn phân biệt được ấm do ánh sáng với ám vàng ngoài ý muốn. Không yêu cầu mọi ảnh cùng Kelvin.",
+    "refs": [
+      "tone",
+      "mask"
+    ],
+    "days": [
+      4,
+      13
+    ],
+    "chapter": "5",
+    "visual": "palette",
+    "id": 4,
+    "sources": [
+      [
+        "Adobe | Tone và Color",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"
+      ],
+      [
+        "Adobe | Masking",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"
+      ]
+    ],
+    "group": "Nền tảng",
+    "sections": [
+      {
+        "title": "Nhiệt độ nguồn sáng và chiều kéo Temp dễ bị nhầm",
+        "paragraphs": [
+          "Nguồn sáng có nhiệt độ màu cao thường xanh hơn, nhưng tăng giá trị Temp trong cân bằng trắng của ảnh RAW thường làm kết quả nhìn ấm hơn. Đây là thao tác bù để diễn giải nguồn sáng, không phải mô tả rằng nguồn sáng đang tự biến thành vàng.",
+          "Tint bù theo trục xanh lá và magenta. Nếu da xanh do phản xạ cây, chỉ tăng Temp có thể biến xanh thành vàng xanh thay vì sạch. Quan sát hai trục riêng: lạnh ấm và xanh lá hồng. Không dùng Saturation để chữa ám WB toàn cảnh."
+        ]
+      },
+      {
+        "title": "Lấy mẫu trung tính phải biết vật đó đáng ra là màu gì",
+        "paragraphs": [
+          "Eyedropper giả định vùng bạn chọn nên trung tính. Áo trắng dưới đèn màu, răng có sắc tự nhiên hoặc điểm phản chiếu bị cháy không phải mốc tin cậy tuyệt đối. Hãy lấy vài điểm xám chưa cháy và so da sau mỗi lần thử.",
+          "Khi chụp thực tế, gray card trong cùng nguồn sáng có thể giúp cân nền. Nhưng gray card ở cửa sổ không đại diện cho góc phòng dưới đèn vàng. Chuẩn tham chiếu chỉ có ý nghĩa khi biết nguồn sáng và điều kiện đo."
+        ]
+      },
+      {
+        "title": "Profile là lựa chọn nền khác với preset thanh trượt",
+        "paragraphs": [
+          "Đổi profile có thể thay cách màu và tone xuất hiện ngay khi các thanh chưa đổi. Preset có thể đặt đồng thời nhiều thiết lập, và cũng có thể bao gồm lựa chọn profile. Vì vậy hai người cùng Exposure và WB vẫn có kết quả khác nếu profile khác.",
+          "Chọn profile tương đối sớm khi xây look rồi kiểm tra bằng da, cây và vật trung tính. Các profile thích ứng có hành vi phụ thuộc nội dung ảnh; đừng xem chúng là một phép biến đổi RGB cố định. Lab WB chỉ mô phỏng bù kênh, không giả lập profile Adobe."
+        ]
+      },
+      {
+        "title": "Ánh sáng hỗn hợp cần một thứ tự ưu tiên",
+        "paragraphs": [
+          "Nếu một bên mặt nhận cửa sổ xanh và bên kia đèn vàng, một Temp toàn cục không thể khiến cả hai cùng trung tính một cách tối ưu. Chọn nguồn sáng chính cho WB nền, rồi mask vùng lệch còn lại. Cũng có thể giữ một phần tương phản nóng lạnh nếu đó là không khí cảnh.",
+          "Một quy trình hữu ích: cân độ sáng trước, tìm một mốc tin cậy, đặt Temp, tinh Tint, so mặt cổ tay rồi kiểm tra nền. Nếu sửa một vùng làm vùng khác tệ hơn, đó là tín hiệu chuyển sang điều chỉnh cục bộ, không tiếp tục kéo toàn ảnh."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Ảnh trong vườn có da hơi xanh ở bên bóng nhưng áo vùng sáng gần trung tính.",
+      "stages": [
+        [
+          "Chẩn đoán",
+          "Kiểm tra xem ám xanh có lan toàn ảnh hay chỉ phía gần lá. Ám cục bộ gợi ý phản xạ nguồn sáng."
+        ],
+        [
+          "Thử nền",
+          "Tinh Tint toàn cục rất nhẹ. Nếu vùng sáng hóa hồng trước khi vùng bóng sạch, dừng chỉnh toàn cục."
+        ],
+        [
+          "Cục bộ",
+          "Mask má phía bóng, thêm magenta vừa đủ, so rìa chuyển tại mũi."
+        ],
+        [
+          "Kiểm tra",
+          "Tắt bật mask và so với cổ trong cùng ánh sáng. Không ép vùng bóng sáng và trắng như vùng nắng."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Vì sao chép cùng 5200 K từ một RAW sang JPEG không đảm bảo màu giống nhau?",
+      "answer": "JPEG đã có WB và xử lý màu được dựng vào ảnh, thang Temp có thể khác RAW. Máy, profile, nguồn sáng và màu vật cũng khác. Cùng số không mô tả toàn bộ trạng thái màu."
+    },
+    "lab": "wb",
+    "labTask": "Dịch Temp rồi Tint riêng rẽ. Dùng áo và tường làm mốc quan sát, nhưng luôn so lại da trước khi kết luận.",
+    "checklist": [
+      "Phân biệt Temp với nhiệt độ nguồn sáng",
+      "Không lấy điểm cháy làm mốc WB",
+      "Nhận ra thời điểm phải dùng mask"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-4/"
+  },
+  {
+    "title": "Tone Curve và RGB Curve",
+    "goal": "Tạo độ tương phản, độ mềm vùng sáng và ám màu có kiểm soát. Biết đọc đồ thị trước khi kéo điểm.",
+    "idea": "Trục ngang là độ sáng đầu vào, trục dọc là đầu ra. Nâng một điểm làm vùng đó sáng hơn trên curve tổng. Với curve kênh màu, nâng điểm làm tăng thành phần kênh đó; quan hệ màu cũng đổi theo.",
+    "tools": [
+      [
+        "Point Curve tổng",
+        "Đặt điểm trực tiếp. Đường chéo là mốc không đổi; ưu tiên ít điểm để chuyển sắc mượt."
+      ],
+      [
+        "Parametric Curve",
+        "Chỉnh Highlights, Lights, Darks, Shadows theo vùng; ranh giới chia vùng thay đổi phạm vi tác động."
+      ],
+      [
+        "S Curve",
+        "Hạ vùng tối và nâng vùng sáng để tăng phân tách; S mạnh dễ làm da gắt."
+      ],
+      [
+        "Black point và White point",
+        "Nâng điểm đen tạo đen bạc; hạ điểm trắng nén cực sáng. Đây không phải phục hồi chi tiết đã mất."
+      ],
+      [
+        "Red channel",
+        "Nâng tăng đỏ; hạ dịch về cyan. Có thể tác động riêng bóng hoặc sáng bằng điểm neo."
+      ],
+      [
+        "Green channel",
+        "Nâng tăng xanh lá; hạ dịch magenta. Kiểm tra da và vật xám vì ám xanh rất dễ gây khó chịu."
+      ],
+      [
+        "Blue channel",
+        "Nâng tăng xanh dương; hạ dịch vàng. Dùng lượng nhỏ khi muốn bóng lạnh và sáng ấm."
+      ],
+      [
+        "Điểm neo và tính liên tục",
+        "Neo midtone giúp giữ da khi chỉnh shadows. Tránh đường gãy hoặc đảo chiều gây chuyển tone bất thường."
+      ]
+    ],
+    "steps": [
+      "Bắt đầu từ bản đã cân bằng Exposure và WB. Tạo Virtual Copy chỉ dùng Curve để thấy rõ tác động.",
+      "Trên curve tổng, đặt điểm gần 25%, 50%, 75% trục vào. Hạ nhẹ điểm tối, nâng nhẹ điểm sáng; giữ điểm giữa nếu da đã đúng.",
+      "Thử nâng điểm đen một chút rồi bật tắt. Nếu tóc mất chiều sâu, giảm mức nâng; đen bạc không tự tạo chất phim.",
+      "Ở Blue curve, nâng rất nhẹ vùng bóng, giữ midtone, hạ nhẹ vùng sáng. Quan sát áo xám và da xem có ám không mong muốn.",
+      "Tắt toàn bộ Curve rồi bật lại. Nếu đổi quá nhiều thứ cùng lúc, bỏ bớt điểm hoặc tách mục tiêu sang Color Grading."
+    ],
+    "case": "Muốn ảnh mềm vùng sáng nhưng vẫn có đen sâu: thử nén đầu trắng nhẹ và giữ đầu đen, thay vì nâng toàn bộ vùng tối. Hai thao tác tạo hai cảm giác khác nhau.",
+    "errors": [
+      "Da xám xanh: kiểm tra Blue hoặc Red curve ở midtone.",
+      "Ảnh bị gãy chuyển sắc: giảm điểm và biên độ; JPEG chịu đẩy kém hơn RAW.",
+      "Không biết màu đến từ đâu: tắt lần lượt curve kênh và Color Grading."
+    ],
+    "exercise": [
+      "Tạo 3 phiên bản một ảnh: tương phản sạch, đen bạc nhẹ, bóng lạnh sáng ấm. Mỗi bản tối đa 5 điểm mỗi curve.",
+      "Vẽ lại curve đã dùng và giải thích tác động của từng điểm bằng vùng ảnh."
+    ],
+    "answer": "Đạt khi giải thích được đầu vào và đầu ra, đọc đúng 3 cặp màu đối và giữ được chuyển sắc da. Số điểm ít chỉ là giới hạn bài tập, không phải chuẩn bắt buộc.",
+    "refs": [
+      "tone",
+      "learn"
+    ],
+    "days": [
+      4,
+      9
+    ],
+    "chapter": "5 và 7",
+    "visual": "curve",
+    "id": 5,
+    "sources": [
+      [
+        "Adobe | Tone và Color",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"
+      ],
+      [
+        "Adobe | Tutorial thực hành",
+        "https://lightroom.adobe.com/learn/tutorial"
+      ]
+    ],
+    "group": "Công cụ màu",
+    "sections": [
+      {
+        "title": "Đọc curve bằng điểm đầu vào và đầu ra",
+        "paragraphs": [
+          "Mỗi tọa độ trên trục ngang là một mức tone đầu vào; chiều cao trên trục dọc là tone đầu ra. Điểm 25% đi lên nghĩa vùng đầu vào tối đó được làm sáng. Một đoạn curve dốc hơn tạo phân tách cục bộ mạnh hơn; đoạn phẳng nén các mức đầu vào về gần nhau.",
+          "Đây là lý do chỉ nhìn hình chữ S là chưa đủ. Vị trí và độ dốc quyết định vùng nào tăng tương phản, vùng nào bị nén. Khi muốn giữ da, đặt một điểm neo gần vùng tone da thay vì kéo cả đường cong ngẫu nhiên."
+        ]
+      },
+      {
+        "title": "Nâng điểm đen và nâng vùng tối không giống nhau",
+        "paragraphs": [
+          "Nâng điểm đen biến giá trị thấp nhất thành xám, làm ảnh có nền đen bạc. Nâng một điểm tối trong khi giữ đầu đen có thể mở chi tiết bóng nhưng vẫn giữ một số vùng đen sâu. Hai lựa chọn có cảm giác khác nhau dù đều khiến vùng tối sáng hơn.",
+          "Nếu preset đen bạc làm tóc mất chiều sâu, hãy so đầu đen trước khi thêm Contrast để bù. Nhiều chỉnh sửa bù trừ khiến bạn không biết độ tương phản đến từ đâu và khó dùng lại trên ảnh khác."
+        ]
+      },
+      {
+        "title": "RGB Curve dùng quan hệ màu đối và vùng tone",
+        "paragraphs": [
+          "Nâng Red thêm đỏ, hạ Red thiên cyan; nâng Green thêm xanh lá, hạ Green thiên magenta; nâng Blue thêm xanh dương, hạ Blue thiên vàng. Tác động không giới hạn trong các vật có cùng tên màu với kênh.",
+          "Muốn bóng lạnh sáng ấm, có thể nâng Blue vùng bóng nhẹ, giữ midtone rồi hạ Blue vùng sáng nhẹ. Nhưng da ở vùng sáng cũng bị ảnh hưởng. So vùng da và áo xám để biết bạn đang tạo không khí hay tạo ám màu khó chịu."
+        ]
+      },
+      {
+        "title": "Curve đẹp phải giữ được thứ tự và chuyển sắc",
+        "paragraphs": [
+          "Một đường tăng đơn điệu giữ thứ tự tối sáng; kéo các điểm qua nhau có thể tạo đảo tone như solarization. Đường gãy mạnh có thể làm chuyển màu lộ bất thường. Dùng ít điểm và thay đổi nhỏ giúp dễ nhìn nguyên nhân.",
+          "Lab dùng nội suy tuyến tính giữa ba điểm tone để bạn thấy chính xác ý nghĩa tọa độ. Lightroom dùng cách nội suy và pipeline riêng nên hình dạng hiển thị và mức tác động không hoàn toàn trùng. Học quan hệ đầu vào đầu ra trước khi cố match con số."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Bạn muốn áo trắng bớt gắt nhưng tóc vẫn sâu; bản đen bạc hiện tại làm cả ảnh mờ.",
+      "stages": [
+        [
+          "Tách mục tiêu",
+          "Vùng sáng cần mềm, vùng đen cần giữ. Không dùng nâng đầu đen để sửa highlight."
+        ],
+        [
+          "Hoàn nguyên",
+          "Trả black point về gần gốc, so tóc có lấy lại chiều sâu không."
+        ],
+        [
+          "Nén đầu sáng",
+          "Hạ nhẹ điểm cao và giữ vùng giữa. Nếu da tối đi, neo vùng da hoặc giảm mức nén."
+        ],
+        [
+          "Kiểm tra",
+          "So áo ở 100% và ảnh ở Fit. Mềm không có nghĩa mọi vùng sáng trở thành xám."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Bạn kéo Blue curve vùng tối lên. Vì sao da cũng có thể đổi dù bạn chỉ muốn đổi nền?",
+      "answer": "Curve chọn theo tone và kênh, không nhận diện vật thể. Phần da nằm trong cùng vùng tone cũng bị tác động. Cần hạn chế curve, neo midtone hoặc tách vị trí bằng mask."
+    },
+    "lab": "curve",
+    "labTask": "Điều khiển đầu ra ở ba mốc 25 50 75%. Đọc đồ thị và ảnh cùng lúc; thử tạo S nhẹ rồi mở bóng mà vẫn giữ đầu đen.",
+    "checklist": [
+      "Giải thích từng điểm curve bằng vùng ảnh",
+      "Phân biệt đầu đen với chi tiết bóng",
+      "Nhận ra curve kênh không chọn vật thể"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://jkost.com/blog/2024/08/the-tone-curve-panel-in-lightroom-classic-2.html"
+  },
+  {
+    "title": "Color Mixer HSL và Point Color",
+    "goal": "Thay đổi từng nhóm màu mà vẫn bảo vệ da và vật thể khác. Hiểu khi nào chọn màu và khi nào phải chọn vị trí.",
+    "idea": "HSL chọn theo họ màu, không hiểu vật thể. Lá vàng và da có thể dùng chung dải cam vàng; chỉnh một dải có thể tác động cả hai. Point Color tinh chọn phạm vi hơn nhưng vẫn cần kiểm tra vùng bị ảnh hưởng.",
+    "tools": [
+      [
+        "Hue",
+        "Dịch sắc trong một dải: cây xanh có thể nghiêng vàng hoặc cyan tùy hướng kéo. Quan sát ảnh thay vì học thuộc dấu số."
+      ],
+      [
+        "Saturation",
+        "Giảm hoặc tăng cường độ của dải. Giảm mạnh có thể khiến vật thể trông xám và thiếu sức sống."
+      ],
+      [
+        "Luminance",
+        "Đổi độ sáng nhóm màu. Hạ Blue có thể làm trời sâu nhưng dễ lộ viền và banding."
+      ],
+      [
+        "Tám dải Mixer",
+        "Red, Orange, Yellow, Green, Aqua, Blue, Purple, Magenta. Dải có thể chồng lấn, không chia màu bằng biên cứng."
+      ],
+      [
+        "Targeted Adjustment",
+        "Chọn công cụ đích, kéo trên vùng ảnh để điều chỉnh các dải liên quan; kiểm tra các thanh cùng thay đổi."
+      ],
+      [
+        "Point Color",
+        "Lấy mẫu một màu rồi chỉnh Hue, Saturation và Luminance cho phạm vi đã chọn."
+      ],
+      [
+        "Range và Visualize Range",
+        "Thu hoặc mở phạm vi tác động; dùng xem vùng chọn để biết da hoặc nền có bị kéo theo không."
+      ],
+      [
+        "Mask kết hợp màu",
+        "Khi chỉ muốn đổi màu áo mà nền cùng màu, chọn vị trí bằng mask rồi dùng các điều chỉnh có sẵn trong phiên bản."
+      ]
+    ],
+    "steps": [
+      "Dùng ảnh người đứng trước cây. Cân WB trước để phạm vi màu không bị lệch ngay từ đầu.",
+      "Ở Mixer giảm nhẹ Saturation Yellow và Green. Bật tắt xem cây bớt tranh mắt hay chỉ thành xám bẩn.",
+      "Dịch Green Hue từng chút theo ý đồ. Kiểm tra vàng của lá, cam của da và các vùng phản xạ trên áo.",
+      "Dùng Point Color lấy mẫu lá. Bật Visualize Range, thu phạm vi tới khi mặt ít bị ảnh hưởng rồi tinh Hue và Luminance.",
+      "Nếu mặt vẫn đổi vì chung màu, dùng mask nền; so mặt và cây riêng, sau đó đánh giá cả khung ở Fit."
+    ],
+    "case": "Áo đỏ và biển hiệu đỏ: Mixer Red sẽ tác động cả hai. Nếu cần giữ biển hiệu, chọn áo bằng Object hoặc Brush mask; bài toán này là không gian trước rồi mới đến màu.",
+    "errors": [
+      "Da cam rực: giảm Orange Saturation có thể giúp nhưng phải kiểm tra WB và profile trước.",
+      "Trời sọc màu: giảm mức hạ Blue Luminance và kiểm tra JPEG nén.",
+      "Lá bị hai mảng màu: phạm vi chọn quá hẹp hoặc đổi Hue quá mạnh; làm mềm chuyển vùng."
+    ],
+    "exercise": [
+      "Chỉnh nền cây thành xanh dịu trong khi da gần bản trung tính. Xuất trước sau.",
+      "Tạo bản HSL toàn cục và bản Point Color hoặc mask; ghi vùng tác động ngoài ý muốn."
+    ],
+    "answer": "Đạt khi màu mục tiêu thay đổi rõ, vùng cần bảo vệ còn tự nhiên và không có ranh màu gắt. Nếu hai vật thể cùng màu, câu trả lời đúng thường cần mask vị trí.",
+    "refs": [
+      "mixer",
+      "mask"
+    ],
+    "days": [
+      8,
+      15,
+      16
+    ],
+    "chapter": "7",
+    "visual": "palette",
+    "id": 6,
+    "sources": [
+      [
+        "Adobe | Color Mixer và Point Color",
+        "https://helpx.adobe.com/uk/lightroom-classic/desktop/process-and-develop-photos/color-mixer.html"
+      ],
+      [
+        "Adobe | Masking",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"
+      ]
+    ],
+    "group": "Công cụ màu",
+    "sections": [
+      {
+        "title": "HSL chọn màu chứ không chọn một cái cây",
+        "paragraphs": [
+          "Trong cùng ảnh, da, gỗ, cốc và lá vàng có thể chia sẻ các dải cam vàng. Khi giảm Orange Saturation, bạn không ra lệnh chỉ giảm da. Bạn tác động các pixel trong phạm vi dải, thường có chồng lấn và chuyển vùng mềm.",
+          "Để biết đang kéo gì, tăng hoặc giảm tạm rõ rồi hoàn nguyên. Quan sát toàn ảnh thay vì chỉ vùng đang nhắm tới. Nếu hai vật chung màu nhưng cần kết quả khác nhau, đây là bài toán vị trí; dùng mask trước rồi mới chỉnh màu."
+        ]
+      },
+      {
+        "title": "Hue Saturation và Luminance có những rủi ro riêng",
+        "paragraphs": [
+          "Dịch Hue quá xa có thể làm lá chuyển sang màu không hợp nguồn sáng. Giảm Saturation quá mạnh khiến vật thể xám bẩn. Hạ Luminance trời quá mức dễ lộ rìa cây và noise hoặc banding ở chuyển sắc trời. Không có thanh nào chỉ tạo lợi ích.",
+          "Một cách học tốt là giữ hai thuộc tính cố định và đổi thuộc tính thứ ba. Sau đó mới kết hợp. Nếu vừa đổi Hue vừa giảm Saturation rồi hạ Luminance mạnh, bạn khó biết lỗi đến từ đâu."
+        ]
+      },
+      {
+        "title": "Point Color là bài tập về phạm vi chọn",
+        "paragraphs": [
+          "Point Color giúp lấy mẫu và tinh phạm vi theo các thuộc tính màu. Hãy dùng Visualize Range để xem cái gì được chọn, thu phạm vi vừa đủ rồi làm mềm chuyển vùng. Phạm vi quá chặt có thể khiến một chiếc lá chia thành hai mảng màu vì phần sáng và bóng khác nhau.",
+          "Lab dùng khoảng cách vòng tròn theo Hue để bạn thấy một phần của ý tưởng phạm vi. Nó không tái hiện đủ chọn theo cả Hue Saturation Luminance của Adobe. Khi tăng độ rộng dải, xem cả da và nền để hiểu đánh đổi giữa đủ vùng chọn và chọn nhầm."
+        ]
+      },
+      {
+        "title": "Hãy kiểm tra màu trong ngữ cảnh ánh sáng",
+        "paragraphs": [
+          "Cây trong bóng và cây ngoài nắng không cần cùng màu tuyệt đối. Nếu ép mọi lá về một xanh rêu đồng nhất, ảnh dễ mất chiều sâu và sự khác biệt của nguồn sáng. Mục tiêu có thể là cây bớt cạnh tranh với mặt nhưng vẫn có chuyển sắc.",
+          "Thứ tự gợi ý: chốt WB nền, tìm dải màu làm phiền, thay một thuộc tính nhỏ, kiểm tra vùng bảo vệ rồi quyết định có cần mask. Khi lỗi da xuất hiện trên nhiều ảnh sau áp preset, xem lại chỉnh dải rộng trước khi chữa từng người."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Bạn muốn lá dịu và hơi xanh rêu nhưng cốc cam và da vẫn sống động.",
+      "stages": [
+        [
+          "Chọn dải",
+          "Trong lab chọn tâm Hue gần vùng lá, mở độ rộng tới khi cả lá sáng tối cùng được ảnh hưởng."
+        ],
+        [
+          "Giảm cạnh tranh",
+          "Giảm bão hòa một chút trước. Xem mặt đã dễ nhìn hơn chưa rồi mới dịch Hue."
+        ],
+        [
+          "Kiểm tra nhầm",
+          "Nếu da hoặc cốc bị đổi, thu dải hoặc dùng mask không gian trong Lightroom."
+        ],
+        [
+          "Dừng",
+          "So toàn khung. Lá nên giữ được phân biệt sáng tối; không chỉ đạt đúng một màu bằng mọi giá."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Cùng một dải cam chứa cả da và cốc. Vì sao thu phạm vi Hue đôi khi vẫn không bảo vệ được da?",
+      "answer": "Nếu chúng thực sự trùng màu, không có ngưỡng Hue nào phân biệt được vật thể. Bạn cần thông tin vị trí hoặc một thuộc tính khác đủ phân tách, rồi kiểm tra phạm vi thật."
+    },
+    "lab": "hsl",
+    "labTask": "Chọn tâm Hue và độ rộng dải. Đổi sắc hoặc bão hòa, bật lớp phạm vi để thấy tác động ngoài ý muốn.",
+    "checklist": [
+      "Xem được vùng bị chỉnh ngoài chủ thể",
+      "Chọn được khi nào cần mask",
+      "Kiểm tra viền trời và chuyển màu sau khi hạ Luminance"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-8/"
+  },
+  {
+    "title": "Color Grading và kỹ thuật blend màu",
+    "goal": "Phối màu theo vùng sáng tối để tạo cảm giác thống nhất. Phân biệt phủ màu tone với đổi màu của một vật thể.",
+    "idea": "Blend màu trong bài này là phối sắc và chuyển vùng để tạo một cách nhìn nhất quán. Color Grading phù hợp với màu trong bóng, trung gian và sáng; Mixer phù hợp với họ màu vật thể.",
+    "tools": [
+      [
+        "Shadows",
+        "Phủ sắc vào vùng tối. Lạnh nhẹ có thể tăng phân tách với da ấm; quá mạnh dễ làm vùng đen bẩn."
+      ],
+      [
+        "Midtones",
+        "Tác động trung gian, thường liên quan nhiều tới da. Dùng rất tiết chế và kiểm tra chân dung trước."
+      ],
+      [
+        "Highlights",
+        "Phủ sắc vùng sáng; vàng nhẹ có thể gợi ánh nắng, nhưng áo trắng không nên vàng nếu cần trung tính."
+      ],
+      [
+        "Hue và Saturation trên wheel",
+        "Góc chọn sắc, khoảng cách tới tâm chọn độ mạnh; tâm gần trung tính. Có thể tăng tạm để thấy sắc rồi giảm."
+      ],
+      [
+        "Luminance từng vùng",
+        "Đổi độ sáng kèm theo sắc. Đừng nhầm thay đổi độ sáng này với chỉ thay đổi độ bão hòa."
+      ],
+      [
+        "Blending",
+        "Điều khiển mức hòa trộn giữa các vùng tone; đánh giá chuyển vùng trên da và nền xám."
+      ],
+      [
+        "Balance",
+        "Nghiêng cân bằng tác động về phía sáng hoặc tối. Không phải thanh Exposure và không thay mask vật thể."
+      ],
+      [
+        "Global",
+        "Một sắc phủ chung. Dùng nhẹ vì tác động rộng và có thể làm giảm phân tách nóng lạnh đã tạo."
+      ]
+    ],
+    "steps": [
+      "Tạo bản sạch trước: WB, Exposure, profile và curve đã ổn. Viết mục tiêu bóng lạnh, da ấm nhẹ, đen còn trung tính tương đối.",
+      "Chọn sắc bóng bằng Saturation tạm rõ để nhìn hướng; sau đó giảm xuống mức chỉ thấy khi bật tắt. Không giữ mức tạm mạnh.",
+      "Thêm sắc sáng ấm nhẹ. Để Midtones gần trung tính trước để bảo vệ da; chỉ đổi nếu có lý do.",
+      "Thử Blending thấp và cao ở hai bản; xem vùng chuyển trên má, áo và tường. Tinh Balance để màu phủ không lấn mặt.",
+      "So với bản sạch sau vài phút nghỉ mắt. Giảm tổng cường độ nếu ánh sáng bị mất hoặc vùng xám nhìn xanh vàng quá rõ."
+    ],
+    "case": "Bài thử có thể dùng bóng H khoảng 210, S khoảng 6 và sáng H khoảng 45, S khoảng 5. Đây là điểm khởi đầu minh họa trên thang wheel, không phải công thức chung cho mọi RAW.",
+    "errors": [
+      "Da bị cam: kiểm tra cả Highlights, Midtones, WB và Orange Mixer.",
+      "Bóng xanh nhưng ảnh vẫn phẳng: sửa cấu trúc sáng tối trước khi tăng màu bóng.",
+      "Áp teal orange cho mọi cảnh: xem lại màu có sẵn và cảm giác bạn thực sự muốn."
+    ],
+    "exercise": [
+      "Tạo hai look: ấm nhẹ và nóng lạnh. Giữ crop, Exposure và profile giống nhau để đo đóng góp của Grading.",
+      "Ghi màu ở shadows, midtones, highlights và giải thích Blending, Balance đã giúp vùng nào."
+    ],
+    "answer": "Đạt khi chuyển sắc mượt, da được giữ theo ý đồ và màu bổ sung phục vụ ánh sáng. Không yêu cầu người xem gọi đúng tên look.",
+    "refs": [
+      "grade",
+      "learn"
+    ],
+    "days": [
+      9,
+      17
+    ],
+    "chapter": "7",
+    "visual": "palette",
+    "id": 7,
+    "sources": [
+      [
+        "Adobe | Video Color Grading",
+        "https://pages.adobe.com/lightroom-classic/en/learn/color-grading/"
+      ],
+      [
+        "Adobe | Tutorial thực hành",
+        "https://lightroom.adobe.com/learn/tutorial"
+      ]
+    ],
+    "group": "Công cụ màu",
+    "sections": [
+      {
+        "title": "Grading chọn theo vùng tone còn Mixer chọn theo màu",
+        "paragraphs": [
+          "Một chiếc áo trắng và một mảng trời đều có thể thuộc vùng sáng dù màu khác nhau. Color Grading có thể phủ sắc lên cả hai theo tone. Ngược lại Mixer có thể chọn cùng họ xanh ở cả vùng sáng và tối. Hai công cụ trả lời hai loại ý định khác nhau.",
+          "Nếu mọi vật trong bóng cần cảm giác lạnh, nghĩ Grading hoặc curve. Nếu chỉ lá cần đổi màu trong khi tường tối phải giữ trung tính, nghĩ Mixer cộng mask. Đừng dùng Grading để đuổi theo màu một vật riêng."
+        ]
+      },
+      {
+        "title": "Sắc độ cường độ và độ sáng của mỗi vùng",
+        "paragraphs": [
+          "Trên wheel, góc chọn Hue, khoảng cách tới tâm chọn Saturation; Luminance thay đổi độ sáng. Khi chọn Hue ở cường độ quá thấp, bạn khó thấy hướng màu; có thể tăng tạm để định hướng rồi giảm ngay. Đừng quên bước giảm.",
+          "Màu phủ quá rõ trong vùng đen có thể khiến người xem cảm nhận một lớp xanh bẩn thay vì không khí lạnh. Kiểm tra vùng gần đen và vật xám. Một look tinh tế thường rõ ở quan hệ giữa các vùng, không nhất thiết rõ trên một pixel."
+        ]
+      },
+      {
+        "title": "Blending và Balance phải đọc qua vùng chuyển",
+        "paragraphs": [
+          "Blending thay mức hòa trộn giữa các vùng tone; Balance nghiêng tương quan tác động giữa vùng sáng và tối. Chúng không phải các mask cứng. Việc kéo Balance có thể thay mức màu xuất hiện trên má mà bạn tưởng chỉ thuộc midtone.",
+          "Trong lab, Balance dịch tâm trọng số của phép phủ màu; đó là mô hình sư phạm. Hãy đổi Balance rồi xem cùng lúc tóc, má và áo. Nếu màu bóng lấn da, giảm cường độ hoặc điều chỉnh phân bố trước khi thêm Tint bù toàn cục."
+        ]
+      },
+      {
+        "title": "Xây nóng lạnh mà không ép teal orange",
+        "paragraphs": [
+          "Bắt đầu từ màu có sẵn và hướng sáng. Với cảnh vườn, bóng hơi lạnh và da hơi ấm có thể hợp lý. Với cảnh đỏ tím của sân khấu, áp teal orange có thể phá bầu không khí. Không có cặp màu nào tự mang lại cảm giác điện ảnh.",
+          "Một buổi luyện nên có bản sạch, bản ấm và bản nóng lạnh, cùng crop và nền Exposure. So khi đã nghỉ mắt. Nếu chỉ bản đậm nhất có vẻ hấp dẫn ngay nhưng làm da khó chịu sau vài phút, giảm cường độ và xem lại cấu trúc sáng tối."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Bạn muốn chiều sâu lạnh ở tóc và cây nhưng giữ blouse gần trắng, mặt không cam.",
+      "stages": [
+        [
+          "Nền sạch",
+          "Đặt WB và Exposure hợp cảnh trước khi phủ màu. Nếu nền đã xanh, grading thêm xanh chỉ chồng lỗi."
+        ],
+        [
+          "Bóng",
+          "Thử bóng Hue 210 cường độ nhẹ; tăng tạm để thấy phạm vi rồi giảm."
+        ],
+        [
+          "Sáng",
+          "Thêm chút ấm ở sáng, bảo vệ midtone. Theo dõi áo trắng để biết lúc màu phủ quá lộ."
+        ],
+        [
+          "Cân lại",
+          "Tinh Balance và so da. Nếu cần giảm màu trên mặt, sửa nơi tạo màu thay vì thêm nhiều chỉnh bù."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Bóng đúng màu nhưng ảnh vẫn phẳng. Nên tiếp tục tăng Saturation của Shadows không?",
+      "answer": "Không tự động. Màu và cấu trúc độ sáng là hai vấn đề khác nhau. Kiểm tra chênh sáng, điểm đen và hướng sáng trước. Tăng màu bóng có thể chỉ làm ảnh phẳng hơn nhưng xanh đậm hơn."
+    },
+    "lab": "grading",
+    "labTask": "Chọn màu bóng và màu sáng, tinh cường độ và Balance. So vùng trắng với tóc để xem sắc phủ phân bố ra sao.",
+    "checklist": [
+      "Phân biệt chọn theo tone và theo màu",
+      "Có bản sạch để so",
+      "Da và vật trung tính không bị phủ sắc ngoài ý muốn"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-9/"
+  },
+  {
+    "title": "Calibration và xây màu có hệ thống",
+    "goal": "Hiểu vai trò rộng của Calibration, tránh dùng Blue Primary như một mẹo cho mọi ảnh. Xác định thứ tự hiệu chỉnh để không tự làm rối màu.",
+    "idea": "Calibration tác động rộng đến cách các màu được tái hiện. Nó không chọn riêng tất cả vật màu đỏ hay xanh như HSL. Mọi thay đổi ở đây cần thử trên nhiều loại ánh sáng và màu da.",
+    "tools": [
+      [
+        "Process",
+        "Chọn phiên bản xử lý nếu được hiển thị. Với bài học mới, giữ cố định; đổi Process có thể làm thay đổi kết quả các thanh."
+      ],
+      [
+        "Shadows Tint",
+        "Tinh ám xanh lá hoặc magenta trong bóng. Không dùng thay cân WB toàn ảnh."
+      ],
+      [
+        "Red Primary Hue",
+        "Dịch cách diễn giải thành phần màu liên quan kênh đỏ; ảnh hưởng có thể lan sang nhiều họ màu."
+      ],
+      [
+        "Red Primary Saturation",
+        "Thay đổi cường độ liên quan primary đỏ. Quan sát cả da, gỗ và vật trung tính."
+      ],
+      [
+        "Green Primary Hue và Saturation",
+        "Tác động quan hệ màu rộng; kiểm tra cây lẫn vùng da và bóng, không chỉ vật xanh lá."
+      ],
+      [
+        "Blue Primary Hue và Saturation",
+        "Có thể đổi cảm giác cam và xanh đồng thời. Không phải thanh riêng cho bầu trời."
+      ],
+      [
+        "Profile trước Calibration",
+        "Chốt profile nền rồi mới thử Calibration. Cùng giá trị trên profile khác nhau có thể tạo kết quả khác."
+      ],
+      [
+        "Đối chiếu Lightroom Mobile",
+        "Không coi mọi giao diện đều có Calibration tương đương Classic. Có thể tạo look bằng Curve, Mixer, Grading và mask."
+      ]
+    ],
+    "steps": [
+      "Chọn 6 RAW gồm nắng, râm, đèn trong nhà; lưu bản trung tính. Giữ cùng profile khi so Calibration.",
+      "Chỉ đổi Blue Primary Hue một mức nhỏ, ví dụ thử -10 rồi +10. Ghi những màu nào thay đổi, đặc biệt da và màu trời.",
+      "Hoàn nguyên rồi thử Saturation của cùng primary. Không thay Hue và Saturation cùng lúc trong lượt học đầu.",
+      "Chọn phương án có ích, kiểm tra 5 ảnh còn lại. Nếu chỉ một ảnh đẹp, coi đó là chỉnh riêng ảnh, chưa phải nền preset.",
+      "Sau khi chốt nền Calibration, tinh lại Mixer và Grading. Nếu kết quả lệch mạnh, giảm Calibration thay vì thêm nhiều chỉnh sửa bù."
+    ],
+    "case": "Một preset trông đẹp trên nắng chiều nhưng làm da trong bóng râm quá cam: thử giảm Calibration trước, kiểm tra WB theo cảnh, rồi mới chỉnh Orange riêng. Tìm nguyên nhân sớm giúp giảm chỉnh bù.",
+    "errors": [
+      "Tưởng Blue Primary chỉ đổi xanh: tắt bật và quan sát cả cam, đỏ, da.",
+      "Da mất tự nhiên ở nhiều ảnh: giảm mức tác động rộng và kiểm tra profile.",
+      "Không thấy Calibration: kiểm tra đúng ứng dụng và phiên bản; không tìm một thanh thay thế hoàn toàn tương đương."
+    ],
+    "exercise": [
+      "Lập bảng 6 ảnh và 3 trạng thái Calibration: gốc, thử âm, thử dương. Mỗi ảnh ghi da, nền, vùng xám.",
+      "Chọn một thay đổi nhỏ có thể dùng lại, hoặc kết luận không cần Calibration và giải thích."
+    ],
+    "answer": "Đạt khi dự đoán được đây là thay đổi rộng, nhận ra tác dụng phụ và không ép dùng công cụ nếu Mixer hoặc Grading đã đủ.",
+    "refs": [
+      "tone",
+      "compare"
+    ],
+    "days": [
+      8,
+      9,
+      12
+    ],
+    "chapter": "5 và 7",
+    "visual": "palette",
+    "id": 8,
+    "sources": [
+      [
+        "Adobe | Tone và Color",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/image-tone-color.html"
+      ],
+      [
+        "Adobe | So sánh Classic và Lightroom",
+        "https://helpx.adobe.com/lightroom-classic/desktop/kb/lightroom-feature-comparison.html"
+      ]
+    ],
+    "group": "Công cụ màu",
+    "sections": [
+      {
+        "title": "Primary không có nghĩa là vật thể cùng tên màu",
+        "paragraphs": [
+          "Calibration tác động cách các thành phần màu được diễn giải trong hệ xử lý, vì vậy chỉnh Blue Primary có thể làm cảm giác cam và xanh cùng đổi. Đây không phải một HSL Blue khác. Dùng nó như công cụ riêng cho trời thường dẫn đến sửa da ngoài ý muốn.",
+          "Trong lab, bạn trộn một phần nhỏ các kênh để thấy thay đổi rộng. Ma trận minh họa không phải thuật toán Calibration của Adobe, và các số không thể chép vào Lightroom. Điểm cần học là tính lan rộng và việc thử trên nhiều màu."
+        ]
+      },
+      {
+        "title": "Tại sao phải cố định profile khi thử Calibration",
+        "paragraphs": [
+          "Nếu vừa đổi profile vừa kéo Calibration, bạn không còn biết biến đổi nào tạo hiệu quả. Hãy giữ profile và WB nền, thử một primary, xem cả da, lá, gỗ và xám. Ghi một tác dụng có lợi và một tác dụng phụ trước khi quyết định giữ.",
+          "Đổi profile về sau có thể làm nền preset khác đi, nên bạn phải kiểm tra lại Mixer và Grading phụ thuộc. Không coi giá trị Calibration là dấu hiệu nhận diện duy nhất của phong cách."
+        ]
+      },
+      {
+        "title": "Kiểm thử trên ảnh chưa dùng để tạo look",
+        "paragraphs": [
+          "Chọn ảnh nắng, râm, trong nhà, có da và có cây. Một điều chỉnh làm một ảnh đẹp hơn có thể đẩy ảnh khác quá cam hoặc làm vùng xám đổi sắc. Điều kiện kiểm định phải rộng hơn bộ ảnh bạn dùng để tự thuyết phục mình.",
+          "Nếu chỉ một cảnh cần thay đổi đó, lưu thành biến thể theo cảnh hoặc chỉnh riêng. Nếu nhiều cảnh đều tốt hơn với mức nhẹ, mới cân nhắc đưa vào nền look. Cũng có thể kết luận không cần Calibration; đó là một quyết định hợp lý."
+        ]
+      },
+      {
+        "title": "Giảm chỉnh bù khi đã tìm ra nguyên nhân",
+        "paragraphs": [
+          "Giả sử Calibration làm da quá cam, bạn giảm Orange Saturation để cứu, rồi tăng Red để lấy môi lại, rồi mask da vì môi lệch. Chuỗi này khó duy trì. Thử giảm tác động rộng ban đầu có thể giải quyết nhiều vấn đề cùng lúc.",
+          "Mỗi khi xuất hiện lỗi lặp lại ở cả series, tắt từng nhóm theo thứ tự: profile nền, Calibration, curve kênh, Grading, Mixer. Tìm nơi sinh lỗi trước khi xây thêm lớp sửa. Duy trì một bản trung tính giúp bạn không lạc trong chuỗi bù trừ."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Look đẹp trên ảnh trời nhiều xanh nhưng khi áp chân dung trong bóng râm thì da bị cam và lá ngả màu lạ.",
+      "stages": [
+        [
+          "Giữ nền",
+          "Cân WB theo nguồn sáng từng ảnh, không dùng WB cố định để đánh giá preset."
+        ],
+        [
+          "Cô lập",
+          "Tắt Calibration rồi so da. Nếu da trở lại hợp lý, bạn đã có giả thuyết cụ thể."
+        ],
+        [
+          "Giảm nguồn lỗi",
+          "Giảm primary đang tác động mạnh trước khi sửa lại từng dải HSL."
+        ],
+        [
+          "Kiểm định",
+          "Thử trên ít nhất ba nguồn sáng, ghi điều kiện nào cần biến thể riêng."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Một thay đổi Calibration làm cả da và lá đổi, nhưng HSL sửa da lại đẹp. Có chắc nên giữ cả hai không?",
+      "answer": "Chưa chắc. Cần so với phương án giảm thay đổi rộng ban đầu. Ít lớp bù hơn thường dễ kiểm soát, nhưng quyết định cuối dựa trên kết quả qua nhiều ảnh và mức độ nhất quán."
+    },
+    "lab": "calibration",
+    "labTask": "Thay từng hệ số trộn kênh, xem tác động toàn ảnh và bảng màu. Mục tiêu là nhận biết tác dụng phụ, không match số Lightroom.",
+    "checklist": [
+      "Không nhầm primary với dải HSL",
+      "Cố định các yếu tố nền khi thử",
+      "Thử trên cảnh mới trước khi lưu preset"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-12/"
+  },
+  {
+    "title": "Masking và tạo chiều sâu bằng ánh sáng",
+    "goal": "Chỉnh đúng vùng, tạo điểm nhìn và xử lý ánh sáng hỗn hợp mà không làm toàn ảnh lệch. Hiểu các phép kết hợp mask.",
+    "idea": "Mask trả lời câu hỏi chỉnh ở đâu. Các thanh trong mask trả lời chỉnh như thế nào. Một mask được chọn đúng nhưng tăng sáng quá nhiều vẫn tạo ảnh giả; chọn vùng và cường độ đều cần kiểm tra.",
+    "tools": [
+      [
+        "Subject Sky Background People",
+        "Lựa chọn tự động cho vùng lớn hoặc người; kết quả cần kiểm tra tóc, kính và các khe hở."
+      ],
+      [
+        "Object và Brush",
+        "Object hỗ trợ chọn vật; Brush cho phép tô thủ công. Size đổi cỡ, Feather làm mềm rìa, Flow tích lũy nét, Density giới hạn mức phủ."
+      ],
+      [
+        "Linear và Radial Gradient",
+        "Tạo chuyển vùng thẳng hoặc elip; hữu ích dẫn sáng, làm dịu cạnh ảnh và dodge burn rộng."
+      ],
+      [
+        "Color Range và Luminance Range",
+        "Chọn theo màu hoặc độ sáng. Thường cần kết hợp phạm vi vị trí để tránh tác động nhầm."
+      ],
+      [
+        "Add Subtract Intersect",
+        "Add mở rộng vùng, Subtract bỏ phần, Intersect giữ vùng giao. Kiểm tra overlay sau mỗi phép."
+      ],
+      [
+        "Invert và Overlay",
+        "Đảo vùng chọn; overlay hiển thị nơi ảnh hưởng. Tắt overlay khi đánh giá màu thật."
+      ],
+      [
+        "Thanh chỉnh trong mask",
+        "Exposure, tone, Temp, Tint, Texture và các điều chỉnh hỗ trợ tùy phiên bản. Không phải mọi thanh toàn cục đều có bản cục bộ."
+      ],
+      [
+        "Amount và tên mask",
+        "Nếu có Amount, dùng giảm tổng tác động. Đặt tên theo ý định như Mặt sáng nhẹ để lần sau đọc được quyết định."
+      ]
+    ],
+    "steps": [
+      "Trên ảnh chân dung đã chỉnh nền, tạo Subject mask và xem overlay ở tóc. Subtract Brush nếu vùng nền bị chọn nhầm.",
+      "Nâng sáng mặt nhẹ, ví dụ +0.2 EV rồi xem Fit. Nếu vai và áo bị sáng quá, giới hạn bằng People hoặc Brush.",
+      "Tạo Radial Gradient mềm gần hướng sáng có thật. Tránh vẽ quầng sáng đồng tâm quanh người nếu cảnh không có nguồn sáng đó.",
+      "Chọn nền rồi Intersect Luminance Range nếu chỉ muốn hạ vùng nền quá sáng. Kiểm tra áo trắng không bị ảnh hưởng.",
+      "Tắt tất cả mask, bật lại từng cái. Kiểm tra viền tóc 100% rồi xem cả ảnh để phát hiện chủ thể như bị dán vào nền."
+    ],
+    "case": "Mặt đúng nhưng tường phía sau tranh mắt: hạ tường bằng Background kết hợp vùng sáng. Không tăng Exposure mặt liên tục vì sẽ làm da phẳng và mất chi tiết.",
+    "errors": [
+      "Viền sáng quanh người: sửa rìa mask, tăng độ mềm phù hợp và giảm chênh Exposure.",
+      "Tô mãi mới đủ mạnh: kiểm tra Flow và Density, tránh lạm dụng nét chồng.",
+      "Màu nhìn kỳ khi đang tô: tắt overlay để xem màu thật trước khi kết luận."
+    ],
+    "exercise": [
+      "Tạo 3 mask có tên: mặt, nền sáng, vùng dẫn mắt. Mỗi mask ghi mục đích và vùng phải bảo vệ.",
+      "Tạo một mask giao giữa nền và vùng sáng; chụp hoặc xuất hai bản bật tắt để đánh giá hiệu quả."
+    ],
+    "answer": "Đạt khi hướng sáng hợp cảnh, viền sạch ở 100% và khi xem Fit mắt tới đúng chủ thể. Một mask lớn mềm tốt có thể hiệu quả hơn nhiều mask mạnh.",
+    "refs": [
+      "mask",
+      "learn"
+    ],
+    "days": [
+      5,
+      6,
+      15,
+      16
+    ],
+    "chapter": "6",
+    "visual": "palette",
+    "id": 9,
+    "sources": [
+      [
+        "Adobe | Masking",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"
+      ],
+      [
+        "Adobe | Tutorial thực hành",
+        "https://lightroom.adobe.com/learn/tutorial"
+      ]
+    ],
+    "group": "Thực hành",
+    "sections": [
+      {
+        "title": "Một mask tốt phải trả lời cả ở đâu và mạnh bao nhiêu",
+        "paragraphs": [
+          "Mask là một trường trọng số từ không tác động đến tác động đầy đủ, không chỉ một đường viền có hoặc không. Feather quyết định chuyển rìa; Flow liên quan mức tích lũy nét cọ; Density giới hạn mức phủ của cọ. Tạo vùng đúng nhưng tăng sáng quá mạnh vẫn làm ảnh giả.",
+          "Select Subject hoặc People là lựa chọn hỗ trợ, không đảm bảo đúng từng sợi tóc hay kính. Kiểm tra overlay để sửa phạm vi; tắt overlay để đánh giá màu thật. Không dùng màu overlay làm cơ sở kết luận da bị đỏ."
+        ]
+      },
+      {
+        "title": "Add Subtract và Intersect là các phép về phạm vi",
+        "paragraphs": [
+          "Add mở rộng vùng, Subtract bỏ phần không cần, Intersect chỉ giữ vùng giao. Ví dụ muốn hạ tường sáng nhưng không đụng áo, chọn nền rồi giao với vùng độ sáng cao. Chỉ dùng Luminance Range toàn ảnh có thể chọn luôn áo trắng.",
+          "Hãy đặt tên theo ý định, như Tường bớt sáng thay vì Mask 7. Nếu không diễn đạt được mục đích, xem lại liệu mask có cần thiết. Nhiều mask mạnh chồng nhau dễ làm kết quả thiếu nhất quán."
+        ]
+      },
+      {
+        "title": "Dodge burn cần đi theo ánh sáng có thể tin",
+        "paragraphs": [
+          "Dodge làm sáng và burn làm tối có thể dẫn mắt và nhấn khối. Với một nguồn sáng từ trái, nâng nhẹ phía đã nhận sáng và giữ bóng chuyển mềm thường dễ tin hơn vẽ vòng sáng đồng tâm quanh người. Đừng làm đều hai má chỉ để tất cả da cùng độ sáng.",
+          "Trong lab, mask là elip hình học di chuyển được, hoàn toàn không phải AI nhận diện người. Dịch tâm mask bằng nhấp vào ảnh, chỉnh độ rộng và Feather, rồi thay Exposure cục bộ. Bạn đang học về vị trí và chuyển vùng, không phải học một nút Select Subject giả."
+        ]
+      },
+      {
+        "title": "Halo là dấu hiệu phải xem cả rìa và mức chênh",
+        "paragraphs": [
+          "Viền sáng có thể đến từ vùng chọn tràn ra nền, feather chưa phù hợp hoặc khác biệt Exposure quá lớn dù vùng chọn đúng. Không phải tăng feather luôn giải quyết được mọi halo; quá mềm cũng khiến ánh sáng tràn sang vùng không cần.",
+          "Xem 100% ở tóc và đường áo để sửa kỹ thuật, rồi Fit để biết người có như dán lên nền không. Chỉ khi cả hai mức xem đều ổn mới coi mask hoàn tất. Nếu phải giảm tác động rất nhiều mới tự nhiên, có thể nền toàn cục chưa được đặt đúng."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Mặt hơi tối nhưng áo và nền đã ổn. Khi tăng Exposure toàn ảnh thì áo bị gắt.",
+      "stages": [
+        [
+          "Khoanh vùng",
+          "Tạo mask mặt thay vì cả người nếu chỉ mặt cần nâng. Trong lab đặt elip vào mặt."
+        ],
+        [
+          "Mức chỉnh",
+          "Thử cục bộ +0.3 EV; so trán và má để tránh phẳng mặt."
+        ],
+        [
+          "Rìa",
+          "Điều chỉnh độ rộng và feather, quan sát tóc cùng nền sát má."
+        ],
+        [
+          "Xác nhận",
+          "Tắt mask rồi bật lại ở Fit. Mặt nên rõ hơn nhưng vẫn thuộc cùng một cảnh."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Bạn nâng mặt +1.5 EV và thấy người tách nền rõ. Vì sao đó chưa chắc là cải thiện?",
+      "answer": "Tách nền chỉ là một mục tiêu. Cường độ lớn có thể phá hướng sáng, chuyển sắc da và tính liên kết với cổ, áo, nền. Cần chấm cả độ tự nhiên và chất lượng rìa."
+    },
+    "lab": "mask",
+    "labTask": "Nhấp ảnh để đặt tâm elip, thay bán kính và Feather, bật overlay kiểm tra rồi tắt để xem tăng sáng thật.",
+    "checklist": [
+      "Có tên và mục đích cho mask",
+      "Kiểm tra rìa và toàn khung",
+      "Không nhầm mô phỏng elip với nhận diện AI"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-5/"
+  },
+  {
+    "title": "Texture Clarity Dehaze Detail và chất ảnh",
+    "goal": "Kiểm soát độ trong, độ nổi, nhiễu và độ sắc. Tránh nhầm ảnh nhiều vi tương phản với ảnh có chất lượng cao.",
+    "idea": "Chất ảnh là tổng hợp của chuyển sắc, chi tiết, nhiễu và cách hiển thị cuối. Luôn xem cả Fit lẫn 100%; một ảnh trông sắc khi thu nhỏ có thể có halo hoặc da sáp khi phóng lớn.",
+    "tools": [
+      [
+        "Texture Clarity Dehaze",
+        "Texture nhấn chi tiết cỡ vừa; Clarity tăng cảm giác tương phản cục bộ; Dehaze thay đổi độ mù và có thể đổi màu mạnh."
+      ],
+      [
+        "Sharpening Amount và Radius",
+        "Amount là cường độ; Radius là độ rộng tác động ở biên. Bắt đầu nhẹ và xem tóc, chữ, đường chân trời."
+      ],
+      [
+        "Sharpening Detail và Masking",
+        "Detail nhấn chi tiết nhỏ; Masking hạn chế tác động vào vùng phẳng. Giữ Alt hoặc Option để xem hỗ trợ khi kéo."
+      ],
+      [
+        "Noise Reduction Luminance",
+        "Giảm nhiễu sáng; Detail giữ chi tiết, Contrast giữ cấu trúc nhưng có thể làm nhiễu quay lại."
+      ],
+      [
+        "Noise Reduction Color",
+        "Giảm đốm màu; Detail và Smoothness cân bằng rìa màu với độ mượt."
+      ],
+      [
+        "AI Denoise",
+        "Dùng khi file và phiên bản hỗ trợ. Tài liệu mới có Denoise trong Detail; video cũ có thể mô tả quy trình tạo DNG khác."
+      ],
+      [
+        "Raw Details và Super Resolution",
+        "Enhance chi tiết và tăng kích thước là mục tiêu khác nhau. Super Resolution không biến ảnh sai nét thành đúng nét."
+      ],
+      [
+        "Vibrance và Saturation",
+        "Saturation tác động rộng; Vibrance điều chỉnh theo mức bão hòa có sẵn. Vibrance không đảm bảo bảo vệ mọi màu da."
+      ]
+    ],
+    "steps": [
+      "Chọn ảnh ISO cao có da, tóc, tường và chữ. Đặt Exposure gần đúng để thấy nhiễu thật trong vùng cần dùng.",
+      "Nếu cần AI Denoise, thực hiện sớm trước mask và Remove; chờ xử lý xong rồi kiểm tra chi tiết. Xem định dạng hỗ trợ trong Adobe.",
+      "So Denoise nhẹ và mạnh ở 100%. Chọn bản còn tóc và lỗ chân lông thay vì bản sạch tuyệt đối nhưng mất kết cấu.",
+      "Tinh Sharpening với Amount vừa phải và Masking để tránh làm sắc tường phẳng. Kiểm tra halo trên rìa sáng tối.",
+      "Thử Texture và Clarity riêng; dùng mask nếu chỉ muốn áo hoặc tóc nổi hơn. Xuất ảnh đúng kích thước dự kiến để chấm chất ảnh cuối."
+    ],
+    "case": "Chân dung da đẹp nhưng tóc mềm: giảm Texture toàn ảnh sẽ làm tóc tệ hơn. Giữ toàn ảnh cân bằng, mask da nhẹ riêng, mask tóc khi cần. Không dùng giảm nhiễu để chữa sai nét.",
+    "errors": [
+      "Da sáp: giảm Denoise, Luminance NR hoặc Texture âm.",
+      "Viền trắng: giảm sharpening Radius hoặc Amount và Clarity.",
+      "Màu quá đậm sau Dehaze: giảm Dehaze và kiểm tra lại WB, saturation của vùng ảnh hưởng."
+    ],
+    "exercise": [
+      "Làm 3 bản cùng ảnh ISO cao: tự nhiên, sạch quá mức, sắc quá mức. Ghi chi tiết bị mất hoặc halo nhìn thấy.",
+      "Xuất cạnh dài 2048 px và bản đầy đủ; so ở kích thước sử dụng, không chỉ nhìn preview."
+    ],
+    "answer": "Đạt khi phân biệt nhiễu với kết cấu, không có halo rõ và không hy sinh chi tiết quan trọng để đạt bề mặt sạch. Thông số phụ thuộc file và kích thước xuất.",
+    "refs": [
+      "enhance",
+      "retouch"
+    ],
+    "days": [
+      4,
+      22,
+      27
+    ],
+    "chapter": "5 và 6",
+    "visual": "palette",
+    "id": 10,
+    "sources": [
+      [
+        "Adobe | Denoise và Enhance",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/enhance-details.html"
+      ],
+      [
+        "Adobe | Retouch và các công cụ chi tiết",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/retouch-photos.html"
+      ]
+    ],
+    "group": "Thực hành",
+    "sections": [
+      {
+        "title": "Độ nét cảm nhận và chi tiết thực sự khác nhau",
+        "paragraphs": [
+          "Sharpening tăng tương phản quanh rìa để ảnh có vẻ sắc hơn; nó không khôi phục hoàn hảo chi tiết chưa ghi được do sai nét hay rung. Một cạnh có viền sáng tối mạnh có thể trông sắc khi thu nhỏ nhưng trở thành halo ở 100%.",
+          "Amount và Radius tương tác với kích thước đầu ra. Radius lớn trên chi tiết nhỏ dễ làm cạnh thô. Detail có thể nhấn cấu trúc nhỏ lẫn nhiễu. Masking giúp hạn chế vùng phẳng. Đừng dùng một cấu hình cho mọi độ phân giải và mục đích."
+        ]
+      },
+      {
+        "title": "Texture Clarity và Dehaze không phải ba mức của cùng một thanh",
+        "paragraphs": [
+          "Chúng tác động ở các đặc trưng khác nhau của chi tiết và tương phản. Texture thường hữu ích với kết cấu; Clarity dễ làm vùng trung gian nổi hơn; Dehaze có thể đổi tương phản và màu rất mạnh. Tên gọi gần nhau không có nghĩa có thể thay thế nhau.",
+          "Nếu da tốt nhưng áo thiếu kết cấu, hãy ưu tiên mask áo. Tăng Clarity toàn ảnh có thể làm lỗ chân lông gắt và bầu trời đậm thêm. Trong lab chỉ dùng unsharp mask và làm mượt để minh họa đánh đổi sắc mịn; không giả lập đầy đủ Texture hoặc Denoise Adobe."
+        ]
+      },
+      {
+        "title": "Khử nhiễu là bài toán phân biệt nhiễu với kết cấu",
+        "paragraphs": [
+          "Nhiễu sáng là biến thiên độ sáng ngẫu nhiên; nhiễu màu là những đốm sắc không mong muốn. Giảm nhiễu quá mức có thể làm tóc, vải và da hòa thành mảng. Kiểm tra vùng phẳng lẫn vùng có kết cấu để thấy đánh đổi.",
+          "AI Denoise có định dạng và điều kiện hỗ trợ tùy phiên bản. Làm sớm khi cần, rồi kiểm tra lại mask hoặc Remove. Không học theo một video cũ rồi cho rằng mọi phiên bản đều phải tạo cùng một loại file đầu ra."
+        ]
+      },
+      {
+        "title": "Chấm chất ảnh ở đúng kích thước sử dụng",
+        "paragraphs": [
+          "Một ảnh 6000 pixel xem Fit che giấu nhiều lỗi. Ngược lại xem 200% có thể khiến bạn sửa những thứ không ai nhìn thấy ở đầu ra. Hãy xem Fit cho cảm giác, 100% cho kỹ thuật và file xuất đúng kích thước cho quyết định cuối.",
+          "Trong lab có chế độ phóng vùng chi tiết để bạn thấy halo và mất kết cấu. Tạo một bản vừa phải rồi một bản quá tay cố ý. Sự khác nhau giữa hai bản giúp bạn nhận ra ngưỡng dừng trên file thật, thay vì học một con số sharpening cố định."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Ảnh có tóc rõ nhưng da hơi nhiễu. Sau khi làm mịn mạnh, da sạch nhưng tóc thành mảng.",
+      "stages": [
+        [
+          "Xem vùng",
+          "So tóc, vải và tường ở cùng độ phóng. Xác định thứ bị xóa là nhiễu hay chi tiết."
+        ],
+        [
+          "Giảm xử lý rộng",
+          "Hạ mức làm mịn trước, xem kết cấu có trở lại không."
+        ],
+        [
+          "Tách nhu cầu",
+          "Nếu chỉ da cần dịu, xử lý cục bộ thay vì làm mịn toàn ảnh."
+        ],
+        [
+          "Xuất thử",
+          "So ảnh nhỏ dùng trên web trước khi quyết định cần thêm sắc hay không."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Vì sao tăng sharpening sau khi làm mịn quá mạnh không chắc lấy lại tóc như cũ?",
+      "answer": "Làm mịn có thể đã loại biến thiên nhỏ mang thông tin tóc. Sharpen chỉ nhấn các cạnh còn lại và có thể khuếch đại artifact; nó không tự biết chính xác cấu trúc đã mất."
+    },
+    "lab": "detail",
+    "labTask": "Tăng sharpening, xem halo; tăng làm mượt, xem tóc mất kết cấu. Dùng nút phóng chi tiết để so cùng vị trí.",
+    "checklist": [
+      "Phân biệt sắc cảm nhận với chi tiết",
+      "Nhìn được halo và da sáp",
+      "So file ở kích thước sử dụng"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-22/"
+  },
+  {
+    "title": "Crop Optics Transform Remove Lens Blur và Effects",
+    "goal": "Hoàn thiện bố cục và xử lý lỗi quang học trước khi kết luận màu chưa đẹp. Biết giới hạn của xóa vật thể và giả lập độ sâu.",
+    "idea": "Màu chịu ảnh hưởng bởi những gì nằm trong khung. Một biển hiệu đỏ sát mép có thể phá bảng màu; crop hợp lý đôi khi hiệu quả hơn giảm toàn bộ dải đỏ.",
+    "tools": [
+      [
+        "Crop và Straighten",
+        "Aspect chọn tỷ lệ, khóa giữ tỷ lệ, Angle xoay thẳng; crop cần giữ không gian nhìn và phần cơ thể quan trọng."
+      ],
+      [
+        "Lens Corrections hoặc Optics",
+        "Remove Chromatic Aberration giảm viền màu; Enable Profile Corrections sửa méo và tối góc theo profile hỗ trợ."
+      ],
+      [
+        "Manual và Defringe",
+        "Chỉnh Distortion, Vignetting và phạm vi viền tím xanh khi cần. Defringe mạnh có thể làm mất màu thật ở rìa."
+      ],
+      [
+        "Transform",
+        "Upright tự động hoặc Guided theo đường tham chiếu. Vertical, Horizontal, Rotate, Aspect, Scale, X và Y Offset tinh hình học."
+      ],
+      [
+        "Remove Heal Clone",
+        "Remove xử lý vật thừa; Heal hòa vùng sửa với xung quanh; Clone sao chép nguồn. Tên và tùy chọn phụ thuộc phiên bản."
+      ],
+      [
+        "Generative Remove",
+        "Tạo nội dung thay vùng chọn. Kiểm tra kết quả và biến thể; công cụ có thể cần mạng hoặc điều kiện tài khoản."
+      ],
+      [
+        "Lens Blur",
+        "Blur Amount, dạng Bokeh và Boost điều khiển cảm giác mờ; Focus Range và tinh vùng Focus hoặc Blur sửa bản đồ chiều sâu."
+      ],
+      [
+        "Effects",
+        "Vignette: Amount, Midpoint, Roundness, Feather, Highlights; Grain: Amount, Size, Roughness. Đánh giá theo kích thước đầu ra."
+      ]
+    ],
+    "steps": [
+      "Chọn ảnh phố có người và kiến trúc. Bật sửa viền màu và profile lens nếu đúng; xem mép khung thay đổi thế nào.",
+      "Dùng Guided Upright với hai đường thẳng đáng tin. Chỉnh vừa đủ, tránh kéo người thành dài bất thường; crop phần mép trắng.",
+      "Crop để loại vùng tranh mắt. Sau đó Remove một vật nhỏ ở nền; kiểm tra hoa văn lặp, bóng và đường thẳng ở 100%.",
+      "Nếu cần Lens Blur, dùng mức nhẹ và xem tóc, kính, khoảng trống giữa tay và thân. Tinh bản đồ chiều sâu khi mặt phẳng sai.",
+      "Thêm vignette nhẹ nếu hỗ trợ điểm nhìn, Grain nếu có chủ đích. Xuất rồi so lại; bỏ hiệu ứng không đóng góp."
+    ],
+    "case": "Ảnh trong quán có lưới cửa sau tóc: Lens Blur có thể hiểu sai khe tóc và cửa cùng độ sâu. Giảm cường độ hoặc bỏ blur nếu không sửa được rìa đáng tin.",
+    "errors": [
+      "Tòa nhà thẳng nhưng người méo: giảm Transform hoặc chọn bố cục khác.",
+      "Vùng xóa có họa tiết lạ: chọn nguồn Clone hoặc Heal khác, chia vùng sửa nhỏ.",
+      "Tối góc lộ như vòng tròn: giảm Amount, tăng Feather hoặc dùng mask theo ánh sáng."
+    ],
+    "exercise": [
+      "Nộp 1 ảnh hoàn thiện kèm ghi chú crop, lens, transform, remove và hiệu ứng nào đã dùng.",
+      "Xuất một bản không hiệu ứng và một bản có Grain hoặc Blur; giải thích giá trị thêm vào."
+    ],
+    "answer": "Đạt khi hình học hợp cảnh, không có dấu xóa rõ và độ sâu có thể tin. Không bắt buộc dùng đủ công cụ; biết bỏ hiệu ứng sai là một phần của bài.",
+    "refs": [
+      "retouch",
+      "upright",
+      "remove",
+      "blur"
+    ],
+    "days": [
+      7,
+      10,
+      21
+    ],
+    "chapter": "6 và 7",
+    "visual": "palette",
+    "id": 11,
+    "sources": [
+      [
+        "Adobe | Retouch và các công cụ chi tiết",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/retouch-photos.html"
+      ],
+      [
+        "Adobe | Guided Upright",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/guided-upright-perspective-correction.html"
+      ],
+      [
+        "Adobe | Remove",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/remove-tool.html"
+      ],
+      [
+        "Adobe | Lens Blur",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/lens-blur.html"
+      ]
+    ],
+    "group": "Thực hành",
+    "sections": [
+      {
+        "title": "Bố cục quyết định những màu nào còn được nhìn thấy",
+        "paragraphs": [
+          "Một biển đỏ sát mép có thể làm bảng màu rối hơn toàn bộ nền. Crop loại nó khỏi ảnh có thể hợp lý hơn kéo Red Saturation vì sẽ ảnh hưởng cả môi và áo. Chỉnh hình học và bố cục sớm giúp các quyết định màu dựa trên khung cuối.",
+          "Straighten xử lý đường chân trời, Transform xử lý phối cảnh nhưng có thể kéo giãn cơ thể. Không ép mọi cạnh tòa nhà thẳng nếu kết quả làm người bất thường. Chụp thẳng và giữ máy đúng từ đầu thường tốt hơn cứu hình học mạnh về sau."
+        ]
+      },
+      {
+        "title": "Sửa quang học và sửa phối cảnh không phải cùng việc",
+        "paragraphs": [
+          "Lens profile có thể bù méo và tối góc của ống kính khi được hỗ trợ. Chromatic Aberration và Defringe xử lý một số viền màu. Transform thay hình học theo các đường tham chiếu và tham số. Chọn đúng lỗi sẽ tránh dùng quá nhiều công cụ để chữa một triệu chứng.",
+          "Viền tím ở cạnh sáng tối không giống màu tím của hoa. Defringe quá rộng có thể làm hoa mất màu thật. Kiểm tra một cạnh bị lỗi và một vật có màu tương tự sau mỗi chỉnh. Không áp cực mạnh chỉ vì cảnh báo chưa biến mất hoàn toàn."
+        ]
+      },
+      {
+        "title": "Remove Heal Clone đều cần kiểm tra tính liên tục",
+        "paragraphs": [
+          "Một vật nhỏ trên tường trơn dễ xử lý hơn vật che họa tiết phức tạp hoặc bóng đổ. Clone sao nguồn có thể lặp hoa văn; Heal hòa vùng có thể bị lem; Generative Remove có thể tạo nội dung không đúng logic. Chọn kết quả bằng kiểm tra, không vì nó là AI.",
+          "Nhìn đường gạch, hướng bóng, độ sắc, kết cấu và ranh tiếp giáp. Nếu một vùng sửa làm người xem chú ý, chia thành phần nhỏ hoặc chọn công cụ khác. Không sử dụng kết quả tạo sinh như bằng chứng cho một chi tiết thực tế chưa được ghi lại."
+        ]
+      },
+      {
+        "title": "Hiệu ứng phải có vai trò trong ảnh",
+        "paragraphs": [
+          "Vignette dẫn mắt bằng giảm cạnh tranh ở mép nhưng dễ lộ vòng tối. Grain là kết cấu thêm có chủ đích, không phải cách tự động biến ảnh thành phim. Lens Blur mô phỏng độ sâu và cần kiểm tra tóc, kính và khe giữa tay thân.",
+          "Lab này cho thay tỷ lệ crop và vignette; khung crop là phần được xuất trong preview, không chỉnh RAW gốc. Nó không giả lập sửa lens, Upright hay Generative Remove. Dùng nó để quyết định bố cục rồi thực hiện công cụ tương ứng trong Lightroom."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Ảnh chân dung có nhiều tường bên phải và góc sáng trên trái làm mắt rời mặt.",
+      "stages": [
+        [
+          "Crop",
+          "Thử tỷ lệ dọc và xem đầu, tay, cốc có bị cắt khó chịu không. Không chỉ crop theo mặt."
+        ],
+        [
+          "Cạnh ảnh",
+          "Thử vignette nhẹ rồi so góc sáng. Nếu xuất hiện vòng tối, giảm hiệu ứng."
+        ],
+        [
+          "Tính hợp cảnh",
+          "Giữ hướng sáng từ trái thay vì làm tối toàn bộ khu vực nguồn sáng."
+        ],
+        [
+          "Kiểm tra",
+          "So hai tỷ lệ cạnh nhau theo mục đích đăng. Khung đẹp cho điện thoại chưa chắc hợp bản in ngang."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Vì sao chỉnh màu toàn dải đỏ để giấu một biển hiệu ở mép có thể là lựa chọn kém hiệu quả?",
+      "answer": "Dải đỏ có thể bao gồm môi, áo và những chi tiết có ích. Crop hoặc mask theo vị trí giải quyết đúng đối tượng hơn, nếu điều đó vẫn giữ được nội dung và bố cục cần thiết."
+    },
+    "lab": "geometry",
+    "labTask": "Đổi tỷ lệ khung, dịch vùng crop bằng thanh vị trí và thêm vignette. So phần nội dung bị mất trước khi chọn bố cục.",
+    "checklist": [
+      "Chọn crop dựa trên nội dung",
+      "Không nhầm quang học với phối cảnh",
+      "Không giữ hiệu ứng chỉ vì đã mất công làm"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-21/"
+  },
+  {
+    "title": "Màu da và xử lý các bối cảnh khó",
+    "goal": "Giữ chân dung đáng tin trong nắng, bóng râm và đèn hỗn hợp; xử lý cây xanh, trời và đồ ăn mà không áp cùng một công thức.",
+    "idea": "Không có một màu da chuẩn cho mọi người. Tông da thay đổi theo cá nhân, ánh sáng và phản xạ môi trường. Mục tiêu là giữ quan hệ sáng tối, sắc độ và sự sống của da trong bối cảnh.",
+    "tools": [
+      [
+        "Thứ tự chẩn đoán da",
+        "Xem Exposure, WB và profile trước Orange HSL. Da sai có thể do thiếu sáng, phản xạ hoặc Grading."
+      ],
+      [
+        "Da và môi trường",
+        "Áo, tường và cây phản chiếu màu lên da. Sửa từng vùng khi cần, không trung hòa cả cảnh chỉ để cứu một má."
+      ],
+      [
+        "Nắng gắt",
+        "Giữ chuyển vùng giữa trán, má và bóng; không nâng mọi bóng bằng nhau vì sẽ làm mặt phẳng."
+      ],
+      [
+        "Ánh sáng hỗn hợp",
+        "Chọn nguồn sáng chính làm chuẩn, dùng mask cho nguồn phụ. Có thể giữ một phần nóng lạnh để còn không khí."
+      ],
+      [
+        "Cây xanh và trời",
+        "Giảm cạnh tranh về độ sáng hoặc bão hòa; không mặc định mọi cây phải xanh rêu và mọi trời phải teal."
+      ],
+      [
+        "Đồ ăn và sản phẩm",
+        "Độ trung thực màu có thể quan trọng hơn look. Cần so với vật thật hoặc mẫu tham chiếu phù hợp."
+      ],
+      [
+        "Trang điểm và áo trắng",
+        "Son, phấn và chất vải có sắc riêng; không lấy mọi vùng sáng làm điểm trắng trung tính."
+      ],
+      [
+        "Giữ kết cấu",
+        "Dùng Texture âm hoặc NR thận trọng, kiểm tra da ở 100%. Da tự nhiên không đồng nghĩa da không còn lỗ chân lông."
+      ]
+    ],
+    "steps": [
+      "Chọn 3 chân dung cùng người trong nắng, râm và đèn. Tạo bản nền sạch cho từng ảnh, chưa áp look.",
+      "So mặt với cổ và tay trong cùng nguồn sáng. Nếu khác vì phản xạ, mask đúng vùng thay vì chỉnh toàn bộ Orange.",
+      "Giảm ám bằng Temp hoặc Tint cục bộ từng chút. Nếu cần Point Color, dùng phạm vi vừa đủ và xem môi, mắt, tóc.",
+      "Áp look nhẹ rồi kiểm tra lại da. Nếu Grading làm mặt mất sức sống, giảm midtones hoặc mask bảo vệ theo khả năng phiên bản.",
+      "Xem cả series cạnh nhau. Chấp nhận khác biệt ánh sáng có thật nhưng giữ mức bão hòa và độ sáng da nhất quán tương đối."
+    ],
+    "case": "Da dưới tán cây bị xanh ở một bên: mask vùng phản xạ và thêm Tint magenta vừa đủ. Đừng tăng Tint toàn ảnh khiến phía mặt còn lại hồng.",
+    "errors": [
+      "Da xám sau giảm Orange: trả lại Saturation và sửa ám nguồn sáng trước.",
+      "Mặt sáng hơn cổ rõ: giảm mask nâng mặt hoặc mở rộng chuyển vùng mềm.",
+      "Răng và mắt trắng phát sáng: giảm whitening và so với ánh sáng chung."
+    ],
+    "exercise": [
+      "Tạo series 3 ảnh cùng người dưới 3 nguồn sáng, mỗi ảnh có bản sạch và bản look.",
+      "Ghi một lỗi màu da, nguyên nhân nghi ngờ, công cụ thử và kết quả; kiểm tra từng giả thuyết một."
+    ],
+    "answer": "Đạt khi da có kết cấu, mặt cổ tay hợp lý theo ánh sáng và không bị một look phủ đồng loạt. Không chấm bằng việc ép mọi da thành màu đào.",
+    "refs": [
+      "mask",
+      "mixer"
+    ],
+    "days": [
+      15,
+      16,
+      17,
+      18
+    ],
+    "chapter": "6 và 7",
+    "visual": "palette",
+    "id": 12,
+    "sources": [
+      [
+        "Adobe | Masking",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/masking.html"
+      ],
+      [
+        "Adobe | Color Mixer và Point Color",
+        "https://helpx.adobe.com/uk/lightroom-classic/desktop/process-and-develop-photos/color-mixer.html"
+      ]
+    ],
+    "group": "Thực hành",
+    "sections": [
+      {
+        "title": "Không có một mã màu da chuẩn áp cho mọi người",
+        "paragraphs": [
+          "Da thay đổi theo người, nguồn sáng, độ phơi, lớp trang điểm và phản xạ môi trường. Ngay trong một khuôn mặt, vùng sáng và bóng có thể khác sắc tự nhiên. Ép tất cả về cùng cam đào thường làm mất cá tính và cảm giác ánh sáng.",
+          "Hãy so quan hệ mặt cổ tay trong cùng nguồn sáng. Không yêu cầu vùng tay nhận nắng giống má trong bóng. Khi so một ảnh tham chiếu, nhớ tách sự khác nhau của người và cảnh khỏi phần hậu kỳ có thể điều khiển."
+        ]
+      },
+      {
+        "title": "Chẩn đoán theo thứ tự trước khi kéo Orange",
+        "paragraphs": [
+          "Nếu cả da lẫn áo trắng ám vàng, hãy xét WB. Nếu áo gần trung tính nhưng da bị cam sau preset, xét profile, curve kênh, Calibration và Grading. Nếu chỉ một má xanh gần lá, xét phản xạ và mask cục bộ.",
+          "Giảm Orange Saturation có thể giảm triệu chứng nhưng cũng làm da xám và môi nhạt. Chỉ dùng khi thật sự vấn đề là độ mạnh của dải cam; đừng lấy nó làm bước đầu cho mọi lỗi chân dung."
+        ]
+      },
+      {
+        "title": "Màu phản xạ có phạm vi và hướng",
+        "paragraphs": [
+          "Lá cây có thể phản xanh vào cằm, áo màu có thể phản vào cổ. Nếu lỗi chỉ ở một vùng, sửa toàn ảnh làm những phần đã đúng lệch theo. Mask mềm và một thay đổi Tint nhỏ có thể hợp lý hơn một chỉnh lớn toàn cục.",
+          "Trong lab, vùng da chỉ được ước lượng bằng một dải Hue mềm, không nhận diện khuôn mặt. Cốc cam có thể bị chọn cùng. Đó chính là ví dụ về giới hạn của chọn màu và lý do cần kết hợp vị trí trong Lightroom."
+        ]
+      },
+      {
+        "title": "Da sống động còn cần độ sáng và kết cấu",
+        "paragraphs": [
+          "Da không chỉ là Hue. Nếu mặt thiếu sáng, bạn có thể thấy nó xỉn dù sắc tương đối đúng; nếu nâng quá nhiều, da có thể nhạt và phẳng. Texture âm mạnh tạo bề mặt sáp, còn Clarity cao làm kết cấu gắt.",
+          "Hãy chốt độ sáng và WB trước, tinh màu rồi kiểm tra kết cấu. Khi chỉnh hàng loạt, so mức bão hòa và độ sáng tương đối theo nhóm ánh sáng; cho phép khác biệt có thật giữa trong nhà và ngoài nắng."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Sau khi áp look, mặt cam nhưng áo và tường vẫn gần trung tính; giảm Orange khiến mặt xám.",
+      "stages": [
+        [
+          "Tìm nguồn",
+          "Tắt Grading rồi Calibration từng phần để biết lớp nào đẩy da."
+        ],
+        [
+          "Giảm nguồn lỗi",
+          "Giảm mức gây ám trước khi giảm toàn bộ saturation của da."
+        ],
+        [
+          "Tinh vùng",
+          "Nếu chỉ vùng phản xạ lệch, mask vị trí. Tránh làm môi và cốc đổi cùng."
+        ],
+        [
+          "So người",
+          "Kiểm tra mặt cổ tay và giữ sự khác nhau hợp nguồn sáng."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Da và cốc đều vào phạm vi chọn màu da trong lab. Điều đó cho thấy công cụ nhận diện sai người hay mô hình chọn sai loại thông tin?",
+      "answer": "Lab chọn theo Hue chứ không nhận diện người. Nếu hai vật cùng màu thì mô hình không có thông tin để phân biệt. Cần thêm vị trí hoặc chọn vùng thích hợp."
+    },
+    "lab": "skin",
+    "labTask": "Điều chỉnh dải cam và Tint nhẹ. Bật phạm vi màu để nhận ra cốc cũng có thể đổi; dùng bài này để học giới hạn của chọn theo màu.",
+    "checklist": [
+      "Chẩn đoán ám toàn cục hay cục bộ",
+      "Giữ khác biệt da theo người và ánh sáng",
+      "Kiểm tra cả màu lẫn kết cấu"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-15/"
+  },
+  {
+    "title": "Đọc ảnh mẫu và tái tạo cảm giác màu",
+    "goal": "Biến một ảnh tham chiếu thành các giả thuyết có thể thử. Học tái tạo quan hệ màu thay vì đoán preset hay sao chép số.",
+    "idea": "Ảnh đã xuất không cho biết chắc profile, đèn, lens hay mọi bước hậu kỳ. Có nhiều cách tạo kết quả gần nhau. Bạn có thể tái tạo cảm giác và quan hệ màu; không thể đảm bảo khôi phục đúng thiết lập gốc từ một JPEG bất kỳ.",
+    "tools": [
+      [
+        "So đầu vào tương đồng",
+        "Chọn ảnh có hướng sáng, vật thể và màu nền gần tham chiếu; hậu kỳ khó bù hoàn toàn khác biệt lúc chụp."
+      ],
+      [
+        "Tách tone khỏi color",
+        "So tương phản, điểm đen, vùng sáng trước; sau đó so WB, dải màu vật thể và sắc trong từng vùng tone."
+      ],
+      [
+        "Năm vùng tham chiếu",
+        "Ghi da, nền, trắng, đen và điểm nhấn. So cả hue, độ mạnh và độ sáng tương đối."
+      ],
+      [
+        "Phân biệt màu vật và màu ánh sáng",
+        "Nếu mọi vật trong bóng đều lạnh, nghĩ tới WB cục bộ hoặc Grading; nếu chỉ lá đổi màu, nghĩ Mixer hoặc mask."
+      ],
+      [
+        "Tỷ lệ diện tích",
+        "Cùng màu nhưng nền chiếm nhiều hơn có thể làm cảm giác khác. Crop hoặc lựa ảnh có thể là bước cần thiết."
+      ],
+      [
+        "Reference View",
+        "Trên Classic có thể dùng chế độ tham chiếu trong Develop để so ảnh mẫu và ảnh đang chỉnh; giữ cùng nền xem."
+      ],
+      [
+        "RGB và lấy mẫu",
+        "RGB tại một điểm chỉ là manh mối phụ thuộc profile và mã hóa; không đánh đồng cùng số với cùng cảm nhận."
+      ],
+      [
+        "Bảng sai khác",
+        "Viết sai khác thành câu: bóng quá xanh, da quá tối, cây quá bão hòa. Mỗi câu chọn một công cụ trước khi thử."
+      ]
+    ],
+    "steps": [
+      "Chọn tham chiếu có quyền sử dụng và ảnh RAW tương tự. Viết 5 đặc điểm: ví dụ đen hơi nâng, sáng mềm, da ấm, cây dịu, bóng xanh nhẹ.",
+      "Làm bản nền sạch. Ghép cấu trúc sáng tối bằng Exposure và Curve trước, chưa thêm màu sáng tạo.",
+      "Ghép màu nền bằng WB, Mixer hoặc Point Color; kiểm tra vùng da và các vật cần giữ.",
+      "Ghép sắc trong bóng sáng bằng Grading hoặc RGB Curve. Chỉnh từng giả thuyết, bật tắt để biết đúng nguyên nhân không.",
+      "Nghỉ mắt rồi ghi 3 sai khác lớn nhất. Sửa theo mức ảnh hưởng: ánh sáng, độ sáng, bảng màu, chi tiết. Dừng khi sửa tiếp gây hại hơn lợi."
+    ],
+    "case": "Tham chiếu có cây xanh rêu và da ấm, nhưng RAW của bạn chụp buổi trưa nắng gắt: hãy xử lý tương phản và vùng sáng trước. Đổi Green Hue ngay sẽ không tạo được ánh sáng mềm của ảnh mẫu.",
+    "errors": [
+      "Màu gần nhưng cảm giác khác: kiểm tra hướng sáng, crop và tỷ lệ màu.",
+      "Càng match càng bẩn: về bản sạch, bỏ chỉnh bù và ưu tiên ba sai khác lớn.",
+      "Cố đạt giống tuyệt đối: ghi rõ giới hạn do cảnh, dữ liệu hoặc ánh sáng và chọn mức tương đồng thực tế."
+    ],
+    "exercise": [
+      "Tái tạo 2 tham chiếu trên 2 RAW phù hợp; nộp ảnh tham chiếu, bản sạch, bản match và phiếu 5 vùng.",
+      "Với mỗi lần chỉnh, ghi giả thuyết, công cụ và điều gì thay đổi ngoài ý muốn."
+    ],
+    "answer": "Tự chấm 5 mục, mỗi mục 0 đến 2: tone, WB, bảng màu, nóng lạnh, chuyển sắc. Từ 8/10 là đạt bài luyện nếu không có lỗi da hoặc artifact rõ. Đây là rubric học tập, không là đo tương đồng khách quan.",
+    "refs": [
+      "proof",
+      "learn"
+    ],
+    "days": [
+      8,
+      9,
+      20
+    ],
+    "chapter": "5 và 7",
+    "visual": "palette",
+    "id": 13,
+    "sources": [
+      [
+        "Adobe | Develop và Soft Proofing",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/develop-module-options.html"
+      ],
+      [
+        "Adobe | Tutorial thực hành",
+        "https://lightroom.adobe.com/learn/tutorial"
+      ]
+    ],
+    "group": "Phong cách",
+    "sections": [
+      {
+        "title": "Match là khớp quan hệ không phải tìm số bí mật",
+        "paragraphs": [
+          "Một JPEG cuối không cho biết chắc nguồn sáng, profile, máy, phơi sáng hay chuỗi hậu kỳ. Có nhiều cách xử lý tạo kết quả gần nhau. Mục tiêu thực tế là khớp cảm giác, cấu trúc tone và quan hệ màu trong điều kiện đầu vào có thể so.",
+          "Nếu ảnh mẫu chụp nắng xiên còn ảnh của bạn chụp trưa gắt, thay Hue không tạo được bóng mềm như mẫu. Chọn ảnh đầu vào tương đồng giúp bài match có ý nghĩa và phân biệt được phần nào do chụp, phần nào do chỉnh."
+        ]
+      },
+      {
+        "title": "Tách bài toán thành năm lớp để không chỉnh bù",
+        "paragraphs": [
+          "Lớp một là bố cục và diện tích màu. Lớp hai là điểm đen, vùng sáng và tương phản. Lớp ba là cân bằng trắng nền. Lớp bốn là màu vật thể. Lớp năm là sắc phủ trong bóng sáng. Làm theo thứ tự này thường dễ biết nguyên nhân.",
+          "Ví dụ da có vẻ quá vàng có thể do nền mẫu lạnh hơn chứ không phải Hue da khác nhiều. Hãy so da trong quan hệ với áo và nền; không lấy một điểm pixel làm toàn bộ đáp án."
+        ]
+      },
+      {
+        "title": "Dùng phiếu năm vùng và ba sai khác lớn nhất",
+        "paragraphs": [
+          "Ghi da, nền, trắng, đen, điểm nhấn. Mỗi vùng ghi sáng tối tương đối, sắc và cường độ. Sau đó chọn ba sai khác ảnh hưởng lớn nhất để sửa. Câu bóng quá xanh dễ chọn công cụ hơn câu ảnh chưa giống.",
+          "Sau mỗi thay đổi, ghi vùng tốt hơn và vùng xấu đi. Nếu càng sửa càng bẩn, về bản sạch và bỏ chuỗi bù không còn rõ nguồn. Giữ một ảnh tham chiếu cạnh ảnh đang chỉnh ở cùng nền hiển thị."
+        ]
+      },
+      {
+        "title": "Một chỉ số số học không đại diện đầy đủ cảm nhận",
+        "paragraphs": [
+          "Trong lab, ảnh đích được tạo từ cùng ảnh đầu vào và một bộ tham số ẩn cố định, nên bài luyện có đáp án kiểm chứng được. Sai khác trung bình RGB là chỉ số trong mô hình này, không là thước đo chất lượng ảnh hoặc tương đồng cảm nhận phổ quát.",
+          "Thử sửa độ sáng trước, rồi nhiệt độ và bão hòa, rồi tương phản. Bạn có thể tạo ảnh mình thích hơn đích nhưng sai khác số lớn hơn; đó là ví dụ vì sao match kỹ thuật và sáng tạo có tiêu chí khác nhau."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Ảnh đích trong lab ấm nhẹ, ít bão hòa hơn và tương phản mềm hơn ảnh đầu vào.",
+      "stages": [
+        [
+          "Tone",
+          "So áo và tóc trước. Điều chỉnh Exposure và Contrast để khoảng sáng tối gần hơn."
+        ],
+        [
+          "WB",
+          "So tường và áo xem độ ấm tổng thể khác nhau ra sao; tinh Temp."
+        ],
+        [
+          "Màu",
+          "Giảm hoặc tăng saturation sau khi nền tone tương đối khớp."
+        ],
+        [
+          "Tự kiểm",
+          "Xem ba vùng cụ thể và chỉ số mô hình. Bấm xem lời giải sau khi đã ghi giả thuyết."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Nếu hai ảnh có mã màu trung bình gần nhau nhưng một ảnh có da lạnh và nền ấm đảo ngược ảnh kia thì đã match chưa?",
+      "answer": "Chưa. Trung bình có thể che vị trí và vai trò của màu. Bạn cần so từng vùng cùng cấu trúc ánh sáng, không chỉ một số tổng hợp."
+    },
+    "lab": "match",
+    "labTask": "Dùng bốn thanh để khớp ảnh đích. Ghi thứ tự thử trước khi mở lời giải; chỉ số đo sai khác trong mô hình RGB, không chấm thẩm mỹ.",
+    "checklist": [
+      "Chọn đầu vào tương đồng",
+      "So tone trước bảng màu",
+      "Nêu giới hạn của việc suy ra thiết lập gốc"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-8/"
+  },
+  {
+    "title": "Phát triển phong cách Preset và chỉnh cả bộ",
+    "goal": "Xây phong cách từ các quyết định lặp lại và kiểm chứng trên nhiều cảnh. Tạo preset giúp tiết kiệm thời gian mà vẫn linh hoạt.",
+    "idea": "Phong cách nằm trong cách chọn ánh sáng, bố cục, bảng màu và mức tương phản được duy trì qua nhiều ảnh. Một bộ preset chỉ là công cụ ghi lại một phần quyết định đó.",
+    "tools": [
+      [
+        "Moodboard có chú thích",
+        "Chọn ảnh bạn thích và ghi lý do cụ thể. Tách sở thích ánh sáng, màu, bố cục và chủ đề để biết phần nào đến từ lúc chụp."
+      ],
+      [
+        "Bản mô tả phong cách",
+        "Viết 5 quy tắc có thể kiểm tra: ví dụ sáng mềm, đen sâu vừa, cây ít nổi, da không đỏ, grain nhỏ nhẹ."
+      ],
+      [
+        "Preset nền và preset look",
+        "Nền xử lý nhóm kỹ thuật; look xử lý Curve, Mixer, Grading. Tách giúp sửa nguyên nhân dễ hơn."
+      ],
+      [
+        "Chọn mục lưu",
+        "Tránh lưu Exposure, WB, crop, vị trí Remove và mask riêng ảnh vào preset dùng chung nếu không chủ đích."
+      ],
+      [
+        "Amount và Adaptive",
+        "Nếu preset hỗ trợ Amount, dùng để tinh mức mạnh. Preset có AI mask cần cập nhật và kiểm tra từng ảnh."
+      ],
+      [
+        "Sync và Auto Sync",
+        "Sync chép các mục được chọn; Auto Sync có thể tác động liên tục tới nhiều ảnh. Kiểm tra vùng chọn trước khi chỉnh."
+      ],
+      [
+        "Ảnh đại diện",
+        "Chia theo nguồn sáng rồi chọn ảnh đại diện từng nhóm. Không lấy một ảnh nắng làm chuẩn phơi sáng cho cả bộ đèn tối."
+      ],
+      [
+        "Version và kiểm định",
+        "Đặt tên LookA_v01, ghi điều chỉnh và thử trên ảnh chưa dùng xây preset để tránh chỉ đẹp trên ảnh mẫu."
+      ]
+    ],
+    "steps": [
+      "Gom 15 ảnh bạn thích, viết lý do. Chọn 3 đặc điểm có thể lặp lại trong ảnh của bạn; không cố lấy mọi thứ từ nhiều tác giả.",
+      "Chỉnh 6 RAW khác cảnh theo ba đặc điểm đó. Tạo preset chỉ gồm các mục phù hợp mục tiêu, ghi profile nếu preset phụ thuộc profile.",
+      "Thử preset lên 12 ảnh mới gồm da, cây, trời, trong nhà. Chỉnh Exposure và WB từng nhóm, sau đó mới đánh giá chất lượng look.",
+      "Nếu nhiều ảnh gặp cùng lỗi, sửa preset nền. Nếu chỉ một cảnh lệch, tạo biến thể theo ánh sáng thay vì phá bản chung.",
+      "Sync look cho từng nhóm, kiểm tra ảnh đầu giữa cuối và tất cả ảnh có da hoặc ánh sáng lạ. Đặt tên phiên bản và lưu ghi chú."
+    ],
+    "case": "Nếu muốn cây dịu, hãy giảm độ nổi của cây theo mức cần thiết nhưng vẫn chấp nhận sắc cây thay đổi theo mùa. Phong cách bền là quan hệ chủ thể và nền ổn định, không phải mọi lá cùng một màu.",
+    "errors": [
+      "Preset đẹp đúng một ảnh: thử ảnh kiểm định chưa dùng xây look.",
+      "Cả bộ cùng số nhưng không nhất quán: chỉnh WB và Exposure theo nguồn sáng.",
+      "Preset kéo theo crop hay xóa nhầm: chọn lại các mục lưu và mục Sync."
+    ],
+    "exercise": [
+      "Nộp 1 preset XMP tự tạo nếu ứng dụng hỗ trợ xuất, mô tả 5 quy tắc và series 12 ảnh.",
+      "Ghi 3 điều kiện preset hoạt động tốt, 3 điều kiện cần chỉnh tay và phiên bản tiếp theo sẽ sửa gì."
+    ],
+    "answer": "Đạt khi tối thiểu 9/12 ảnh giữ ý đồ chung sau chỉnh WB và Exposure hợp cảnh, không có lỗi da lặp lại. Ngưỡng này dùng cho bài luyện; không đại diện kiểm định chất lượng thương mại.",
+    "refs": [
+      "presets",
+      "catalog"
+    ],
+    "days": [
+      12,
+      14,
+      20,
+      30
+    ],
+    "chapter": "8",
+    "visual": "palette",
+    "id": 14,
+    "sources": [
+      [
+        "Adobe | Presets",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/apply-presets.html"
+      ],
+      [
+        "Adobe | Catalog là gì",
+        "https://helpx.adobe.com/lightroom-classic/desktop/manage-catalogs-and-files/lightroom-catalog-basics.html"
+      ]
+    ],
+    "group": "Phong cách",
+    "sections": [
+      {
+        "title": "Phong cách là tập quyết định có thể lặp lại",
+        "paragraphs": [
+          "Một bảng màu dễ nhớ chỉ là một phần. Ánh sáng bạn chọn chụp, khoảng cách tới người, độ sáng nền, cách giữ da và mức tương phản cùng góp vào dấu ấn. Preset ghi lại vài quyết định xử lý, không thay thế toàn bộ quá trình tạo ảnh.",
+          "Viết ba đến năm quy tắc có thể quan sát, như nền bớt cạnh tranh, da ấm vừa và sáng mềm. Tránh chỉ ghi film hoặc cinematic vì các từ đó không giúp bạn kiểm tra một ảnh có đúng ý đồ không."
+        ]
+      },
+      {
+        "title": "Tách biến phụ thuộc cảnh khỏi đặc điểm của look",
+        "paragraphs": [
+          "WB và Exposure phụ thuộc nguồn sáng và cách phơi. Curve, quan hệ HSL và Grading có thể phù hợp để lưu look hơn, nhưng vẫn phải kiểm định. Nếu preset lưu luôn WB chụp ban ngày, ảnh trong nhà có thể lệch ngay trước khi bạn đánh giá màu.",
+          "Trong lab, lưu look chỉ lưu tương phản và saturation; tùy chọn áp kèm Exposure và Temp minh họa rủi ro trộn biến theo cảnh vào phong cách. Đây là preset JSON cho lab, không phải file XMP dùng trong Lightroom."
+        ]
+      },
+      {
+        "title": "Kiểm định cần ảnh mới và nhiều nguồn sáng",
+        "paragraphs": [
+          "Chia bộ thành nhóm ánh sáng, chọn ảnh đại diện, cân nền rồi áp look. Một thay đổi phải được thử trên ảnh chưa dùng để xây nó. Nếu cùng lỗi xuất hiện ở nhiều nhóm, xem lại look; nếu chỉ một cảnh khác biệt, xử lý theo cảnh hoặc tạo biến thể.",
+          "Bạn có thể thích một ảnh riêng lẻ vì màu đặc biệt nhưng series cần quan hệ nhất quán. So dạng contact sheet, chú ý da, độ sáng nền và độ sâu đen. Đừng ép mọi ảnh cùng giá trị thanh trượt để đạt vẻ đồng nhất giả tạo."
+        ]
+      },
+      {
+        "title": "Phiên bản preset cần có ghi chú sử dụng",
+        "paragraphs": [
+          "Đặt tên có phiên bản và ghi profile nền, điều kiện ánh sáng hợp, những mục không lưu và những lỗi hay gặp. Nếu không biết preset chứa gì, rất khó quyết định sửa toàn cục hay ảnh riêng.",
+          "Lưu một bản cũ trước khi sửa look dùng chung. Khi đổi nền màu, thử lại bộ kiểm định và ghi ảnh nào tốt hơn, ảnh nào tệ hơn. Tiến bộ nằm ở khả năng giải thích thay đổi chứ không ở việc tạo thêm nhiều preset."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Bạn có look dịu và ấm đẹp trên ảnh quán cà phê, muốn áp cho ảnh ngoài vườn.",
+      "stages": [
+        [
+          "Lưu chọn lọc",
+          "Lưu tương phản và saturation trước. Không kèm Temp Exposure trong lượt đầu."
+        ],
+        [
+          "Đổi đầu vào",
+          "Chọn cảnh lạnh hoặc tối trong lab để minh họa khác điều kiện đầu vào."
+        ],
+        [
+          "Áp và cân",
+          "Áp look rồi cân biến theo cảnh. So với việc chép luôn Temp Exposure."
+        ],
+        [
+          "Kiểm định",
+          "Nếu cùng đặc điểm quan hệ màu vẫn giữ được sau cân nền, look có tính thích ứng tốt hơn."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Hai ảnh khác nguồn sáng dùng cùng WB và Exposure. Có phải đó là bằng chứng preset nhất quán?",
+      "answer": "Không. Nhất quán nên đánh giá ở kết quả quan hệ màu và độ sáng, sau khi bù khác biệt cảnh hợp lý. Cùng số chỉ chứng minh đã chép cùng thiết lập."
+    },
+    "lab": "preset",
+    "labTask": "Lưu look, đổi điều kiện đầu vào, áp lại. So hai chế độ có hoặc không kèm Exposure và Temp; preset chỉ dùng trong lab này.",
+    "checklist": [
+      "Có mô tả phong cách bằng dấu hiệu cụ thể",
+      "Tách biến theo cảnh khỏi look",
+      "Thử trên ảnh ngoài bộ xây dựng"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-12/"
+  },
+  {
+    "title": "Quản lý màu Soft Proof và xuất ảnh",
+    "goal": "Giữ kết quả ổn định từ màn hình chỉnh đến web hoặc bản in. Phân biệt không gian màu, kích thước pixel, PPI và chế độ HDR.",
+    "idea": "Ảnh đẹp trong Develop chưa phải file giao nhận. Kết quả còn phụ thuộc màn hình, ứng dụng xem, profile đầu ra, kích thước và môi trường nhìn. Chọn chuẩn xuất theo mục đích rồi kiểm tra file thật.",
+    "tools": [
+      [
+        "Màn hình và môi trường",
+        "Giữ ánh sáng làm việc ổn định; tắt chế độ đổi màu theo giờ khi đánh giá. Hiệu chuẩn và profile màn hình giúp xem đáng tin hơn."
+      ],
+      [
+        "sRGB Adobe RGB ProPhoto RGB",
+        "Các không gian có phạm vi khác nhau. sRGB là lựa chọn thực hành an toàn cho JPEG web thông dụng; in theo yêu cầu lab."
+      ],
+      [
+        "Soft Proofing",
+        "Chọn profile đầu ra để xem mô phỏng, đánh giá màu vượt gamut; có thể tạo Proof Copy để tinh riêng bản xuất."
+      ],
+      [
+        "Intent và mô phỏng giấy",
+        "So Relative và Perceptual khi profile hỗ trợ. Simulate Paper and Ink giúp dự đoán giới hạn trắng đen của giấy."
+      ],
+      [
+        "Format và Quality",
+        "JPEG cho giao nhận phổ biến; TIFF cho quy trình yêu cầu chất lượng và chỉnh tiếp. Quality cao tăng dung lượng, không phục hồi chi tiết."
+      ],
+      [
+        "Image Sizing và PPI",
+        "Pixel quyết định kích thước hiển thị số. PPI gắn với kích thước in; 300 PPI không tự làm JPEG ít pixel sắc hơn."
+      ],
+      [
+        "Output Sharpening và Metadata",
+        "Sharpen cho Screen hoặc giấy đúng mục đích; chọn metadata, GPS và watermark theo nhu cầu giao nhận."
+      ],
+      [
+        "HDR và SDR",
+        "HDR cần quy trình, định dạng và nơi xem tương thích. Bài cơ bản ưu tiên SDR; không nhầm HDR edit với HDR merge nhiều phơi sáng."
+      ]
+    ],
+    "steps": [
+      "Chọn ảnh hoàn thiện, kiểm tra dưới ánh sáng làm việc ổn định. So trên ứng dụng có quản lý màu trước khi quy lỗi cho preset.",
+      "Xuất bản web thử: JPEG, sRGB, SDR, Quality khoảng 85, cạnh dài 2048 px, Output Sharpening Screen Standard. Đây là cấu hình luyện, không phải quy định mọi nền tảng.",
+      "Mở file vừa xuất, xem đúng kích thước. Kiểm tra da, chuyển sắc trời, nét tóc, metadata và crop; không chỉ nhìn thumbnail.",
+      "Với bản in, hỏi lab kích thước, profile và yêu cầu file. Ví dụ 20 x 30 cm ở 300 PPI cần xấp xỉ 2362 x 3543 px nếu không tính lề.",
+      "Soft proof bằng profile lab, tạo bản tinh riêng nếu cần. Xuất theo hướng dẫn lab và thử bản in nhỏ trước khi in lớn."
+    ],
+    "case": "Ảnh trên điện thoại ấm hơn máy: kiểm tra chế độ màn hình, độ sáng, ứng dụng xem và profile file. Đừng sửa RAW liên tục để chạy theo từng màn hình chưa được kiểm soát.",
+    "errors": [
+      "Xuất vẫn tối: màn hình chỉnh có thể quá sáng; kiểm tra điều kiện nhìn và file xuất.",
+      "Đổi 72 thành 300 PPI nhưng web không nét hơn: kiểm tra số pixel và mức resize.",
+      "In khác màn hình: kiểm tra ICC lab, giấy, ánh sáng xem bản in và tránh quản lý màu hai lần."
+    ],
+    "exercise": [
+      "Nộp JPEG web, file đủ độ phân giải và bảng thiết lập xuất. So trên hai thiết bị, ghi khác biệt có thể giải thích.",
+      "Tính pixel cần cho bản in 20 x 30 cm ở 300 PPI; chuẩn bị proof copy nếu có profile lab."
+    ],
+    "answer": "Đáp án tính: cm chia 2.54 rồi nhân PPI. Đạt khi file đúng không gian màu và kích thước, không có lỗi resize hoặc sharpening rõ, và bạn phân biệt pixel với PPI.",
+    "refs": [
+      "color",
+      "proof",
+      "export",
+      "hdr"
+    ],
+    "days": [
+      27,
+      28
+    ],
+    "chapter": "11 và 12",
+    "visual": "palette",
+    "id": 15,
+    "sources": [
+      [
+        "Adobe | Quản lý màu",
+        "https://helpx.adobe.com/lightroom-classic/desktop/workspace/color-management.html"
+      ],
+      [
+        "Adobe | Develop và Soft Proofing",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/develop-module-options.html"
+      ],
+      [
+        "Adobe | Các thiết lập Export",
+        "https://helpx.adobe.com/lightroom-classic/desktop/export-photos/export-files-disk-or-cd.html"
+      ],
+      [
+        "Adobe | Chỉnh và xuất HDR",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/hdr-output.html"
+      ]
+    ],
+    "group": "Phong cách",
+    "sections": [
+      {
+        "title": "Pixel kích thước in và PPI là ba thông tin cần liên hệ",
+        "paragraphs": [
+          "Ảnh 3000 x 2000 có sáu triệu pixel. Khi in dài 10 inch, cạnh 3000 pixel cho 300 PPI; khi in dài 20 inch chỉ còn 150 PPI. Đổi nhãn PPI mà giữ pixel không tự thêm chi tiết.",
+          "Với bản in 20 x 30 cm ở 300 PPI, cạnh cần xấp xỉ 2362 x 3543 pixel trước khi xét lề. Nếu ảnh nguồn không đủ, cân nhắc kích thước in, khoảng nhìn và cách nội suy thay vì chỉ gõ 300. Lab cho tính yêu cầu và so với đầu ra dự kiến."
+        ]
+      },
+      {
+        "title": "Không gian màu và profile cần đi cùng nơi nhận",
+        "paragraphs": [
+          "sRGB thường là lựa chọn thuận tiện cho ảnh web thông dụng. Adobe RGB hoặc ProPhoto RGB có phạm vi khác nhưng chỉ có ích khi quy trình và nơi nhận xử lý đúng. Không gian rộng hơn không tự khiến mọi ảnh đẹp hơn trên mọi màn hình.",
+          "Canvas lab dùng đường xuất JPEG sRGB thông thường của trình duyệt. Nó không tạo ICC máy in hay chuyển sang ProPhoto. Với bản in thật, dùng profile và hướng dẫn từ lab in; khi cần soft proof, làm trong ứng dụng quản lý màu thích hợp."
+        ]
+      },
+      {
+        "title": "Quality nén và sharpening đầu ra giải quyết khác vấn đề",
+        "paragraphs": [
+          "JPEG quality ảnh hưởng nén và dung lượng. Ảnh ít chất lượng có thể xuất hiện ô khối hoặc viền ở cạnh và banding. Sharpening không khôi phục hoàn hảo lỗi nén. Resize cũng thay chi tiết, nên cần nhìn file ở kích thước đã xuất.",
+          "Trong lab, chọn cạnh dài và quality rồi tạo file thật. Kích thước file thay đổi theo nội dung và bộ mã hóa trình duyệt; không có quy tắc quality 85 luôn cho đúng một số KB. Đo file thực tế thay vì đoán."
+        ]
+      },
+      {
+        "title": "Kiểm tra cuối phải mở đúng file giao nhận",
+        "paragraphs": [
+          "Nhìn đẹp trong trình chỉnh chưa chứng minh file xuất đúng. Hãy mở JPEG, kiểm tra kích thước, màu, độ sắc, crop và metadata theo nhu cầu. So trên ứng dụng có quản lý màu rồi mới kết luận do preset.",
+          "Khác biệt màn hình có thể đến từ độ sáng, chế độ đổi màu theo giờ, profile hoặc môi trường nhìn. Không sửa RAW liên tục để chạy theo từng thiết bị chưa được kiểm soát. Với in quan trọng, thử bản nhỏ dưới ánh sáng xem phù hợp trước khi in lớn."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Bạn muốn JPEG đăng web nhẹ nhưng không mất rõ nét tóc và cần biết có đủ pixel in 20 x 30 cm không.",
+      "stages": [
+        [
+          "Kích thước",
+          "Chọn cạnh dài, giữ tỷ lệ và xem số pixel thật của file tạo ra."
+        ],
+        [
+          "Nén",
+          "So quality cao và thấp ở tóc, cốc và trời. Quan sát dung lượng đo được, không đoán."
+        ],
+        [
+          "In",
+          "Nhập cm và PPI để tính yêu cầu. So với pixel hiện có, không chỉ nhìn nhãn DPI."
+        ],
+        [
+          "Giao nhận",
+          "Tải JPEG rồi mở ở ngoài. Nhớ lab không thay thế soft proof ICC hoặc quy trình HDR."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Bạn giữ nguyên 2048 pixel nhưng đổi từ 72 sang 300 PPI. Trên trang web ảnh có tự sắc hơn không?",
+      "answer": "Không. Số pixel và cách hiển thị chưa đổi. PPI liên hệ pixel với kích thước vật lý khi in; nó không tự thêm dữ liệu chi tiết cho màn hình."
+    },
+    "lab": "export",
+    "labTask": "Tạo JPEG với cạnh dài và quality khác nhau, xem preview và dung lượng thật. Dùng công cụ tính pixel in ngay bên dưới.",
+    "checklist": [
+      "Phân biệt pixel với nhãn PPI",
+      "Mở file xuất thật để đánh giá",
+      "Không gọi mô phỏng canvas là soft proof ICC"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-27/"
+  },
+  {
+    "title": "Quy trình chuyên nghiệp và đồ án cuối khóa",
+    "goal": "Tự xử lý một bộ ảnh từ chẩn đoán đến xuất, giải thích quyết định và kiểm tra phong cách. Đây là bài kết nối toàn bộ 15 bài trước.",
+    "idea": "Một quy trình tốt giúp bạn chọn đúng vấn đề đầu tiên và dừng đúng lúc. Thứ tự dưới đây là khung suy nghĩ, không mô tả thứ tự tính toán nội bộ của Lightroom và không phải công thức bắt buộc.",
+    "tools": [
+      [
+        "Quan sát",
+        "Xác định chủ thể, hướng sáng, tình trạng dữ liệu và mục đích đầu ra; viết một câu ý đồ."
+      ],
+      [
+        "Nền kỹ thuật",
+        "Nếu cần Denoise, làm sớm trước mask và Remove. Kiểm tra profile, lens, crop và hình học trước khi tinh màu."
+      ],
+      [
+        "Cân bằng",
+        "Đặt WB, Exposure và dải sáng tối theo chủ thể. Phân biệt toàn cục với từng vùng."
+      ],
+      [
+        "Định hình",
+        "Dùng Curve cho chuyển tone; Mixer hoặc Point Color cho màu vật; Grading cho sắc trong vùng tone."
+      ],
+      [
+        "Dẫn mắt",
+        "Mask để chủ thể và nền có quan hệ sáng tối phù hợp; không tăng mặt cho tới khi tách khỏi cảnh."
+      ],
+      [
+        "Hoàn thiện",
+        "Dọn vật thừa, kiểm tra rìa, chi tiết, grain và hiệu ứng. Chỉ giữ hiệu ứng có lý do."
+      ],
+      [
+        "Đồng bộ",
+        "Nhóm ảnh theo ánh sáng, Sync mục phù hợp, kiểm tra từng ảnh quan trọng và mọi ảnh có lỗi bất thường."
+      ],
+      [
+        "Giao nhận",
+        "Xuất đúng đích, mở file thật và so bộ ảnh. Lưu preset, snapshot, ghi chú và sao lưu ảnh gốc lẫn catalog."
+      ]
+    ],
+    "steps": [
+      "Chọn 20 RAW chưa chỉnh gồm ít nhất 3 điều kiện ánh sáng, 1 ảnh khó và 1 ảnh có chủ thể da người. Chọn 10 ảnh để hoàn thiện.",
+      "Viết brief: người xem nhìn vào đâu, cảm giác chính là gì, ba đặc điểm phong cách và kênh sử dụng cuối.",
+      "Chỉnh một ảnh đại diện mỗi nhóm. Ghi vấn đề, giả thuyết, công cụ, kết quả; tối đa ba giả thuyết chính trước khi đánh giá lại.",
+      "Áp look cho nhóm còn lại, chỉnh theo cảnh. Tạo một bản match tham chiếu và một bản phong cách của bạn để phân biệt mô phỏng với sáng tạo.",
+      "Xuất series, tự chấm rubric và sửa ba lỗi lớn nhất. Sau 24 giờ xem lại, ghi điều bạn sẽ làm khác ở lần chụp tiếp theo."
+    ],
+    "case": "Một ảnh nhìn đẹp riêng nhưng lệch bộ: xác định lệch do WB, tương phản hay độ mạnh nền. Sửa đúng quan hệ đó; đừng thêm một preset khác chỉ để thử may.",
+    "errors": [
+      "Chỉnh quá lâu mà không tiến bộ: quay lại brief và ba sai khác lớn nhất.",
+      "Mỗi ảnh một màu: kiểm tra nhóm nguồn sáng và bản mô tả phong cách.",
+      "Màu đẹp nhưng lỗi ảnh rõ: kiểm tra clipping, mask, halo, xóa vật, độ nét và file xuất trước khi giao."
+    ],
+    "exercise": [
+      "Nộp series 10 ảnh, 1 preset look, 1 phiếu phân tích tham chiếu và nhật ký quyết định cho ảnh khó nhất.",
+      "Tự chấm 5 tiêu chí 0 đến 4: ánh sáng, quan hệ màu, da hoặc màu vật, sự nhất quán, chất lượng đầu ra."
+    ],
+    "answer": "Từ 16/20 và không có lỗi nghiêm trọng là hoàn thành đồ án học tập. Mức 0 chưa xử lý; 1 lỗi rõ; 2 dùng được nhưng chưa đều; 3 tốt; 4 có chủ đích và giải thích được. Lặp lại trên ảnh mới để đo tiến bộ.",
+    "refs": [
+      "learn",
+      "export",
+      "presets"
+    ],
+    "days": [
+      14,
+      15,
+      16,
+      27,
+      30
+    ],
+    "chapter": "1 và 8",
+    "visual": "palette",
+    "id": 16,
+    "sources": [
+      [
+        "Adobe | Tutorial thực hành",
+        "https://lightroom.adobe.com/learn/tutorial"
+      ],
+      [
+        "Adobe | Các thiết lập Export",
+        "https://helpx.adobe.com/lightroom-classic/desktop/export-photos/export-files-disk-or-cd.html"
+      ],
+      [
+        "Adobe | Presets",
+        "https://helpx.adobe.com/lightroom-classic/desktop/process-and-develop-photos/apply-presets.html"
+      ]
+    ],
+    "group": "Phong cách",
+    "sections": [
+      {
+        "title": "Brief tốt giúp bạn biết bắt đầu và biết dừng",
+        "paragraphs": [
+          "Một brief tối thiểu ghi chủ thể, cảm giác, nơi dùng và ba đặc điểm phong cách. Nếu không biết mắt người xem cần đi đâu, bạn sẽ dễ chỉnh tất cả vùng đẹp riêng lẻ rồi cả ảnh mất ưu tiên.",
+          "Ví dụ chân dung quán vườn cho web: mặt là điểm nhìn đầu, giữ không khí ấm nhẹ, cây bớt nổi, blouse còn chi tiết. Mỗi thao tác phải phục vụ ít nhất một mục tiêu đó; nếu không, thử tắt để xem có thật sự cần."
+        ]
+      },
+      {
+        "title": "Quy trình là trình tự suy nghĩ không phải pipeline nội bộ",
+        "paragraphs": [
+          "Bạn có thể nghĩ theo quan sát, nền kỹ thuật, tone, màu, mask, chi tiết rồi xuất. Đây là khung để giảm bỏ sót, không khẳng định Lightroom tính toán các công cụ đúng theo thứ tự bạn nhấp. Một số thao tác như Denoise nên làm sớm khi cần theo quy trình ứng dụng.",
+          "Khi quay lại một bước, hãy biết phụ thuộc nào cần kiểm tra. Đổi profile có thể buộc xem lại màu; đổi crop có thể thay điểm nhìn; đổi dữ liệu đầu vào có thể cần cập nhật mask. Quay lại có chủ đích khác với kéo thử không có giả thuyết."
+        ]
+      },
+      {
+        "title": "Chấm chất lượng cần cả chủ đích và lỗi kỹ thuật",
+        "paragraphs": [
+          "Một ảnh có look rõ nhưng mask viền sáng, da sáp hoặc file xuất sai vẫn chưa hoàn thiện. Ngược lại một ảnh kỹ thuật sạch nhưng không rõ chủ thể cũng chưa đạt brief. Dùng hai lượt chấm: cảm nhận ở Fit và kỹ thuật ở 100%.",
+          "Với series, thêm lượt contact sheet để tìm ảnh lệch. Đừng chỉ kiểm tra ảnh đầu tiên đẹp nhất. Xem ảnh chuyển nguồn sáng và ảnh có da, vùng trắng hoặc màu mạnh vì chúng dễ bộc lộ preset thiếu ổn định."
+        ]
+      },
+      {
+        "title": "Nhật ký quyết định biến thực hành thành kỹ năng dùng lại",
+        "paragraphs": [
+          "Ghi triệu chứng, giả thuyết, công cụ thử, tác dụng phụ và kết quả. Sau vài bộ ảnh, bạn sẽ thấy lỗi lặp lại như kéo Orange để chữa WB hoặc nâng Shadows khiến ảnh phẳng. Đó là thông tin hữu ích hơn một danh sách thông số cuối.",
+          "Đồ án cần một ảnh tham chiếu, bản sạch, bản cá nhân và lời giải thích khác nhau ở đâu. Hoàn thành bộ hiện tại rồi thử lại với ảnh mới. Tiến bộ thể hiện ở việc dự đoán đúng hơn và cần ít chỉnh bù hơn, không chỉ ở tốc độ kéo thanh."
+        ]
+      }
+    ],
+    "worked": {
+      "scenario": "Bạn được giao series chân dung vườn với look dịu, mặt rõ và da hợp cảnh. Ảnh cuối phải đọc tốt trên điện thoại.",
+      "stages": [
+        [
+          "Brief",
+          "Viết ba tiêu chí trước: mặt là điểm nhìn, nền dịu, áo giữ chi tiết."
+        ],
+        [
+          "Nền",
+          "Đặt Exposure và Temp trước; tránh bắt đầu bằng preset đậm để có cảm giác đã tiến bộ."
+        ],
+        [
+          "Định hình",
+          "Tinh tương phản và saturation. Dùng mask nếu chỉ mặt thiếu sáng, không đẩy cả cảnh."
+        ],
+        [
+          "Chấm",
+          "Xem trước sau, tự chấm rubric, xuất thử và lưu nhật ký cùng ảnh. Chỉ đánh dấu hoàn thành khi giải thích được quyết định."
+        ]
+      ]
+    },
+    "reflection": {
+      "question": "Bạn thấy ảnh chưa đẹp nhưng không biết sửa đâu. Thao tác có ích nhất trước khi kéo thêm là gì?",
+      "answer": "Viết ba sai khác có thể quan sát so với brief hoặc tham chiếu. Chọn sai khác ảnh hưởng lớn nhất, đề xuất một nguyên nhân và thử một nhóm công cụ. Tránh thay hàng loạt thứ khi chưa biết vấn đề."
+    },
+    "lab": "project",
+    "labTask": "Chỉnh bản cá nhân bằng bốn nhóm nền, ghi brief và tự chấm rubric. Tải ảnh đã thử nếu muốn giữ kết quả thực hành.",
+    "checklist": [
+      "Có brief trước khi kéo thanh",
+      "Giải thích được ba quyết định quan trọng",
+      "Chấm cả cảm nhận kỹ thuật và đầu ra"
+    ],
+    "readMinutes": 12,
+    "videoUrl": "https://phlearn.com/tutorial/30-days-lightroom-day-30/"
+  }
+]
